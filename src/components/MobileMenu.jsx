@@ -10,23 +10,23 @@ const MobileMenu = () => {
         <Grid templateColumns={'repeat(5, 1fr)'} w={'100%'}>
             <GridItem display={'flex'} flexDirection={"column"} alignItems={"center"} justifyContent={"space-between"} gap={0.5} pt={2}>
                 <FaRegHeart size={25}/>
-                <Text fontSize={'10px'} mt={1}>รายการโปรด</Text>
+                <Text fontSize={'10px'} mt={1.5}>รายการโปรด</Text>
             </GridItem>
             <GridItem display={'flex'} flexDirection={"column"} alignItems={"center"} justifyContent={"space-between"} gap={0.5} pt={2}>
                 <FaBullhorn size={25}/>
-                <Text fontSize={'10px'} mt={1}>Looking</Text>
+                <Text fontSize={'10px'} mt={1.5}>Looking</Text>
             </GridItem>
             <GridItem display={'flex'} flexDirection={"column"} alignItems={"center"} justifyContent={"space-between"} gap={0.5} pt={2}>
                 <FaMedal size={25}/>
-                <Text fontSize={'10px'} mt={1}>ประกาศเเนะนำ</Text>
+                <Text fontSize={'10px'} mt={1.5}>ประกาศเเนะนำ</Text>
             </GridItem>
             <GridItem display={'flex'} flexDirection={"column"} alignItems={"center"} justifyContent={"space-between"} gap={0.5} pt={2}>
                 <FaUserCircle size={25}/>
-                <Text fontSize={'10px'} mt={1}>AgentClub</Text>
+                <Text fontSize={'10px'} mt={1.5}>AgentClub</Text>
             </GridItem>
             <GridItem display={'flex'} flexDirection={"column"} alignItems={"center"} justifyContent={"space-between"} gap={0.5} pt={2}>
                 <FaTh size={25}/>
-                <Text fontSize={'10px'} mt={1}>เพิ่มเติม</Text>
+                <Text fontSize={'10px'} mt={1.5}>เพิ่มเติม</Text>
             </GridItem>
         </Grid>
     </Flex>

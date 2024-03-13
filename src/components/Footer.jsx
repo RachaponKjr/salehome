@@ -4,7 +4,7 @@ import { FaRegHeart } from 'react-icons/fa'
 
 const Footer = () => {
     return (
-        <Box bg={"gray.500"}>
+        <Box bg={"gray.500"} p>
             <Container maxW={'container.xl'}>
                 <Flex h={"min-content"} flexDirection={{base:"column",md:"row"}} py={"16px"}>
                     {/* ฝั่่งทางด้านซ้ายของ footer */}
