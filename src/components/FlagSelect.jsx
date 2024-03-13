@@ -17,7 +17,7 @@ const FlagSelect = () => {
     }
     return (
         <>
-            <Box position={'relative'} p={0}>
+            <Box position={'relative'} p={0} zIndex={100}>
                 <ul onClick={() => setOpentFlag(!opentFlag)} >
                     <li style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: "8px" }}><Image src={flag} alt={flag} width={30} height={30} /><FaAngleDown /></li>
                 </ul>
