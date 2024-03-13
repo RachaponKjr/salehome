@@ -77,21 +77,21 @@ const Section1 = () => {
                     <GridItem>
                       <Box display={'flex'} gap={"4px"}>
                         <TbStairs size={15} />
-                        <Text variant={"h6"} fontSize={{ base: "8px", md: "12px" }}>{item.number_of_floors}</Text>
+                        <Text variant={"h6"} fontSize={{ base: "8px", md: "12px" }}>{item.number_of_floors} ชั้น</Text>
                       </Box>
                     </GridItem>
                     {/* จำนวนห้องนอน */}
                     <GridItem>
                       <Box display={'flex'} gap={"4px"}>
                         <FaBed size={15} />
-                        <Text variant={"h6"} fontSize={{ base: "8px", md: "12px" }}>{item.number_of_rooms}</Text>
+                        <Text variant={"h6"} fontSize={{ base: "8px", md: "12px" }}>{item.number_of_rooms} ห้องนอน</Text>
                       </Box>
                     </GridItem>
                     {/* จำนวนห้องน้ำ */}
                     <GridItem>
                       <Box display={'flex'} gap={"4px"}>
                         <FaBath size={15} />
-                        <Text variant={"h6"} fontSize={{ base: "8px", md: "12px" }}>{item.number_of_bathrooms}</Text>
+                        <Text variant={"h6"} fontSize={{ base: "8px", md: "12px" }}>{item.number_of_bathrooms} ห้องน้ำ</Text>
                       </Box>
                     </GridItem>
                   </Grid>
