@@ -33,7 +33,7 @@ const Section1 = () => {
               <Flex w={"100%"} h={"100%"} flexDirection={"column"} overflow={"hidden"} borderRadius={"10px"} boxShadow={'md'}>
                 {/* รูปภาพใน card */}
                 <Box w={"100%"} h={{ base: "6rem", md: "12rem" }} position={"relative"} bg={"gray.200"} cursor={"pointer"} _hover={{ bg: "gray.300" }}>
-                    <Image src={House} alt="image" fill className='image_hover' />
+                  <Image src={House} alt="image" fill className='image_hover' />
                   {/* ราคาของสินค้า */}
                   <Flex flexDirection={"column"} w={"100%"} h={"max-content"} bg={"rgba(0,0,0,0.5)"} py={"4px"} lineHeight={"1.2"} zIndex={2} px={{ base: 1, md: 2 }} position={"absolute"} bottom={0} display={"flex"} justifyContent={"end"} alignItems={"end"}>
                     {item.discount && <Text variant={"h1"} fontSize={{ base: "10px", md: "16px" }} color={"#c4c4c4"}><s>{item.discount}</s></Text>}
@@ -41,7 +41,7 @@ const Section1 = () => {
                   </Flex>
                 </Box>
                 {/* ข้อมูลของสินค้า */}
-                <Flex flexDirection={"column"} zIndex={2} gap={"4px"} py={1} px={{ base: 1, md: 2 }} bg={"#FAFAFA"} >
+                <Flex flexDirection={"column"} zIndex={10} gap={"4px"} py={1} px={{ base: 1, md: 2 }} bg={"#FAFAFA"} >
                   {/* หัวข้อของสินค้า */}
                   <Text variant={"h1"} fontSize={{ base: "12px", md: "14px" }} cursor={"pointer"} className='line-clamp' h={{ base: "36px", md: "2.5rem" }}>{item.title}</Text>
                   {/* เวลาเเก้ไข กับ จำนวนการคลิก */}

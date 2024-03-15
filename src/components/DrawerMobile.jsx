@@ -44,7 +44,7 @@ const DrawerMobile = () => {
 
             <Drawer onClose={onClose} isOpen={isOpen} size={"full"} >
                 <DrawerOverlay />
-                <DrawerContent py={"32px"}>
+                <DrawerContent py={"36px"}>
                     <DrawerCloseButton size={"lg"} outline={"none"} />
                     {/* ส่วนหัวของ Drawer ประกอบไปด้วย login / register */}
                     <DrawerHeader>
