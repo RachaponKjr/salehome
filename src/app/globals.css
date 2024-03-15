@@ -27,6 +27,7 @@
 }
 .image_hover{
   z-index: 1;
+  object-fit: cover;
 }
 .image_hover:hover{
   scale: 1.1;
