@@ -44,22 +44,8 @@ const DrawerMobile = () => {
 
             <Drawer onClose={onClose} isOpen={isOpen} size={"full"} >
                 <DrawerOverlay />
-                <DrawerContent py={"36px"}>
+                <DrawerContent py={"42px"}>
                     <DrawerCloseButton size={"lg"} outline={"none"} />
-                    {/* ส่วนหัวของ Drawer ประกอบไปด้วย login / register */}
-                    <DrawerHeader>
-                        {/* ปุ่ม เข้าสู่ระบบ / สมัครสมาชิก */}
-                        <Flex justifyContent={"center"}>
-                            <Box w={'100%'} minW={"6rem"} maxW={"12rem"} bg={'gray.300'} py={2} textAlign={'center'} rounded={'lg'}>
-                                <Text fontSize={'16px'}>เข้าสู่ระบบ</Text>
-                            </Box>
-                            {/* line horizontal */}
-                            <Box w={"1px"} bg={'black'} mx={2}></Box>
-                            <Box w={'100%'} minW={"6rem"} maxW={"12rem"} bg={'gray.300'} py={2} textAlign={'center'} rounded={'lg'}>
-                                <Text fontSize={'16px'}>สมัครสมาชิก</Text>
-                            </Box>
-                        </Flex>
-                    </DrawerHeader>
                     <DrawerBody>
                         <Box w={'100%'} h={'max-content'}>
                             {/* ไม่ควรใช้ map 

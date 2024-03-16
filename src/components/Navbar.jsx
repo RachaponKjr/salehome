@@ -1,12 +1,16 @@
-import { Box, Container, Flex } from '@chakra-ui/react'
+import { Box, Container, Flex, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import React from 'react'
 
 import icon from '../imgs/logo.png'
 
 import { IoIosAddCircle } from "react-icons/io";
+import { FaPaperPlane } from "react-icons/fa";
 import FlagSelect from './FlagSelect'
 import MobileMenu from './MobileMenu';
+import BtnTop from './BtnTop';
+import BtnContact from './BtnContact';
+import Link from 'next/link';
 
 const Navbar = () => {
     const maun = [
@@ -22,15 +26,6 @@ const Navbar = () => {
         {
             tital: "ประกาศเเนะนำ",
         },
-        {
-            tital: "ขายราคาทุน",
-        },
-        {
-            tital: "AgentClub",
-        },
-        {
-            tital: "Looking",
-        }
     ]
     return (
         <>
@@ -39,33 +34,37 @@ const Navbar = () => {
                     <Container maxW={"container.xl"}>
                         <Flex py={"8px"} position={"relative"} w={"100%"} display={"flex"} flexDirection={{ base: "row" }} justifyContent={"space-between"}>
                             {/* ส่วนของ Logo */}
-                            <Box maxW={"100%"} w={{ base: "10rem", sm: "15rem", md: "30%" }} position={{ base: "relative", md: "absolute", xl: "relative" }} display={"block"} justifyContent={"center"} alignItems={"center"}><Image src={icon} alt="logo" width={"100%"} height={100} /></Box>
+                            <Box maxW={"100%"} w={{ base: "10rem", sm: "15rem", md: "30%" }} position={{ base: "relative", md: "absolute", xl: "relative" }} display={"block"} justifyContent={"center"} alignItems={"center"}>
+                                <Link href={"/"}>
+                                <Image src={icon} alt="logo" width={"100%"} height={100} />
+                                </Link>
+                            </Box>
                             {/* ส่วนเมนูทางด้าน ขวา ของ ขนาด 1024px ขึ้นไป */}
                             <Flex flexDirection={"column"} w={{ md: "100%", xl: "70%" }} alignItems={'end'} gap={"8px"}>
                                 {/* ส่วนบนของเมนู */}
                                 <Flex gap={2} pr={{ base: "0px", md: "12px" }} display={'flex'} alignItems={'center'} h={"100%"}>
                                     {/* Select เลือกเปลี่ยนภาษา */}
                                     <FlagSelect />
-                                    <Flex gap={2} display={{ base: "none", md: "flex" }}>
-                                        <Box fontSize={{ md: "12px", xl: "14px" }} py={"4px"}>|</Box>
-                                        <Box color={"white"} fontSize={{ md: "12px", xl: "14px" }} py={"4px"} cursor={"pointer"}>คู่มือการใช้งาน</Box>
-                                        <Box fontSize={{ md: "12px", xl: "14px" }} py={"4px"}>|</Box>
-                                        <Box color={"white"} fontSize={{ md: "12px", xl: "14px" }} py={"4px"} cursor={"pointer"}>ติดต่อเรา</Box>
-                                    </Flex>
                                 </Flex>
                                 {/* ส่วนล่างของเมนู */}
-                                <Flex display={{ base: "none", md: "flex" }}>
+                                <Flex display={{ base: "none", md: "flex" }} gap={4}>
                                     {maun.map((item, index) => (
-                                        <Box key={index} px={"12px"} py={"4px"} display={"flex"} alignItems={"center"} color={"white"} borderRadius={"20px"} cursor={"pointer"} fontSize={{ md: "12px", xl: "14px" }} _hover={{ bg: "blue.500" }}>{item.tital}</Box>
+                                        <Box key={index} px={"12px"} py={"4px"} display={"flex"} overflow={"hidden"} alignItems={"center"} color={"white"} cursor={"pointer"} gap={"4px"} fontSize={{ md: "12px", xl: "14px" }} position={"relative"} className='nav_hover'>
+                                            <IoIosAddCircle size={25}/>
+                                            <Text>{item.tital}</Text>
+                                        </Box>
                                     ))}
-                                    <Box px={"12px"} py={"4px"} gap={1} border={"2px solid white"} bg={"#F5A623"} color={"white"} borderRadius={"20px"} cursor={"pointer"} fontSize={{ md: "12px", xl: "14px" }} display={"flex"} alignItems={"center"} _hover={{ bg: "white", color: "#F5A623" }}>
-                                        <IoIosAddCircle size={18} />
-                                        <Box as="p">ลงประกาศ</Box>
-                                    </Box>
                                 </Flex>
                             </Flex>
                         </Flex>
                     </Container>
+                </Box>
+                {/* ปุ่มติดต่อ กับ ปุ่ม เลื่อน ขึ้นด้านบน */}
+                <Box position={'fixed'} right={0} bottom={0} width={'4rem'} height={'max-content'} display={{base:"none",md:'flex'}} flexDirection={'column'} justifyContent={'center'} alignItems={'center'} gap={2} mx={2} py={4}  zIndex={999}> 
+                    {/* ติดต่อ */}
+                    <BtnContact/>
+                    {/* เลื่อนขึ้นบน */}
+                    <BtnTop/>
                 </Box>
             </Box>
             {/* เมนู ของส่วนมือถือ อยู่ทางด้านล่าง */}

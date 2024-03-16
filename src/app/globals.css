@@ -18,6 +18,7 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  height: 3rem;
 }
 .line-clamp1{
   display: -webkit-box;
@@ -32,4 +33,25 @@
 .image_hover:hover{
   scale: 1.1;
   transition: 300ms;
+}
+
+.nav_hover:hover::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(3, 255, 129);
+  z-index: 1;
+  animation: bottomline 0.5s ease-in-out forwards;
+}
+
+@keyframes bottomline {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
