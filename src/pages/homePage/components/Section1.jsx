@@ -21,7 +21,7 @@ const Section1 = () => {
       {/* ส่วนหัว มี Input กับ Dropdown */}
       <Flex flexDirection={{base:"column-reverse",md:"row"}} gap={"8px"} justifyContent={"space-between"}>
         {/* Tabs */}
-        <Flex h={'2rem'} gap={'4px'} overflowX={'scroll'}>
+        <Flex h={'2rem'} gap={'4px'} overflowX={{base:'scroll',md:'auto'}}>
           <Box h={'100%'} width={"max-content"} whiteSpace={"nowrap"} px={4} py={1} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 0 && { _before: { content: "''", position: "absolute", width: "100%", height: "2px", bottom: "0", left: "0", bg: "blue.500" } }} onClick={() => setTabs(0)}>Lorem, ipsum.</Box>
           <Box h={'100%'} width={"max-content"} whiteSpace={"nowrap"} px={4} py={1} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 1 && { _before: { content: "''", position: "absolute", width: "100%", height: "2px", bottom: "0", left: "0", bg: "blue.500" } }} onClick={() => setTabs(1)}>Lorem, ipsum.</Box>
           <Box h={'100%'} width={"max-content"} whiteSpace={"nowrap"} px={4} py={1} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 2 && { _before: { content: "''", position: "absolute", width: "100%", height: "2px", bottom: "0", left: "0", bg: "blue.500" } }} onClick={() => setTabs(2)}>Lorem, ipsum.</Box>
