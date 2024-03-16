@@ -16,7 +16,7 @@ import Link from 'next/link';
 const Section1 = () => {
   const [tabs, setTabs] = React.useState(0)
   return (
-    <Box h="min-content" my={"16px"} w={"100%"} >
+    <Box h="min-content" my={"16px"} w={"100%"} boxShadow={'lg'} rounded={"10px"} p={4} >
       <Box variant={"h1"} fontSize={"24px"} mb={"16px"}>Lorem, ipsum dolor.</Box>
       {/* ส่วนหัว มี Input กับ Dropdown */}
       <Flex flexDirection={{base:"column-reverse",md:"row"}} gap={"8px"} justifyContent={"space-between"}>
