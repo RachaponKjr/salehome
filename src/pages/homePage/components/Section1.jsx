@@ -32,9 +32,7 @@ function Section1() {
       <Box w={"100%"} h={"min-content"} my={"8px"}>
         {/* Tabs ที่ 1 */}
         {tabs === 0 && (
-          <Grid gridTemplateColumns={{ base: "repeat(2, minmax(0, 1fr))", sm: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" }} gap={{ base: "4px", md: "16px" }}>
           <ShowItem />
-        </Grid>
         )}
         
       </Box>

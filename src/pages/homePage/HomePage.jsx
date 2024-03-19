@@ -1,6 +1,7 @@
 import { Container } from '@chakra-ui/react'
 import React from 'react'
 import Section1 from './components/Section1'
+import Loading from '@/components/Loading'
 
 function HomePage(){
   return (

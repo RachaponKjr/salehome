@@ -13,7 +13,8 @@ const BtnContact = () => {
           <Box
             w={'3.5rem'}
             h={'3.5rem'}
-            bg={'blue'}
+            bg={"#EA834F"}
+            _hover={{ bg: '#E66F33' }}
             rounded={'full'}
             display={'flex'}
             transitionDuration={'.3s'}

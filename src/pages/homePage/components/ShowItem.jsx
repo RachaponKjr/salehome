@@ -1,4 +1,5 @@
 'use client'
+import Loading from '@/components/Loading'
 import { Box, Divider, Flex, Grid, GridItem, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,10 +11,11 @@ import { IoLocationSharp } from 'react-icons/io5'
 
 function ShowItem() {
     const [data, setData] = React.useState([])
-    const optimizedFetch = useMemo(() => fetch('http://18.140.121.108:5500/getsalehome', { method: 'GET' ,next: { revalidate: 0 } }), [])
-
+    const optimizedFetch = useMemo(() => fetch('http://18.140.121.108:5500/getsalehome', { method: 'GET', next: { revalidate: 0 } }), [])
+    const [loading, setLoading] = React.useState(false)
     useEffect(() => {
         const fetchData = async () => {
+            setLoading(false)
             try {
                 const res = await optimizedFetch
                 const jsonData = await res.json()
@@ -21,6 +23,8 @@ function ShowItem() {
                 setData(data)
             } catch (error) {
                 console.log(error)
+            }finally{
+                setLoading(true)
             }
         }
         fetchData()
@@ -31,6 +35,8 @@ function ShowItem() {
     }, [])
     return (
         <>
+        {loading ? (
+            <Grid gridTemplateColumns={{ base: "repeat(2, minmax(0, 1fr))", sm: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" }} gap={{ base: "4px", md: "16px" }}>
             {data.map((item, index) => (
                 <GridItem w={"100%"} p={{ base: "4px", md: "8px" }} key={item.number_home}>
                     <Flex w={"100%"} h={"100%"} flexDirection={"column"} overflow={"hidden"} borderRadius={"10px"} boxShadow={'md'}>
@@ -99,7 +105,13 @@ function ShowItem() {
                         </Flex>
                     </Flex>
                 </GridItem>
-            ))}
+            ))
+            }
+        </Grid>
+        ) : (
+            <Loading/>
+        )}
+            
         </>
     )
 }

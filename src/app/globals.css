@@ -73,3 +73,17 @@
     width: 100%;
   }
 }
+
+
+
+/* Cookie Consent Style */
+.cookie{
+  transform: translateY(0rem);
+  transition: 500ms;
+  opacity: 1;
+}
+.accept{
+  transform: translateY(100rem);
+  opacity: 0;
+  transition: 500ms;
+}

@@ -3,6 +3,7 @@ import "./globals.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,8 @@ export default function RootLayout({ children }) {
           {children}
           {/* ส่วน Footer */}
           <Footer />
+          {/* Cookie Consent */}
+          <CookieConsent/>
         </ChakraProvider>
       </body>
     </html>
