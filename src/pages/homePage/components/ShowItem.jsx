@@ -1,23 +1,39 @@
+'use client'
 import { Box, Divider, Flex, Grid, GridItem, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { BiShapeTriangle } from 'react-icons/bi'
 import { FaBath, FaBed } from 'react-icons/fa'
 import { IoLocationSharp } from 'react-icons/io5'
 
-//api import
-import { GetDataAll } from '../../../utils/getApi'
 
-async function ShowItem(){
-    const data = await GetDataAll()
-    const opData = data.data
-    // console.log(opData)
+function ShowItem() {
+    const [data, setData] = React.useState([])
+    const optimizedFetch = useMemo(() => fetch('http://18.140.121.108:5500/getsalehome', { method: 'GET' ,next: { revalidate: 0 } }), [])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await optimizedFetch
+                const jsonData = await res.json()
+                const { data } = jsonData
+                setData(data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchData()
+
+        return () => {
+            setData([])
+        }
+    }, [])
     return (
         <>
-            {opData.map((item, index) => (
+            {data.map((item, index) => (
                 <GridItem w={"100%"} p={{ base: "4px", md: "8px" }} key={item.number_home}>
-                    <Flex w={"100%"} h={"100%"} flexDirection={"column"}  overflow={"hidden"} borderRadius={"10px"} boxShadow={'md'}>
+                    <Flex w={"100%"} h={"100%"} flexDirection={"column"} overflow={"hidden"} borderRadius={"10px"} boxShadow={'md'}>
                         {/* รูปภาพใน card */}
                         <Box w={"100%"} h={{ base: "6rem", md: "12rem" }} position={"relative"} bg={"gray.200"} cursor={"pointer"} _hover={{ bg: "gray.300" }}>
                             <Link href={"/" + item.number_home}>
@@ -29,7 +45,7 @@ async function ShowItem(){
                             {/* หัวข้อของสินค้า */}
                             <Link href={"/" + item.number_home} fontSize={{ base: "12px", md: "14px" }} cursor={"pointer"} className='line-clamp'>
                                 <Text variant={'h1'}>
-                                {item.name_home}
+                                    {item.name_home}
                                 </Text>
                             </Link>
                             {/* รหัสสินค้า:  */}
@@ -51,12 +67,12 @@ async function ShowItem(){
                                 <Divider />
                             </Box>
                             {/* ขนานของห้อง จำนวนห้องต่างๆ */}
-                            <Grid gridTemplateColumns={{base: "repeat(2, 1fr)", md:"repeat(3, 1fr)"}} gap={"2px"} my={"4px"} alignItems={"center"}>
+                            <Grid gridTemplateColumns={{ base: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }} gap={"2px"} my={"4px"} alignItems={"center"}>
                                 {/* ขนานของห้อง */}
                                 <GridItem >
                                     <Box display={'flex'} gap={"2px"}>
                                         <BiShapeTriangle size={15} />
-                                        <Text variant={"h6"} wordBreak={"break-all"} whiteSpace={"nowrap"}  fontSize={{ base: "8px", md: "12px" }}>{item.centimate !== null ? item.centimate : "-"}</Text>
+                                        <Text variant={"h6"} wordBreak={"break-all"} whiteSpace={"nowrap"} fontSize={{ base: "8px", md: "12px" }}>{item.centimate !== null ? item.centimate : "-"}</Text>
                                     </Box>
                                 </GridItem>
                                 {/* จำนวนห้องนอน */}

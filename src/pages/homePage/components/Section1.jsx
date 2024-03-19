@@ -1,11 +1,11 @@
 'use client'
-import { Box, Divider, Flex, Grid, Input, InputGroup, InputRightElement} from '@chakra-ui/react'
+import { Box, Divider, Flex, Grid, Input, InputGroup, InputRightElement } from '@chakra-ui/react'
 import React from 'react'
 
 import { FaSearch } from "react-icons/fa";
 import ShowItem from './ShowItem';
 
-function Section1(){
+function Section1() {
   const [tabs, setTabs] = React.useState(0)
 
   return (
@@ -33,11 +33,10 @@ function Section1(){
         {/* Tabs ที่ 1 */}
         {tabs === 0 && (
           <Grid gridTemplateColumns={{ base: "repeat(2, minmax(0, 1fr))", sm: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" }} gap={{ base: "4px", md: "16px" }}>
-            <ShowItem/>
-          </Grid>
+          <ShowItem />
+        </Grid>
         )}
-
-
+        
       </Box>
     </Box>
   )
