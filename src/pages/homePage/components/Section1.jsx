@@ -5,7 +5,7 @@ import React from 'react'
 import { FaSearch } from "react-icons/fa";
 import ShowItem from './ShowItem';
 
-const Section1 =  () => {
+function Section1(){
   const [tabs, setTabs] = React.useState(0)
 
   return (

@@ -1,3 +1,4 @@
+import React from 'react'
 import { Avatar, Box, Container, Divider, Flex, Grid, GridItem, SimpleGrid, Text } from "@chakra-ui/react";
 
 
@@ -5,8 +6,9 @@ import { FaPhoneAlt,FaFacebook,FaFacebookMessenger,FaChevronRight } from "react-
 import { TbStairs } from "react-icons/tb";
 import { FaBed, FaBath } from "react-icons/fa";
 import { BiShapeTriangle } from "react-icons/bi";
-export default function Page() {
+function HomeGet () {
   return (
+    <>
     <Container maxW={"container.xl"} py={"8px"}>
       <Box boxShadow={"lg"} rounded={"10px"} p={4}>
         {/* ส่วนหัวข้อของหน้า */}
@@ -112,6 +114,9 @@ export default function Page() {
             </Box>
         </Flex>
       </Box>
-    </Container>
-  );
+    </Container>v
+    </>
+  )
 }
+
+export default HomeGet

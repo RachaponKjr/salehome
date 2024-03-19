@@ -1,13 +1,10 @@
-'use client'
 import { Box, Divider, Flex, Grid, GridItem, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { BiShapeTriangle } from 'react-icons/bi'
 import { FaBath, FaBed } from 'react-icons/fa'
-import { FaPenToSquare } from 'react-icons/fa6'
 import { IoLocationSharp } from 'react-icons/io5'
-import { TbStairs } from 'react-icons/tb'
 
 //api import
 import { GetDataAll } from '../../../utils/getApi'
@@ -15,7 +12,7 @@ import { GetDataAll } from '../../../utils/getApi'
 async function ShowItem(){
     const data = await GetDataAll()
     const opData = data.data
-    console.log(opData)
+    // console.log(opData)
     return (
         <>
             {opData.map((item, index) => (

@@ -2,7 +2,7 @@ import { Container } from '@chakra-ui/react'
 import React from 'react'
 import Section1 from './components/Section1'
 
-const HomePage = () => {
+function HomePage(){
   return (
     <>
       <Container maxW={"container.xl"}>
