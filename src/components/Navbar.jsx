@@ -32,11 +32,11 @@ const Navbar = () => {
             <Box>
                 <Box backgroundColor={"gray.500"}>
                     <Container maxW={"container.xl"}>
-                        <Flex py={"8px"} position={"relative"} w={"100%"} display={"flex"} flexDirection={{ base: "row" }} justifyContent={"space-between"}>
+                        <Flex py={"8px"} position={"relative"} w={"100%"} display={"flex"} flexDirection={{ base: "row" }} justifyContent={"space-between"} alignItems={"center"}>
                             {/* ส่วนของ Logo */}
-                            <Box maxW={"100%"} w={{ base: "10rem", sm: "15rem", md: "30%" }} position={{ base: "relative", md: "absolute", xl: "relative" }} display={"block"} justifyContent={"center"} alignItems={"center"}>
+                            <Box maxW={"100%"} w={{ base: "10rem", sm: "15rem", md: "30%" }} position={{ base: "relative", md: "absolute", xl: "relative" }} display={"flex"} alignItems={"center"}>
                                 <Link href={"/"}>
-                                <Image src={icon} alt="logo" width={"100%"} height={100} />
+                                <Image src={icon} alt="logo" width={"100%"} height={35} />
                                 </Link>
                             </Box>
                             {/* ส่วนเมนูทางด้าน ขวา ของ ขนาด 1024px ขึ้นไป */}

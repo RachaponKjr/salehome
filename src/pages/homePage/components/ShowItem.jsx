@@ -13,6 +13,8 @@ function ShowItem() {
     const [data, setData] = React.useState([])
     const optimizedFetch = useMemo(() => fetch('http://18.140.121.108:5500/getsalehome', { method: 'GET', next: { revalidate: 0 } }), [])
     const [loading, setLoading] = React.useState(false)
+
+    // console.log(data[1].img_all[0])
     useEffect(() => {
         const fetchData = async () => {
             setLoading(false)
@@ -42,14 +44,17 @@ function ShowItem() {
                     <Flex w={"100%"} h={"100%"} flexDirection={"column"} overflow={"hidden"} borderRadius={"10px"} boxShadow={'md'}>
                         {/* รูปภาพใน card */}
                         <Box w={"100%"} h={{ base: "6rem", md: "12rem" }} position={"relative"} bg={"gray.200"} cursor={"pointer"} _hover={{ bg: "gray.300" }}>
-                            <Link href={"/" + item.number_home}>
-                                {/* <Image src={} alt="image" fill className='image_hover' /> */}
+                            <Link href={"/" + item._id}>
+                                <Image src={`http://18.140.121.108:5500/public/img_all/${item.img_all[0]}`} alt="image" fill className='image_hover' />
                             </Link>
+                            <Box boxShadow={"md"} bg={'rgba(52,148,128,0.8)'} position={"absolute"} top={2} left={2} px={4} py={1} rounded={'5px'} zIndex={10}>
+                                <Text variant={'h4'} color={'white'} fontSize={{ base: "8px", md: "12px" }}>Sale</Text>
+                            </Box>
                         </Box>
                         {/* ข้อมูลของสินค้า */}
                         <Flex flexDirection={"column"} zIndex={10} gap={"4px"} py={1} px={{ base: 1, md: 2 }} bg={"#FAFAFA"} >
                             {/* หัวข้อของสินค้า */}
-                            <Link href={"/" + item.number_home} fontSize={{ base: "12px", md: "14px" }} cursor={"pointer"} className='line-clamp'>
+                            <Link href={"/" + item._id} fontSize={{ base: "12px", md: "14px" }} cursor={"pointer"} className='line-clamp'>
                                 <Text variant={'h1'}>
                                     {item.name_home}
                                 </Text>
@@ -74,13 +79,6 @@ function ShowItem() {
                             </Box>
                             {/* ขนานของห้อง จำนวนห้องต่างๆ */}
                             <Grid gridTemplateColumns={{ base: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }} gap={"2px"} my={"4px"} alignItems={"center"}>
-                                {/* ขนานของห้อง */}
-                                <GridItem >
-                                    <Box display={'flex'} gap={"2px"}>
-                                        <BiShapeTriangle size={15} />
-                                        <Text variant={"h6"} wordBreak={"break-all"} whiteSpace={"nowrap"} fontSize={{ base: "8px", md: "12px" }}>{item.centimate !== null ? item.centimate : "-"}</Text>
-                                    </Box>
-                                </GridItem>
                                 {/* จำนวนห้องนอน */}
                                 <GridItem ml={2}>
                                     <Box display={'flex'} gap={"4px"}>
@@ -93,6 +91,13 @@ function ShowItem() {
                                     <Box display={'flex'} gap={"4px"}>
                                         <FaBath size={15} />
                                         <Text variant={"h6"} fontSize={{ base: "8px", md: "12px" }}>{item.bathroom != null ? `${item.bathroom} ห้องน้ำ` : "-"}</Text>
+                                    </Box>
+                                </GridItem>
+                                {/* ขนานของห้อง */}
+                                <GridItem >
+                                    <Box display={'flex'} gap={"2px"}>
+                                        <BiShapeTriangle size={15} />
+                                        <Text variant={"h6"} wordBreak={"break-all"} whiteSpace={"nowrap"} fontSize={{ base: "8px", md: "12px" }}>{item.centimate !== null ? item.centimate : "-"}</Text>
                                     </Box>
                                 </GridItem>
                             </Grid>
