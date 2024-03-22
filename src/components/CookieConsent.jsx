@@ -11,7 +11,7 @@ function CookieConsent() {
         setCookieConsent(true)
     }
     return (
-        <Flex justifyContent={"center"} position={"fixed"} bottom={0} w={"100%"} zIndex={{base:1000,sm:100}} py={{base:0,md:2}} className='cookie' id='cookie'>
+        <Flex justifyContent={"center"} position={"fixed"} bottom={0} w={"100%"} zIndex={{base:1000,sm:1000}} py={{base:0,md:2}} className='cookie' id='cookie'>
             <Box bg={'white'} w={'50rem'} h={'min-content'} py={4} px={8} rounded={{base:"0",md:"10px"}} boxShadow={'xl'}>
                 {/* HeadText */}
                 <Text variant={'h4'} fontWeight={"bold"} fontSize={{base:"16px",sm:"20px"}} color={'#292929'}>เว็บไซต์นี้ใช้คุกกี้</Text>

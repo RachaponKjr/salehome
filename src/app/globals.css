@@ -13,18 +13,12 @@
   margin-right: 8px; /* ระยะห่างระหว่างรูปภาพและข้อความ */
 }
 
-.line-clamp{
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  height: min-content;
-}
 .line-clamp1{
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  height: min-content;
 }
 .line-clamp2{
   display: -webkit-box;
@@ -86,4 +80,25 @@
   transform: translateY(100rem);
   opacity: 0;
   transition: 500ms;
+}
+
+
+
+.grid_tp{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 100%;
+  grid-gap: 16px;
+
+}
+
+@media screen and (min-width: 768px) {
+  .grid_tp{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    height: 100%;
+    grid-gap: 16px;
+  }
 }

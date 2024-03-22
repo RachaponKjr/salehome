@@ -36,7 +36,7 @@ const Navbar = () => {
                             {/* ส่วนของ Logo */}
                             <Box maxW={"100%"} w={{ base: "10rem", sm: "15rem", md: "30%" }} position={{ base: "relative", md: "absolute", xl: "relative" }} display={"flex"} alignItems={"center"}>
                                 <Link href={"/"}>
-                                <Image src={icon} alt="logo" width={"100%"} height={35} />
+                                <Image src={icon} alt="logo" width={"100%"} height={60} />
                                 </Link>
                             </Box>
                             {/* ส่วนเมนูทางด้าน ขวา ของ ขนาด 1024px ขึ้นไป */}

@@ -1,3 +1,5 @@
+// ไม่ได้ใช้ ไฟล์นี้
+
 // ใช้กับ server component
 export async function GetDataAll({id}) {
     const res = await fetch(`http://18.140.121.108:5500/getsalehome/${id}`,{
