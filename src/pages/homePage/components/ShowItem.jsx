@@ -16,14 +16,14 @@ import bedroom from '../../../icons/bedroom.png'
 
 function ShowItem(props) {
     const data = props.data
-    
+
     // debug
     // console.log(props.data)
     // console.log(props)
     return (
         <>
                 <Grid gridTemplateColumns={{ base: "repeat(2, minmax(0, 1fr))", sm: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" }}>
-                    {data.map((item, index) => (
+                    {data.map((item) => (
                         <GridItem w={"100%"} p={{ base: "4px", md: "8px" }} key={item.number_home}>
                             <Flex w={"100%"} h={"100%"} flexDirection={"column"} overflow={"hidden"} borderRadius={"10px"} boxShadow={'md'}>
                                 {/* รูปภาพใน card */}

@@ -4,8 +4,8 @@ import React from 'react'
 function Skaliton() {
     return (
         <Grid gridTemplateColumns={{ base: "repeat(2, minmax(0, 1fr))", sm: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" }}>
-            {[...Array(12)].map((_, i) => (
-                <GridItem w={"100%"} h={"100%"} p={{ base: "4px", md: "8px" }} >
+            {[...Array(12)].map((_,index) => (
+                <GridItem w={"100%"} h={"100%"} p={{ base: "4px", md: "8px" }} key={index} >
                     <Skeleton height={'20rem'} rounded={"10px"}/>
                 </GridItem>
             ))}
