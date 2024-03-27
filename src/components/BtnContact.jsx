@@ -1,43 +1,15 @@
-import { Box, Button, Flex, Input, Popover, PopoverArrow, PopoverBody, PopoverContent, PopoverHeader, PopoverTrigger, Text } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
+import Link from 'next/link';
 import React from 'react'
 
-import { FaPaperPlane,FaUser } from 'react-icons/fa'
-import { MdEmail } from "react-icons/md";
-import { BsFillSendFill } from "react-icons/bs";
+import { RiLineFill } from "react-icons/ri";
 
 const BtnContact = () => {
   return (
-    <>
-      <Popover placement='left-start'>
-        <PopoverTrigger>
-          <Box
-            w={'3.5rem'}
-            h={'3.5rem'}
-            bg={"#EA834F"}
-            _hover={{ bg: '#E66F33' }}
-            rounded={'full'}
-            display={'flex'}
-            transitionDuration={'.3s'}
-            justifyContent={'center'}
-            alignItems={'center'}
-            cursor={'pointer'}
-            color={'white'}
-            children={<FaPaperPlane size={20} />}
-          />
-        </PopoverTrigger>
-        <PopoverContent bg={'whitesmoke'} color='black' boxShadow={'lg'}>
-          <PopoverHeader fontWeight='semibold' fontSize={'xl'} textAlign={'center'} textTransform={'uppercase'}>Git in touch</PopoverHeader>
-          <PopoverArrow bg='whitesmoke' />
-          <PopoverBody>
-            <Flex flexDirection={'column'} gap={'8px'}>
-              <Input variant='unstyled' placeholder='Name' bg={'white'} h={'2rem'} px={2} ring={"1px"} ringColor={"#ccc"}/>
-              <Input variant='unstyled' placeholder='Email' bg={'white'} h={'2rem'} px={2} ring={"1px"} ringColor={"#ccc"}/>
-              <textarea placeholder='Message' className='textarea_style' />
-              <Button w={'100%'}  bg={'blue.500'} color={'white'} _hover={{bg: 'none', color: 'blue.500',borderColor: 'blue.500',borderWidth: '2px',borderStyle: 'solid'}}>Send</Button>
-            </Flex>
-          </PopoverBody>
-        </PopoverContent>
-      </Popover>
+    <>  <Box w={'3.5rem'}
+      h={'3.5rem'} bg={"#02685C"} _hover={{ bg: '#02685C' }} cursor={'pointer'} color={'white'} rounded={'full'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
+      <Link href={'https://line.me/ti/p/%40wqrxr8w0'} target='_blank' style={{width:'100%',height:'100%',display:'flex',justifyContent:'center',alignItems:'center'}} children={<RiLineFill size={30} />} />
+    </Box>
     </>
   )
 }

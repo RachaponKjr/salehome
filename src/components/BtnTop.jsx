@@ -3,7 +3,7 @@ import { Box } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 
 
-import { FaAngleUp, FaPaperPlane } from "react-icons/fa";
+import { FaAngleUp } from "react-icons/fa";
 
 const BtnTop = () => {
     useEffect(() => {
@@ -20,7 +20,7 @@ const BtnTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     return (
-        <Box id='btnTop' w={'3.5rem'} h={'3.5rem'} bg={"#EA834F"} _hover={{ bg: '#E66F33' }} rounded={'full'} display={'none'} justifyContent={'center'} alignItems={'center'} cursor={'pointer'} color={'white'} onClick={topFunction}>
+        <Box id='btnTop' w={'3.5rem'} h={'3.5rem'} bg={"#02685C"} _hover={{ bg: '#02685C' }} rounded={'full'} display={'none'} justifyContent={'center'} alignItems={'center'} cursor={'pointer'} color={'white'} onClick={topFunction}>
             <FaAngleUp size={20} />
         </Box>
     )

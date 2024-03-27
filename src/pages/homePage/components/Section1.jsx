@@ -1,10 +1,9 @@
 'use client'
-import { Box, Divider, Flex, Grid, Input, InputGroup, InputRightElement } from '@chakra-ui/react'
+import { Box, Divider, Flex, Input, InputGroup, InputRightElement } from '@chakra-ui/react'
 import React, {useEffect } from 'react'
 
 import { FaSearch } from "react-icons/fa";
 import ShowItem from './ShowItem';
-import Loading from '@/components/Loading';
 import Skaliton from './Skaliton';
 
 
@@ -44,13 +43,13 @@ function Section1() {
       <Flex flexDirection={{ base: "column-reverse", md: "row" }} gap={"8px"} justifyContent={"space-between"}>
         {/* Tabs ต่างๆ */}
         <Flex h={'2rem'} overflowX={{ base: 'scroll', md: 'auto' }} borderBottom={"3px solid #EAEAEA"} >
-          <Box h={'100%'} width={"max-content"} whiteSpace={"nowrap"} px={4} py={1} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 0 && { _before: { content: "''", position: "absolute", width: "100%", height: "2px", bottom: "0", left: "0", bg: "blue.500" } }} onClick={() => setTabs(0)}>Lorem, ipsum.</Box>
+          <Box h={'100%'} width={"max-content"} whiteSpace={"nowrap"} px={4} py={1} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 0 && { _before: { content: "''", position: "absolute", width: "100%", height: "2px", bottom: "0", left: "0", bg: "#02685C" } }} onClick={() => setTabs(0)}>ทั้งหมด</Box>
           <Divider orientation='vertical' borderLeftWidth={"1px"} />
-          <Box h={'100%'} width={"max-content"} whiteSpace={"nowrap"} px={4} py={1} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 1 && { _before: { content: "''", position: "absolute", width: "100%", height: "2px", bottom: "0", left: "0", bg: "blue.500" } }} onClick={() => setTabs(1)}>Lorem, ipsum.</Box>
+          <Box h={'100%'} width={"max-content"} whiteSpace={"nowrap"} px={4} py={1} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 1 && { _before: { content: "''", position: "absolute", width: "100%", height: "2px", bottom: "0", left: "0", bg: "#02685C" } }} onClick={() => setTabs(1)}>ที่ดิน</Box>
           <Divider orientation='vertical' borderLeftWidth={"1px"} />
-          <Box h={'100%'} width={"max-content"} whiteSpace={"nowrap"} px={4} py={1} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 2 && { _before: { content: "''", position: "absolute", width: "100%", height: "2px", bottom: "0", left: "0", bg: "blue.500" } }} onClick={() => setTabs(2)}>Lorem, ipsum.</Box>
+          <Box h={'100%'} width={"max-content"} whiteSpace={"nowrap"} px={4} py={1} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 2 && { _before: { content: "''", position: "absolute", width: "100%", height: "2px", bottom: "0", left: "0", bg: "#02685C" } }} onClick={() => setTabs(2)}>บ้าน</Box>
           <Divider orientation='vertical' borderLeftWidth={"1px"} />
-          <Box h={'100%'} width={"max-content"} whiteSpace={"nowrap"} px={4} py={1} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 3 && { _before: { content: "''", position: "absolute", width: "100%", height: "2px", bottom: "0", left: "0", bg: "blue.500" } }} onClick={() => setTabs(3)}>Lorem, ipsum.</Box>
+          <Box h={'100%'} width={"max-content"} whiteSpace={"nowrap"} px={4} py={1} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 3 && { _before: { content: "''", position: "absolute", width: "100%", height: "2px", bottom: "0", left: "0", bg: "#02685C" } }} onClick={() => setTabs(3)}>ทาวน์เฮ้าส์</Box>
         </Flex>
         <InputGroup w={{ base: "100%", md: "15rem" }} size={"sm"} m={{ base: 'auto', md: '0' }} mb={{ base: "8px", md: "0px" }}>
           <Input placeholder='Enter amount' />
@@ -69,7 +68,19 @@ function Section1() {
         }
   
         {tabs === 1 && (
-          <ShowItem data={data} search="ที่ดิน" />
+          <>
+         {loading ? <Skaliton /> : <ShowItem data={data} search="ที่ดิน" />}
+          </>
+        )}
+        {tabs === 2 && (
+          <>
+          {loading ? <Skaliton /> :<ShowItem data={data} search="บ้านเดี่ยว 2 ชั้น" />}
+          </>
+        )}
+        {tabs === 3 && (
+         <>
+         {loading ? <Skaliton /> : <ShowItem data={data} search="ทาวน์เฮ้าส์" />}
+         </>
         )}
       </Box>
     </Box>

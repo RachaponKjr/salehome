@@ -17,13 +17,13 @@ const FlagSelect = () => {
     }
     return (
         <>
-            <Box position={'relative'} p={0} zIndex={100}>
+            <Box position={'relative'} p={0} borderRadius={'5px'} bg={"white"} px={"8px"} py={"4px"}>
                 <ul onClick={() => setOpentFlag(!opentFlag)} >
-                    <li style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: "8px" }}><Image src={flag} alt={flag} width={30} height={30} /><FaAngleDown /></li>
+                    <li style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: "8px" }}>{flag === TH ? "TH" : "EN"}<FaAngleDown /></li>
                 </ul>
                 {/* Menu */}
                 {opentFlag && (
-                    <Box position={'absolute'} cursor={"pointer"} display={"flex"} gap={2} right={0} borderRadius={'5px'} w={"max-content"} h={"max-content"} bg={"white"} p={"8px"} mt={"8px"}
+                    <Box position={'absolute'} cursor={"pointer"} display={"flex"} gap={2} right={0} zIndex={10} borderRadius={'5px'} w={"max-content"} h={"max-content"} bg={"white"} p={"8px"} mt={"8px"}
                         onClick={SelectFlag}
                     >
                         <Image src={flag === TH ? EN : TH} width={30} height={30} />
