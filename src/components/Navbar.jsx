@@ -1,69 +1,78 @@
+'use client'
 import { Box, Container, Flex, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import React from 'react'
 
-import icon from '../imgs/logo.png'
+import icon from '@/imgs/logo.png'
 
 import { BsMegaphone } from "react-icons/bs";
-import { FaHeadset,FaEdit } from "react-icons/fa";
+import { FaHeadset, FaEdit } from "react-icons/fa";
 import { BiHomeAlt } from "react-icons/bi";
-import FlagSelect from './FlagSelect'
-import MobileMenu from './MobileMenu';
-import BtnTop from './BtnTop';
-import BtnContact from './BtnContact';
+
 import Link from 'next/link';
 
+import { usePathname } from 'next/navigation'
+import dynamic from 'next/dynamic'
+import FlagSelect from './FlagSelect'
+
+const ButtonTop = dynamic(() => import('./BtnTop'), { ssr: false })
+const ButtonContact = dynamic(() => import('./BtnContact'), { ssr: false })
+const MobileMenu = dynamic(() => import('./MobileMenu'), { ssr: false })
 const Navbar = () => {
+    const pathName = usePathname()
+
     const manu = [
         {
             tital: "หน้าเเรก",
-            icon: <BiHomeAlt size={20}/>,
+            icon: <BiHomeAlt size={20} {...pathName === "/" ? {color:'#ED1B22'} : ""} />,
             link: "/"
         },
         {
             tital: "บทความเเนะนำ",
-            icon: <FaEdit size={20} />,
+            icon: <FaEdit size={20} {...pathName === "/blogs" ? {color:'#ED1B22'} : ""}/>,
             link: "/blogs"
         },
         {
             tital: "ติดต่อเรา",
-            icon: <FaHeadset size={20}/>,
+            icon: <FaHeadset size={20} {...pathName === "/contact" ? {color:'#ED1B22'} : ""}/>,
             link: "/contact"
         },
         {
             tital: "ประกาศเเนะนำ",
-            icon: <BsMegaphone size={20}/>,
+            icon: <BsMegaphone size={20} {...pathName === "/advertise" ? {color:'#ED1B22'} : ""}/>,
             link: "/advertise"
         },
     ]
     return (
         <>
             <Box>
-                <Box backgroundColor={"#029988"} >
+                <Box backgroundColor={"white"} boxShadow={'md'}>
                     <Container maxW={"container.xl"}>
-                        <Flex py={"8px"} position={"relative"} w={"100%"} display={"flex"} flexDirection={{ base: "row" }} justifyContent={"space-between"} alignItems={"center"}>
+                        <Flex py={"8px"} position={"relative"} w={"100%"} flexDirection={{ base: "row" }} justifyContent={"space-between"} alignItems={"center"}>
                             {/* ส่วนของ Logo */}
-                            <Box maxW={"100%"} w={{ base: "10rem", sm: "15rem", md: "30%" }} position={{ base: "relative", md: "absolute", xl: "relative" }} display={"flex"} alignItems={"center"}>
+                            <Flex maxW={"100%"} w={{ base: "10rem", sm: "15rem", md: "30%" }} position={{ base: "relative", md: "absolute", xl: "relative" }} alignItems={"center"}>
                                 <Link href={"/"}>
-                                <Image src={icon} alt="logo" width={"100%"} height={60} />
+                                    <Image src={icon} alt="logo" width={'auto'} height={60} />
                                 </Link>
-                            </Box>
+                            </Flex>
                             {/* ส่วนเมนูทางด้าน ขวา ของ ขนาด 1024px ขึ้นไป */}
                             <Flex flexDirection={"column"} w={{ md: "100%", xl: "70%" }} alignItems={'end'} gap={"8px"}>
                                 {/* ส่วนบนของเมนู */}
-                                <Flex gap={2} pr={{ base: "0px", md: "12px" }} display={'flex'} alignItems={'center'} h={"100%"} zIndex={10}>
+                                <Flex gap={2} pr={{ base: "0px", md: "12px" }} alignItems={'center'} h={"100%"} zIndex={10}>
                                     {/* Select เลือกเปลี่ยนภาษา */}
                                     <FlagSelect />
                                 </Flex>
                                 {/* ส่วนล่างของเมนู */}
                                 <Flex display={{ base: "none", md: "flex" }} gap={4}>
                                     {manu.map((item, index) => (
-                                        <Box key={index} px={"12px"} zIndex={0} py={"4px"} display={"flex"} overflow={"hidden"} alignItems={"center"} color={"white"} cursor={"pointer"} gap={"8px"} fontSize={{ md: "12px", xl: "14px" }} position={"relative"} className='nav_hover'>
-                                            <Link href={item.link} style={{width:'100%',height:'100%',display:'flex',justifyContent:'center',alignItems:'center',gap:'8px'}}>
-                                            {item.icon}
-                                            <Text>{item.tital}</Text>
+                                        <Flex role='group' key={index} px={"12px"} py={"8px"} zIndex={0} overflow={"hidden"} alignItems={"center"} color={'#676767'} cursor={"pointer"} gap={"8px"} fontSize={{ md: "12px", xl: "14px" }} position={"relative"} className={`${pathName === item.link ? "nav_active" : "nav_hover"}`}>
+                                            <Link href={item.link} style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}>
+                                                <Box _groupHover={{ color: 'orange' }} transitionDuration={'0.3s'}>
+                                                {item.icon}
+                                                </Box>
+                                                <Text>{item.tital}</Text>
                                             </Link>
-                                        </Box>
+                                        </Flex>
                                     ))}
                                 </Flex>
                             </Flex>
@@ -71,11 +80,11 @@ const Navbar = () => {
                     </Container>
                 </Box>
                 {/* ปุ่มติดต่อ กับ ปุ่ม เลื่อน ขึ้นด้านบน */}
-                <Box position={'fixed'} right={0} bottom={0} width={'4rem'} height={'max-content'} display={{base:"none",md:'flex'}} flexDirection={'column'} justifyContent={'center'} alignItems={'center'} gap={2} mx={2} py={4}  zIndex={999}> 
+                <Box position={'fixed'} right={0} bottom={0} width={'4rem'} height={'max-content'} display={{ base: "none", md: 'flex' }} flexDirection={'column'} justifyContent={'center'} alignItems={'center'} gap={2} mx={2} py={4} zIndex={999}>
                     {/* ติดต่อ */}
-                    <BtnContact/>
+                    <ButtonContact />
                     {/* เลื่อนขึ้นบน */}
-                    <BtnTop/>
+                    <ButtonTop />
                 </Box>
             </Box>
             {/* เมนู ของส่วนมือถือ อยู่ทางด้านล่าง */}

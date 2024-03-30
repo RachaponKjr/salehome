@@ -1,34 +1,28 @@
 'use client'
-import { Box, Text } from '@chakra-ui/react'
-import Image from 'next/image'
+import { Box, Flex, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
-
-import TH from '../imgs/TH.png'
-import EN from '../imgs/EN.png'
-
 import { FaAngleDown } from "react-icons/fa";
 const FlagSelect = () => {
     const [opentFlag, setOpentFlag] = useState(false)
-    const [flag, setFlag] = useState(TH)
+    const [flag, setFlag] = useState("TH")
 
     const SelectFlag = () => {
-        setFlag(flag === TH ? EN : TH)
+        setFlag(flag === "TH" ? "EN" : "TH")
         setOpentFlag(!opentFlag)
     }
     return (
         <>
-            <Box position={'relative'} p={0} borderRadius={'5px'} bg={"white"} px={"8px"} py={"4px"}>
+            <Box position={'relative'} p={0} borderRadius={'5px'} border={"1px solid gray"} bg={"white"} px={"8px"} py={"4px"}>
                 <ul onClick={() => setOpentFlag(!opentFlag)} >
-                    <li style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: "8px" }}>{flag === TH ? "TH" : "EN"}<FaAngleDown /></li>
+                    <li style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: "8px" }}>{flag === "TH" ? "TH" : "EN"}<FaAngleDown /></li>
                 </ul>
                 {/* Menu */}
                 {opentFlag && (
-                    <Box position={'absolute'} cursor={"pointer"} display={"flex"} gap={2} right={0} zIndex={10} borderRadius={'5px'} w={"max-content"} h={"max-content"} bg={"white"} p={"8px"} mt={"8px"}
+                    <Flex position={'absolute'} border={"1px solid gray"} borderRadius={'5px'} cursor={"pointer"} gap={2} right={0} zIndex={10} w={"max-content"} h={"max-content"} bg={"white"} p={"8px"} mt={"8px"}
                         onClick={SelectFlag}
                     >
-                        <Image src={flag === TH ? EN : TH} width={30} height={30} />
-                        <Text>{flag === TH ? "Englist" : "Thailand"}</Text>
-                    </Box>
+                        <Text px={"8px"}>{flag === "TH" ? "English" : "Thailand"}</Text>
+                    </Flex>
                 )}
 
             </Box>

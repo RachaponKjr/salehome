@@ -14,6 +14,9 @@ import { FaPhoneAlt, FaFacebook, FaFacebookMessenger, FaChevronRight } from "rea
 import bathroom from '../../../icons/bathroom.png'
 import area from '../../../icons/area.png'
 import bedroom from '../../../icons/bedroom.png'
+import whatsapp from '../../../icons/contact_icons/whatsapp.png'
+import facebook from '../../../icons/contact_icons/facebook.png'
+import line from '../../../icons/contact_icons/line.png'
 
 
 // function import
@@ -22,7 +25,9 @@ import { reformatDate } from '@/utils/reformatDate';
 
 // lib import Gallery
 import { mapImages } from '@/utils/mapImages';
-import Carousel from '@/components/Carousel';
+import dynamic from 'next/dynamic';
+
+export const Carousel = dynamic(() => import('@/components/Carousel'), { ssr: false })
 
 function HomeGet() {
     // ดึง Params
@@ -73,9 +78,9 @@ function HomeGet() {
                     (
                         <>
                             <Container maxW={"container.xl"} py={"8px"}>
-                                <Box boxShadow={"lg"} rounded={"10px"} p={4}>
-                                    {/* ส่วนหัวข้อของหน้า */}
-                                    <Text variant={"h1"} fontSize={"24px"} fontWeight={"bold"} mb={"16px"}>{res.name_home}</Text>
+                                {/* ส่วนหัวข้อของหน้า */}
+                                <Text variant={"h1"} fontSize={"24px"} fontWeight={"bold"} my={"16px"} color={'#676767'}>{res.name_home}</Text>
+                                <Box boxShadow={'rgba(0, 0, 0, 0.35) 0px 5px 15px'}  rounded={"10px"} mb={"16px"} p={4}>
                                     {/* รูปที่ใช้เเสดง */}
                                     <Box w={"100%"} h={"500px"} my={"16px"} position={"relative"}>
                                         {/* รูปที่ 1 */}
@@ -85,24 +90,24 @@ function HomeGet() {
                                             h={"100%"}
                                             gap={2}
                                         >
-                                            <GridItem rowSpan={{ base: 2, md: 3 }} colSpan={{ base: 3, md: 3 }} overflow={"hidden"} onClick={() => setSelectImg(0)}>
+                                            <GridItem rowSpan={{ base: 2, md: 3 }} colSpan={{ base: 3, md: 3 }} overflow={"hidden"} rounded={{base:"none",md:"10px 0 0 10px"}} onClick={() => setSelectImg(0)}>
                                                 <Box w={"100%"} h={"100%"} position={"relative"} cursor={"pointer"}>
-                                                    <Image src={`http://18.140.121.108:5500/public/img_all/${res.img_all[0]}`} alt="image" layout="fill" objectFit="cover" />
+                                                    <Image src={`http://18.140.121.108:5500/public/img_all/${res.img_all[0]}`} alt={res.detail_home} layout="fill" objectFit="cover" />
                                                 </Box>
                                             </GridItem>
-                                            <GridItem colSpan={{ base: 1, md: 2 }} rowSpan={{ base: 1, md: 2 }} overflow={"hidden"} onClick={() => setSelectImg(1)}>
+                                            <GridItem colSpan={{ base: 1, md: 2 }} rowSpan={{ base: 1, md: 2 }} overflow={"hidden"} rounded={{base:"none",md:"0 10px 0 0"}} onClick={() => setSelectImg(1)}>
                                                 <Box w={"100%"} h={"100%"} position={"relative"} cursor={"pointer"}>
-                                                    <Image src={`http://18.140.121.108:5500/public/img_all/${res.img_all[1]}`} alt="image" layout="fill" objectFit="cover" />
+                                                    <Image src={`http://18.140.121.108:5500/public/img_all/${res.img_all[1]}`} alt={res.detail_home} layout="fill" objectFit="cover" />
                                                 </Box>
                                             </GridItem>
                                             <GridItem colSpan={1} overflow={"hidden"} >
                                                 <Box w={"100%"} h={"100%"} position={"relative"} cursor={"pointer"} onClick={() => setSelectImg(2)}>
-                                                    <Image src={`http://18.140.121.108:5500/public/img_all/${res.img_all[2]}`} alt="image" layout="fill" objectFit="cover" />
+                                                    <Image src={`http://18.140.121.108:5500/public/img_all/${res.img_all[2]}`} alt={res.detail_home} layout="fill" objectFit="cover" />
                                                 </Box>
                                             </GridItem>
-                                            <GridItem colSpan={1} overflow={"hidden"} >
+                                            <GridItem colSpan={1} overflow={"hidden"} rounded={{base:"none",md:"0 0 10px 0"}}>
                                                 {res.img_all[3] ? <Box w={"100%"} h={"100%"} position={"relative"} cursor={"pointer"} onClick={() => setSelectImg(3)}>
-                                                    <Image src={`http://18.140.121.108:5500/public/img_all/${res.img_all[3]}`} alt="image" layout="fill" objectFit="cover" />
+                                                    <Image src={`http://18.140.121.108:5500/public/img_all/${res.img_all[3]}`} alt={res.detail_home} layout="fill" objectFit="cover" />
                                                     {chacklenght
                                                         ? <Box position={'absolute'} w={'100%'} h={'100%'} bg={'rgba(0,0,0,0.5)'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
                                                             <Text color={'white'} fontSize={24}>+{chacklenght} รูป</Text>
@@ -116,34 +121,34 @@ function HomeGet() {
                                     <Flex gap={3} flexDirection={{ base: "column", lg: "row" }}>
                                         {/* ฝั่งซ้าย */}
                                         <Box w={{ base: "100%", lg: "70%" }} h={"min-content"} >
-                                            <Flex justifyContent={"end"} px={4} flexDirection={"column"} gap={4} boxShadow={"lg"} rounded={"10px"} p={4}>
+                                            <Flex justifyContent={"end"} px={4} flexDirection={"column"} color={"#676767"} gap={4} boxShadow={"lg"} rounded={"10px"} p={4}>
                                                 {res.location_home}
-                                                <Text variant={'h2'} fontSize={'28px'} textAlign={"right"} fontWeight={'bold'}>
+                                                <Text variant={'h2'} fontSize={'28px'} textAlign={"right"} fontWeight={'bold'} color={'#EE0000'}>
                                                     ราคา {res.price_home}
                                                 </Text>
                                             </Flex>
                                             {/* ข้อมูลการอัพเดต */}
                                             <Flex gap={4} flexDirection={'column'} mt={4}>
                                                 {/* หัวเรื่อง Head */}
-                                                <Text variant={'h3'} fontSize={'15px'}>ข้อมูลการอัพเดตประกาษนี้</Text>
+                                                <Text variant={'h3'} fontSize={'18px'}>ข้อมูลการอัพเดตประกาษนี้</Text>
                                                 {/* รายละเอียด */}
                                                 <Text variant={'h6'} fontSize={'13px'}>{reformatDate(res.createdAt)}</Text>
                                             </Flex>
                                             {/* ข้อมูลอสังหา */}
                                             <Flex gap={4} flexDirection={'column'} mt={4}>
                                                 {/* หัวเรื่อง Head */}
-                                                <Text variant={'h3'} fontSize={'15px'}>ข้อมูลอสังหาฯ</Text>
+                                                <Text variant={'h3'} fontSize={'18px'}>ข้อมูลอสังหาฯ</Text>
                                                 {/* รายละเอียด */}
-                                                <Grid templateColumns={"repeat(auto-fit, minmax(100px, 150px))"} gap={{ base: 1, md: 4 }}>
+                                                <Grid templateColumns={"repeat(auto-fit, minmax(100px, 150px))"} color={'#676767'} gap={{ base: 1, md: 4 }}>
                                                     {/* เเสดงขนานห้อง */}
-                                                    <GridItem border={"1px solid black"} rounded={"10px"} py={2} px={2} m={1}>
+                                                    <GridItem border={"1px solid #676767"} rounded={"10px"} py={2} px={2} m={1}>
                                                         <Flex alignItems={"center"} gap={2} h={"100%"}>
                                                             <Image src={area} alt="image" />
                                                             <Text variant={'h6'} fontSize={'14px'} mt={2} whiteSpace={'nowrap'}>{res.centimate != null ? res.centimate : '-'}</Text>
                                                         </Flex>
                                                     </GridItem>
                                                     {/* เเสดงจำนวนห้องนอน */}
-                                                    <GridItem border={"1px solid black"} rounded={"10px"} py={2} px={3} m={1}>
+                                                    <GridItem border={"1px solid #676767"} rounded={"10px"} py={2} px={3} m={1}>
                                                         <Flex alignItems={"center"} gap={4} h={"100%"}>
                                                             <Box w={10} h={10} display={"flex"} justifyContent={"center"} alignItems={"center"}>
                                                                 <Image src={bedroom} alt="image" />
@@ -152,7 +157,7 @@ function HomeGet() {
                                                         </Flex>
                                                     </GridItem>
                                                     {/* เเสดงจำนวนห้องน้ำ */}
-                                                    <GridItem border={"1px solid black"} rounded={"10px"} py={2} px={3} m={1}>
+                                                    <GridItem border={"1px solid #676767"} rounded={"10px"} py={2} px={3} m={1}>
                                                         <Flex alignItems={"center"} gap={4} h={"100%"}>
                                                             <Image src={bathroom} alt="image" />
                                                             <Text variant={'h6'} fontSize={'14px'} mt={2}>{res.bathroom != null ? `${res.bathroom} ห้อง` : '-'}</Text>
@@ -165,9 +170,9 @@ function HomeGet() {
                                             <Divider my={4} />
                                             {/* รายละเอียด */}
                                             <Box h={"min-content"}>
-                                                <Text variant={'h3'} fontSize={'15px'}>รายละเอียด</Text>
+                                                <Text variant={'h3'} fontSize={'18px'}>รายละเอียด</Text>
                                                 <Box mt={2}>
-                                                    <Text>{res.detail_home}</Text>
+                                                    <Text variant={'h2'} color={'#676767'} fontSize={'16px'}>{res.detail_home}</Text>
                                                 </Box>
                                             </Box>
                                         </Box>
@@ -191,18 +196,25 @@ function HomeGet() {
                                                     {/* phone contact */}
                                                     <Box display={'flex'} gap={4} alignItems={'center'}>
                                                         <Box w={"3rem"} aspectRatio={1} boxShadow={'lg'} display={'flex'} justifyContent={'center'} alignItems={'center'} rounded={'lg'} cursor={'pointer'} color={'#4A90E4'}>
-                                                            <FaPhoneAlt size={25} />
+                                                            {/* <FaPhoneAlt size={25} /> */}
+                                                            <Image src={whatsapp} alt="phonenumber contact" />
                                                         </Box>
                                                         <Text>xxx-xxxxxxx</Text>
                                                     </Box>
                                                     {/* Email contact */}
                                                     <Box display={'flex'} gap={4} alignItems={'center'}>
-                                                        <Box w={"3rem"} aspectRatio={1} boxShadow={'lg'} display={'flex'} justifyContent={'center'} alignItems={'center'} rounded={'lg'} cursor={'pointer'} color={'#4A90E4'}><FaFacebook size={25} /></Box>
+                                                        <Box w={"3rem"} aspectRatio={1} boxShadow={'lg'} display={'flex'} justifyContent={'center'} alignItems={'center'} rounded={'lg'} cursor={'pointer'} color={'#4A90E4'}>
+                                                            {/* <FaFacebook size={25} /> */}
+                                                            <Image src={facebook} alt="facebook contact" />
+                                                            </Box>
                                                         <Text>xxxx@gmail.com</Text>
                                                     </Box>
                                                     {/* line id */}
                                                     <Box display={'flex'} gap={4} alignItems={'center'}>
-                                                        <Box w={"3rem"} aspectRatio={1} boxShadow={'lg'} display={'flex'} justifyContent={'center'} alignItems={'center'} rounded={'lg'} cursor={'pointer'} color={'#4A90E4'}><FaFacebookMessenger size={25} /></Box>
+                                                        <Box w={"3rem"} aspectRatio={1} boxShadow={'lg'} display={'flex'} justifyContent={'center'} alignItems={'center'} rounded={'lg'} cursor={'pointer'} color={'#4A90E4'}>
+                                                            {/* <FaFacebookMessenger size={25} /> */}
+                                                            <Image src={line} alt="line contact" />
+                                                            </Box>
                                                         <Text>@xxxx.xx</Text>
                                                     </Box>
                                                 </Flex>

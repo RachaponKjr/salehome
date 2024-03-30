@@ -15,7 +15,7 @@ const BtnTop = () => {
                 document.getElementById("btnTop").style.display = "none";
             }
         }
-    })
+    },[])
     const topFunction = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }

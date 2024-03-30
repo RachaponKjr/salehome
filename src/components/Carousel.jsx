@@ -69,9 +69,9 @@ const Carousel = (props) => {
     return (
         <>
             <Box w={"100%"} h={"100%"} position={'absolute'} top={0} zIndex={100000}>
-                <Box display={'flex'} position={'sticky'} bg={'rgb(0,0,0,0.8)'} top={0} flexDirection={"column"} justifyContent={{ base: "start", md: "center" }} alignItems={"center"} w={"100%"} h={"calc(100vh)"} gap={0}>
-                    <Box w={10} h={10} bg={'red'} position={"absolute"} display={"flex"} justifyContent={"center"} alignItems={"center"} color={'white'} rounded={'lg'} top={{ base: 2, md: 10 }} right={{ base: 2, md: 10 }} cursor={"pointer"} zIndex={10} onClick={close}><IoClose size={30} /></Box>
-                    <Box id='slider' display={'flex'} justifyContent={{ base: "start", md: "center" }} mt={{ base: "4rem", md: "0rem" }} alignItems={{ base: "start", md: "center" }} w={{ base: "100%", md: "50rem" }} position={"relative"} h={{ base: "20rem", md: "40rem" }}>
+                <Flex position={'sticky'} bg={'rgb(0,0,0,0.8)'} top={0} flexDirection={"column"} justifyContent={{ base: "start", md: "center" }} alignItems={"center"} w={"100%"} h={"calc(100vh)"} gap={0}>
+                    <Flex w={10} h={10} bg={'red'} position={"absolute"} justifyContent={"center"} alignItems={"center"} color={'white'} rounded={'lg'} top={{ base: 2, md: 10 }} right={{ base: 2, md: 10 }} cursor={"pointer"} zIndex={10} onClick={close}><IoClose size={30} /></Flex>
+                    <Flex id='slider' justifyContent={{ base: "start", md: "center" }} mt={{ base: "4rem", md: "0rem" }} alignItems={{ base: "start", md: "center" }} w={{ base: "100%", md: "50rem" }} position={"relative"} h={{ base: "20rem", md: "40rem" }}>
                         <Image
                             src={imgs[props.selectImg]}
                             alt={imgs[props.selectImg]}
@@ -79,12 +79,12 @@ const Carousel = (props) => {
                             objectFit="contain"
                         />
                         {/* Dot Show item */}
-                        <Flex gap={2} position={"absolute"} bottom={{ base: "-2rem", md: 5 }} display={"flex"} justifyContent={"center"} w={"100%"}>
+                        <Flex gap={2} position={"absolute"} bottom={{ base: "-2rem", md: 5 }} justifyContent={"center"} w={"100%"}>
                             {imgs.map((img, index) => (
                                 <Box key={index} className={`dot ${index === props.selectImg ? 'active' : ''}`} onClick={() => props.setSelectImg(index)} />
                             ))}
                         </Flex>
-                    </Box>
+                    </Flex>
                     {/* arrow */}
                     <Box w={"3rem"} h={"3rem"} bg={'#02685C'} color={'white'} cursor={"pointer"} position={"absolute"} rounded={"full"} display={{base:"none",md:"flex"}} justifyContent={"center"} alignItems={"center"} top={{ base: "26rem", md: "50%" }} right={10} onClick={nextImge}>
                         <FaAngleRight size={30} />
@@ -93,7 +93,7 @@ const Carousel = (props) => {
                         <FaAngleLeft size={30} />
                     </Box>
 
-                </Box>
+                </Flex>
             </Box>
         </>
     )

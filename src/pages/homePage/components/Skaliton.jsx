@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem, Skeleton } from '@chakra-ui/react'
+import { Grid, GridItem, Skeleton } from '@chakra-ui/react'
 import React from 'react'
 
 function Skaliton() {
