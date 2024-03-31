@@ -20,7 +20,7 @@ const BtnTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     return (
-        <Box id='btnTop' w={'3.5rem'} ring={1} ringColor={'white'} h={'3.5rem'} bg={"#305553"} _hover={{ bg: '#305553' }} rounded={'full'} display={'none'} justifyContent={'center'} alignItems={'center'} cursor={'pointer'} color={'white'} onClick={topFunction}>
+        <Box id='btnTop' w={'56px'} ring={1} ringColor={'white'} h={'56px'} bg={"#305553"} _hover={{ bg: '#305553' }} rounded={'full'} display={'none'} justifyContent={'center'} alignItems={'center'} cursor={'pointer'} color={'white'} onClick={topFunction}>
             <FaAngleUp size={20} />
         </Box>
     )

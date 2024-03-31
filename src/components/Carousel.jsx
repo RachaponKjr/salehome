@@ -71,7 +71,7 @@ const Carousel = (props) => {
             <Box w={"100%"} h={"100%"} position={'absolute'} top={0} zIndex={100000}>
                 <Flex position={'sticky'} bg={'rgb(0,0,0,0.8)'} top={0} flexDirection={"column"} justifyContent={{ base: "start", md: "center" }} alignItems={"center"} w={"100%"} h={"calc(100vh)"} gap={0}>
                     <Flex w={10} h={10} bg={'red'} position={"absolute"} justifyContent={"center"} alignItems={"center"} color={'white'} rounded={'lg'} top={{ base: 2, md: 10 }} right={{ base: 2, md: 10 }} cursor={"pointer"} zIndex={10} onClick={close}><IoClose size={30} /></Flex>
-                    <Flex ref={ref} justifyContent={{ base: "start", md: "center" }} mt={{ base: "4rem", md: "0rem" }} alignItems={{ base: "start", md: "center" }} w={{ base: "100%", md: "50rem" }} position={"relative"} h={{ base: "20rem", md: "40rem" }}>
+                    <Flex ref={ref} justifyContent={{ base: "start", md: "center" }} mt={{ base: "64px", md: "0px" }} alignItems={{ base: "start", md: "center" }} w={{ base: "100%", md: "800px" }} position={"relative"} h={{ base: "320px", md: "640px" }}>
                         <Image
                             src={imgs[props.selectImg]}
                             alt={imgs[props.selectImg]}
@@ -79,17 +79,17 @@ const Carousel = (props) => {
                             objectFit="contain"
                         />
                         {/* Dot Show item */}
-                        <Flex gap={2} position={"absolute"} bottom={{ base: "-2rem", md: 5 }} justifyContent={"center"} w={"100%"}>
+                        <Flex gap={2} position={"absolute"} bottom={{ base: "-32px", md: 5 }} justifyContent={"center"} w={"100%"}>
                             {imgs.map((img, index) => (
                                 <Box key={index} className={`dot ${index === props.selectImg ? 'active' : ''}`} onClick={() => props.setSelectImg(index)} />
                             ))}
                         </Flex>
                     </Flex>
                     {/* arrow */}
-                    <Box w={"3rem"} h={"3rem"} bg={'#02685C'} color={'white'} cursor={"pointer"} position={"absolute"} rounded={"full"} display={{base:"none",md:"flex"}} justifyContent={"center"} alignItems={"center"} top={{ base: "26rem", md: "50%" }} right={10} onClick={nextImge}>
+                    <Box w={"48px"} h={"48px"} bg={'#02685C'} color={'white'} cursor={"pointer"} position={"absolute"} rounded={"full"} display={{base:"none",md:"flex"}} justifyContent={"center"} alignItems={"center"} top={{ base: "416px", md: "50%" }} right={10} onClick={nextImge}>
                         <FaAngleRight size={30} />
                     </Box>
-                    <Box w={"3rem"} h={"3rem"} bg={'#02685C'} color={'white'} cursor={"pointer"} position={"absolute"} rounded={"full"} display={{base:"none",md:"flex"}} justifyContent={"center"} alignItems={"center"} top={{ base: "26rem", md: "50%" }} left={10} onClick={prevImge}>
+                    <Box w={"48px"} h={"48px"} bg={'#02685C'} color={'white'} cursor={"pointer"} position={"absolute"} rounded={"full"} display={{base:"none",md:"flex"}} justifyContent={"center"} alignItems={"center"} top={{ base: "416px", md: "50%" }} left={10} onClick={prevImge}>
                         <FaAngleLeft size={30} />
                     </Box>
 

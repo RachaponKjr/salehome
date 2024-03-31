@@ -12,7 +12,7 @@ function CookieConsent() {
     }
     return (
         <Flex justifyContent={"center"} position={"fixed"} bottom={0} w={"100%"} zIndex={{base:1000,sm:1000}} py={{base:0,md:2}} className='cookie' id='cookie'>
-            <Box bg={'white'} w={'50rem'} h={'min-content'} py={4} px={8} rounded={{base:"0",md:"10px"}} boxShadow={'xl'}>
+            <Box bg={'white'} w={'800px'} h={'min-content'} py={4} px={8} rounded={{base:"0",md:"10px"}} boxShadow={'xl'}>
                 {/* HeadText */}
                 <Text variant={'h4'} fontWeight={"bold"} fontSize={{base:"16px",sm:"20px"}} color={'#292929'}>เว็บไซต์นี้ใช้คุกกี้</Text>
                 {/* BodyText */}
@@ -22,7 +22,7 @@ function CookieConsent() {
                     {/* setting cookie */}
                     <Text variant={'h6'} color={'#EA834F'} cursor={"pointer"}>การตั้งค่าคุกกี้</Text>
                     {/* BTN */}
-                    <Box w={{base:"100%",sm:"20%"}} h={"3rem"} bg={"#EA834F"} cursor={"pointer"} display={'flex'} justifyContent={"center"} alignItems={"center"} rounded={'5px'} _hover={{bg: '#E66F33'}} onClick={acceptCookie}>
+                    <Box w={{base:"100%",sm:"20%"}} h={"48px"} bg={"#EA834F"} cursor={"pointer"} display={'flex'} justifyContent={"center"} alignItems={"center"} rounded={'5px'} _hover={{bg: '#E66F33'}} onClick={acceptCookie}>
                         <Text variant={'h6'} color={'white'}>ยอมรับทั้งหมด</Text>
                     </Box>
                 </Flex>

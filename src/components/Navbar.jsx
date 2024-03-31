@@ -50,7 +50,7 @@ const Navbar = () => {
                     <Container maxW={"container.xl"}>
                         <Flex py={"8px"} position={"relative"} w={"100%"} flexDirection={{ base: "row" }} justifyContent={"space-between"} alignItems={"center"}>
                             {/* ส่วนของ Logo */}
-                            <Flex maxW={"100%"} w={{ base: "10rem", sm: "15rem", md: "30%" }} position={{ base: "relative", md: "absolute", xl: "relative" }} alignItems={"center"}>
+                            <Flex maxW={"100%"} w={{ base: "160px", sm: "240px", md: "30%" }} position={{ base: "relative", md: "absolute", xl: "relative" }} alignItems={"center"}>
                                 <Link href={"/"}>
                                     <Image src={icon} alt="logo" width={'auto'} height={60} />
                                 </Link>
@@ -80,7 +80,7 @@ const Navbar = () => {
                     </Container>
                 </Box>
                 {/* ปุ่มติดต่อ กับ ปุ่ม เลื่อน ขึ้นด้านบน */}
-                <Box position={'fixed'} right={0} bottom={0} width={'4rem'} height={'max-content'} display={{ base: "none", md: 'flex' }} flexDirection={'column'} justifyContent={'center'} alignItems={'center'} gap={2} mx={2} py={4} zIndex={999}>
+                <Box position={'fixed'} right={0} bottom={0} width={'64px'} height={'max-content'} display={{ base: "none", md: 'flex' }} flexDirection={'column'} justifyContent={'center'} alignItems={'center'} gap={2} mx={2} py={4} zIndex={999}>
                     {/* ติดต่อ */}
                     <ButtonContact />
                     {/* เลื่อนขึ้นบน */}

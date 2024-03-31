@@ -9,7 +9,7 @@ import Image from 'next/image'
 const RightSide = () => {
     return (
         <>
-            <Box w={{ base: "100%", sm: "20rem", lg: "30%" }} h={"min-content"} p={2}>
+            <Box w={{ base: "100%", sm: "320px", lg: "30%" }} h={"min-content"} p={2}>
                 {/* ข้อมูล ผู้ขาย */}
                 <Flex w={"100%"} h={"min-content"} bg={'whitesmoke'} alignItems={"center"} boxShadow={"lg"} px={4} py={4} gap={4} rounded={"10px"}>
                     <Avatar />
@@ -25,7 +25,7 @@ const RightSide = () => {
                     <Flex gap={2} flexDirection={'column'} >
                         {/* phone contact */}
                         <Box display={'flex'} gap={4} alignItems={'center'}>
-                            <Box w={"3rem"} aspectRatio={1} boxShadow={'lg'} display={'flex'} justifyContent={'center'} alignItems={'center'} rounded={'lg'} cursor={'pointer'} color={'#4A90E4'}>
+                            <Box w={"48px"} aspectRatio={1} boxShadow={'lg'} display={'flex'} justifyContent={'center'} alignItems={'center'} rounded={'lg'} cursor={'pointer'} color={'#4A90E4'}>
                                 {/* <FaPhoneAlt size={25} /> */}
                                 <Image src={whatsapp} alt="phonenumber contact" width={35} height={35} />
                             </Box>
@@ -33,7 +33,7 @@ const RightSide = () => {
                         </Box>
                         {/* Email contact */}
                         <Box display={'flex'} gap={4} alignItems={'center'}>
-                            <Box w={"3rem"} aspectRatio={1} boxShadow={'lg'} display={'flex'} justifyContent={'center'} alignItems={'center'} rounded={'lg'} cursor={'pointer'} color={'#4A90E4'}>
+                            <Box w={"48px"} aspectRatio={1} boxShadow={'lg'} display={'flex'} justifyContent={'center'} alignItems={'center'} rounded={'lg'} cursor={'pointer'} color={'#4A90E4'}>
                                 {/* <FaFacebook size={25} /> */}
                                 <Image src={facebook} alt="facebook contact" width={35} height={35}/>
                             </Box>
@@ -41,7 +41,7 @@ const RightSide = () => {
                         </Box>
                         {/* line id */}
                         <Box display={'flex'} gap={4} alignItems={'center'}>
-                            <Box w={"3rem"} aspectRatio={1} boxShadow={'lg'} display={'flex'} justifyContent={'center'} alignItems={'center'} rounded={'lg'} cursor={'pointer'} color={'#4A90E4'}>
+                            <Box w={"48px"} aspectRatio={1} boxShadow={'lg'} display={'flex'} justifyContent={'center'} alignItems={'center'} rounded={'lg'} cursor={'pointer'} color={'#4A90E4'}>
                                 {/* <FaFacebookMessenger size={25} /> */}
                                 <Image src={line} alt="line contact" width={35} height={35}/>
                             </Box>

@@ -78,7 +78,7 @@ function Section1({ datafetch }) {
               </Text>
             </Flex>
           </Flex>
-          <InputGroup w={{ base: "100%", md: "20rem" }} size={"md"} m={{ base: 'auto', md: '0' }}  mb={{ base: "8px", md: "0px" }} >
+          <InputGroup w={{ base: "100%", md: "320px" }} size={"md"} m={{ base: 'auto', md: '0' }}  mb={{ base: "8px", md: "0px" }} >
             <Input focusBorderColor='#305553' placeholder='Search' type='text' value={query} onChange={(e) => setQuery(e.target.value)} />
             <InputRightElement cursor={"pointer"} bg={'#305553'} color={'white'}><FaSearch /></InputRightElement>
           </InputGroup>
@@ -87,7 +87,7 @@ function Section1({ datafetch }) {
         <Box w={"100%"} h={"min-content"} my={"16px"}>
           <Grid gridTemplateColumns={{ base: "repeat(2, minmax(0, 1fr))", sm: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" }}>
             {resQuery.length === 0 ? (
-              <GridItem h={'25rem'} w={"100%"} gridColumn={{ base: "1 / 3", md: "1 / 5" }} placeContent={"center"}>
+              <GridItem h={'400px'} w={"100%"} gridColumn={{ base: "1 / 3", md: "1 / 5" }} placeContent={"center"}>
                 <Text variant={'h3'} fontSize={{ base: "14px", md: "16px" }} textAlign={"center"}>ไม่พบรายการค้นหา...</Text>
               </GridItem>
             ) : resQuery.map((item) => (

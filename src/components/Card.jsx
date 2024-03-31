@@ -14,7 +14,7 @@ const Card = ({data}) => {
     <GridItem w={"100%"} p={{ base: "4px", md: "8px" }} key={data.number_home}>
                 <Flex w={"100%"} h={"100%"} flexDirection={"column"} overflow={"hidden"} borderRadius={"10px"} boxShadow={'md'}>
                   {/* รูปภาพใน card */}
-                  <Box w={"100%"} h={{ base: "6rem", md: "12rem" }} position={"relative"} bg={"gray.200"} cursor={"pointer"} _hover={{ bg: "gray.300" }}>
+                  <Box w={"100%"} h={{ base: "96px", md: "192px" }} position={"relative"} bg={"gray.200"} cursor={"pointer"} _hover={{ bg: "gray.300" }}>
                     <Link href={"/product/" + data._id}>
                       <Box position={"relative"} w={"100%"} h={"100%"}>
                       <Image src={`http://18.140.121.108:5500/public/img_all/${data.img_all[0]}`} alt="image" fill priority className='image_hover' />
