@@ -2,7 +2,6 @@ import { Container } from '@chakra-ui/react'
 import React from 'react'
 
 import Section1 from './components/Section1'
-import Card from '@/components/Card'
 
 
 
@@ -16,7 +15,6 @@ async function HomePage(){
         <Section1 datafetch={newData}/>
       </Container>
     </>
-
   )
 }
 

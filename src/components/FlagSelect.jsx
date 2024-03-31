@@ -12,7 +12,7 @@ const FlagSelect = () => {
     }
     return (
         <>
-            <Box position={'relative'} p={0} borderRadius={'5px'} border={"1px solid gray"} bg={"white"} px={"8px"} py={"4px"}>
+            <Box position={'relative'} boxShadow={'lg'} bg={"white"} px={"8px"} py={"4px"}>
                 <ul onClick={() => setOpentFlag(!opentFlag)} >
                     <li style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: "8px" }}>{flag === "TH" ? "TH" : "EN"}<FaAngleDown /></li>
                 </ul>

@@ -37,11 +37,11 @@ const Navbar = () => {
             icon: <FaHeadset size={20} {...pathName === "/contact" ? {color:'#ED1B22'} : ""}/>,
             link: "/contact"
         },
-        {
-            tital: "ประกาศเเนะนำ",
-            icon: <BsMegaphone size={20} {...pathName === "/advertise" ? {color:'#ED1B22'} : ""}/>,
-            link: "/advertise"
-        },
+        // {
+        //     tital: "ประกาศเเนะนำ",
+        //     icon: <BsMegaphone size={20} {...pathName === "/advertise" ? {color:'#ED1B22'} : ""}/>,
+        //     link: "/advertise"
+        // },
     ]
     return (
         <>
@@ -65,9 +65,9 @@ const Navbar = () => {
                                 {/* ส่วนล่างของเมนู */}
                                 <Flex display={{ base: "none", md: "flex" }} gap={4}>
                                     {manu.map((item, index) => (
-                                        <Flex role='group' key={index} px={"12px"} py={"8px"} zIndex={0} overflow={"hidden"} alignItems={"center"} color={'#676767'} cursor={"pointer"} gap={"8px"} fontSize={{ md: "12px", xl: "14px" }} position={"relative"} className={`${pathName === item.link ? "nav_active" : "nav_hover"}`}>
-                                            <Link href={item.link} style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}>
-                                                <Box _groupHover={{ color: 'orange' }} transitionDuration={'0.3s'}>
+                                        <Flex role='group' key={index} minW={'160px'} zIndex={0} overflow={"hidden"} alignItems={"center"} color={'#676767'} cursor={"pointer"} gap={"8px"} fontSize={{ md: "12px", xl: "14px" }} position={"relative"} className={`${pathName === item.link ? "nav_active" : "nav_hover"}`}>
+                                            <Link href={item.link} style={{margin:'8px 0px' ,width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}>
+                                                <Box transitionDuration={'0.3s'}>
                                                 {item.icon}
                                                 </Box>
                                                 <Text>{item.tital}</Text>

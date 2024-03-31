@@ -68,7 +68,7 @@ const Card = ({data}) => {
                       <Divider />
                     </Box>
                     <Flex alignItems={"center"} justifyContent={{ base: "end", md: "space-between" }}>
-                      <Box h={"max-content"} w={'max-content'} maxW={'100%'} bg={'#02685C'} color={'white'} px={6} py={1} display={{ base: 'none', md: 'flex' }} alignItems={"center"} rounded={"10px"}>
+                      <Box h={"max-content"} w={'max-content'} maxW={'100%'} bg={'#305553'} color={'white'} px={6} py={1} display={{ base: 'none', md: 'flex' }} alignItems={"center"} rounded={"10px"}>
                         <Text variant={'h6'} fontSize={{ base: "12px", md: "14px" }}>ขาย</Text>
                       </Box>
                       <Box my={2} px={2}>

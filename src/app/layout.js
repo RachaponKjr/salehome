@@ -4,8 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 // import Footer from "@/components/Footer";
 // import CookieConsent from "@/components/CookieConsent";
-import Providers from "@/chakaUi/providers";
 import dynamic from "next/dynamic";
+import Providers from "@/chakaUi_Provider/Providers";
 
 const inter = Prompt({ subsets: ["latin", "thai"],weight:"500" });
 
