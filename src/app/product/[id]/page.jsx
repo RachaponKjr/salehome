@@ -1,4 +1,4 @@
-import HomeGet from "./HomeGet";
+import HomeGet from "../../../pages/gat_product/HomeGet";
 
 export default function Page() {
   return (

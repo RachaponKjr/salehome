@@ -1,23 +1,23 @@
 import { Box, Flex } from '@chakra-ui/react';
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 const Carousel = (props) => {
     const imgs = Array.from(props.images)
+    const ref = useRef(null)
     let [startX, setStartX] = useState(null)
     let startY, distX, distY;
 
     useEffect(() => {
-        const slider = document.getElementById('slider')
-        slider.addEventListener('touchstart', handleTonchStart)
-        slider.addEventListener('touchmove', handleTouchMove)
-        slider.addEventListener('touchend', handleTouchEnd)
+        ref.current.addEventListener('touchstart', handleTonchStart)
+        ref.current.addEventListener('touchmove', handleTouchMove)
+        ref.current.addEventListener('touchend', handleTouchEnd)
         return () => {
-            slider.removeEventListener('touchstart', handleTonchStart)
-            slider.removeEventListener('touchmove', handleTouchMove)
-            slider.removeEventListener('touchend', handleTouchEnd)
+            ref.current?.removeEventListener('touchstart', handleTonchStart)
+            ref.current?.removeEventListener('touchmove', handleTouchMove)
+            ref.current?.removeEventListener('touchend', handleTouchEnd)
         }
     }, [startX])
     const nextImge = () => {
@@ -71,7 +71,7 @@ const Carousel = (props) => {
             <Box w={"100%"} h={"100%"} position={'absolute'} top={0} zIndex={100000}>
                 <Flex position={'sticky'} bg={'rgb(0,0,0,0.8)'} top={0} flexDirection={"column"} justifyContent={{ base: "start", md: "center" }} alignItems={"center"} w={"100%"} h={"calc(100vh)"} gap={0}>
                     <Flex w={10} h={10} bg={'red'} position={"absolute"} justifyContent={"center"} alignItems={"center"} color={'white'} rounded={'lg'} top={{ base: 2, md: 10 }} right={{ base: 2, md: 10 }} cursor={"pointer"} zIndex={10} onClick={close}><IoClose size={30} /></Flex>
-                    <Flex id='slider' justifyContent={{ base: "start", md: "center" }} mt={{ base: "4rem", md: "0rem" }} alignItems={{ base: "start", md: "center" }} w={{ base: "100%", md: "50rem" }} position={"relative"} h={{ base: "20rem", md: "40rem" }}>
+                    <Flex ref={ref} justifyContent={{ base: "start", md: "center" }} mt={{ base: "4rem", md: "0rem" }} alignItems={{ base: "start", md: "center" }} w={{ base: "100%", md: "50rem" }} position={"relative"} h={{ base: "20rem", md: "40rem" }}>
                         <Image
                             src={imgs[props.selectImg]}
                             alt={imgs[props.selectImg]}
