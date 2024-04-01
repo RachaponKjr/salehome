@@ -1,4 +1,4 @@
-import Contact from '@/pages/contactPage/Contact'
+import Contact from '@/containers/contactPage/Contact'
 import React from 'react'
 
 export const metadata = {

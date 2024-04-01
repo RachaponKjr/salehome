@@ -2,7 +2,7 @@ import Loading from "@/components/Loading";
 // import HomePage from "@/pages/homePage/HomePage";
 import dynamic from "next/dynamic";
 
-const DynamicHomePage = dynamic(() => import("@/pages/homePage/HomePage"), {
+const DynamicHomePage = dynamic(() => import("@/containers/homePage/HomePage"), {
   loading: () => <Loading />,
 })
 

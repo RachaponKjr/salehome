@@ -54,7 +54,7 @@ const Card = ({data}) => {
                           <Text variant={"h6"} fontSize={{ base: "12px", md: "14px" }}>{data.bedroom != null ? `${data.bedroom}` : "-"}</Text>
                         </Flex>
                         <Divider orientation='vertical' />
-                        <Flex gap={"8px"} color={'#676767'}>
+                        <Flex gap={"8px"} color={'#676767'} alignItems={"center"}>
                           <Image src={bathroom} alt="bathroom" width={"auto"} height={"auto"}  />
                           <Text variant={"h6"} fontSize={{ base: "12px", md: "14px" }}>{data.bathroom != null ? `${data.bathroom}` : "-"}</Text>
                         </Flex>

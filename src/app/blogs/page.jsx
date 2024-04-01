@@ -1,4 +1,4 @@
-import Blogs from '@/pages/blogPage/Blogs'
+import Blogs from '@/containers/blogPage/Blogs'
 import React from 'react'
 
 export const metadata = {
