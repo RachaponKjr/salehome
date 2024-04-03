@@ -49,29 +49,29 @@ function Section1({ datafetch }) {
         {/* ส่วนหัว มี Input กับ Dropdown */}
         <Flex flexDirection={{ base: "column-reverse", md: "row" }} gap={"8px"} alignItems={"center"} justifyContent={"space-between"}>
           {/* Tabs ต่างๆ */}
-          <Flex h={'max-content'} overflowX={{ base: 'scroll', md: 'auto' }} borderBottom={"3px solid #EAEAEA"} color={'#AEAEAE'}>
-            <Flex h={'100%'} flexDirection={"row"} gap={'16px'} alignItems={"center"} width={"max-content"} whiteSpace={"nowrap"} px={8} py={2} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 0 && { color: "#333333",boxShadow:'rgba(0, 0, 0, 0.16) 0px 1px 4px;', _before: { content: "''", position: "absolute", width: "100%", height: "3.5px", bottom: "0", left: "0", bg: "#305553" } }} onClick={() => handleClicked({ tabs: 0, filter: 'ทั้งหมด' })}>
+          <Flex h={'max-content'} w={{ base: "100%", lg: "auto" }} overflowX={{ base: 'scroll', lg: 'none' }} overflow={{base:'none',lg:'hidden'}} flexDirection={'row'} gap={{ base: "4px", md: "8px" }} alignItems={{ base: "center", md: "flex-start" }} position={"hidden"} borderBottom={"3px solid #EAEAEA"} color={'#AEAEAE'}>
+            <Flex h={'100%'} flexDirection={"row"} gap={'16px'} alignItems={"center"} width={"max-content"} whiteSpace={"nowrap"} px={{base:4,md:8}} py={2} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 0 && { color: "#333333",boxShadow:'rgba(0, 0, 0, 0.16) 0px 1px 4px;', _before: { content: "''", position: "absolute", width: "100%", height: "3.5px", bottom: "0", left: "0", bg: "#305553" } }} onClick={() => handleClicked({ tabs: 0, filter: 'ทั้งหมด' })}>
               <FaThLarge size={25} {...tabs === 0 && { color: '#305553' }} />
               <Text>
                 ทั้งหมด
               </Text>
             </Flex>
             <Divider orientation='vertical' borderLeftWidth={"1px"} />
-            <Flex h={'100%'} flexDirection={"row"} gap={'16px'} alignItems={"center"} width={"max-content"} whiteSpace={"nowrap"} px={8} py={2} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 1 && { color: "#333333",boxShadow:'rgba(0, 0, 0, 0.16) 0px 1px 4px;', _before: { content: "''", position: "absolute", width: "100%", height: "3.5px", bottom: "0", left: "0", bg: "#305553" } }} onClick={() => handleClicked({ tabs: 1, filter: 'ที่ดิน' })}>
+            <Flex h={'100%'} flexDirection={"row"} gap={'16px'} alignItems={"center"} width={"max-content"} whiteSpace={"nowrap"} px={{base:4,md:8}} py={2} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 1 && { color: "#333333",boxShadow:'rgba(0, 0, 0, 0.16) 0px 1px 4px;', _before: { content: "''", position: "absolute", width: "100%", height: "3.5px", bottom: "0", left: "0", bg: "#305553" } }} onClick={() => handleClicked({ tabs: 1, filter: 'ที่ดิน' })}>
               <FaVectorSquare size={25} {...tabs === 1 && { color: '#305553' }} />
               <Text>
                 ที่ดิน
               </Text>
             </Flex>
             <Divider orientation='vertical' borderLeftWidth={"1px"} />
-            <Flex h={'100%'} flexDirection={"row"} gap={'16px'} alignItems={"center"} width={"max-content"} whiteSpace={"nowrap"} px={8} py={2} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 2 && { color: "#333333",boxShadow:'rgba(0, 0, 0, 0.16) 0px 1px 4px;', _before: { content: "''", position: "absolute", width: "100%", height: "3.5px", bottom: "0", left: "0", bg: "#305553" } }} onClick={() => handleClicked({ tabs: 2, filter: 'บ้านเดี่ยว 2 ชั้น' })}>
+            <Flex h={'100%'} flexDirection={"row"} gap={'16px'} alignItems={"center"} width={"max-content"} whiteSpace={"nowrap"} px={{base:4,md:8}} py={2} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 2 && { color: "#333333",boxShadow:'rgba(0, 0, 0, 0.16) 0px 1px 4px;', _before: { content: "''", position: "absolute", width: "100%", height: "3.5px", bottom: "0", left: "0", bg: "#305553" } }} onClick={() => handleClicked({ tabs: 2, filter: 'บ้านเดี่ยว 2 ชั้น' })}>
               <LuHome size={25} {...tabs === 2 && { color: '#305553' }} />
               <Text>
                 บ้าน
               </Text>
             </Flex>
             <Divider orientation='vertical' borderLeftWidth={"1px"} />
-            <Flex h={'100%'} flexDirection={"row"} gap={'16px'} alignItems={"center"} width={"max-content"} whiteSpace={"nowrap"} px={8} py={2} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 3 && { color: "#333333",boxShadow:'rgba(0, 0, 0, 0.16) 0px 1px 4px;', _before: { content: "''", position: "absolute", width: "100%", height: "3.5px", bottom: "0", left: "0", bg: "#305553" } }} onClick={() => handleClicked({ tabs: 3, filter: 'ทาวน์เฮ้าส์' })}>
+            <Flex h={'100%'} flexDirection={"row"} gap={'16px'} alignItems={"center"} width={"max-content"} whiteSpace={"nowrap"} px={{base:4,md:8}} py={2} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 3 && { color: "#333333",boxShadow:'rgba(0, 0, 0, 0.16) 0px 1px 4px;', _before: { content: "''", position: "absolute", width: "100%", height: "3.5px", bottom: "0", left: "0", bg: "#305553" } }} onClick={() => handleClicked({ tabs: 3, filter: 'ทาวน์เฮ้าส์' })}>
               <FaRegBuilding size={25} {...tabs === 3 && { color: '#305553' }} />
               <Text>
                 ทาวน์เฮ้าส์

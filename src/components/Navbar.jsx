@@ -5,7 +5,6 @@ import React from 'react'
 
 import icon from '@/imgs/logo.png'
 
-import { BsMegaphone } from "react-icons/bs";
 import { FaHeadset, FaEdit } from "react-icons/fa";
 import { BiHomeAlt } from "react-icons/bi";
 

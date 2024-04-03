@@ -11,7 +11,7 @@ async function HomePage(){
 
   return (
     <>
-      <Container maxW={"container.xl"}>
+      <Container maxW={"container.xl"} w={"100%"}>
         <Section1 datafetch={newData}/>
       </Container>
     </>
