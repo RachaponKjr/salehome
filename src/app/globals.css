@@ -123,3 +123,28 @@
   border-radius: 10px;
   transition: 300ms;
 }
+
+
+
+
+
+/* button animation */
+.btn-animetion{
+  position: relative;
+  overflow: hidden;
+}
+.btn-animetion:after{
+  content: '';
+  width: 10rem;
+  height: 10rem;
+  background-color: #02685C;
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
+  transform: translateX(-100%);
+  transition: 1000ms;
+}
+.btn-animetion:hover:after{
+  transform: translateX(0);
+}

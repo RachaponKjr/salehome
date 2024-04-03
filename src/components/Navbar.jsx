@@ -5,14 +5,15 @@ import React from 'react'
 
 import icon from '@/imgs/logo.png'
 
-import { FaHeadset, FaEdit } from "react-icons/fa";
-import { BiHomeAlt } from "react-icons/bi";
-
 import Link from 'next/link';
 
 import { usePathname } from 'next/navigation'
 import dynamic from 'next/dynamic'
 import FlagSelect from './FlagSelect'
+
+// icons Navbar
+import home from "@/icons/nav_icons/home.png"
+import edit from "@/icons/nav_icons/edit.png"
 
 const ButtonTop = dynamic(() => import('./BtnTop'), { ssr: false })
 const ButtonContact = dynamic(() => import('./BtnContact'), { ssr: false })
@@ -23,17 +24,17 @@ const Navbar = () => {
     const manu = [
         {
             tital: "หน้าเเรก",
-            icon: <BiHomeAlt size={20} {...pathName === "/" ? {color:'#ED1B22'} : ""} />,
+            icon: home,
             link: "/"
         },
         {
             tital: "บทความเเนะนำ",
-            icon: <FaEdit size={20} {...pathName === "/blogs" ? {color:'#ED1B22'} : ""}/>,
+            icon: edit,
             link: "/blogs"
         },
         {
             tital: "ติดต่อเรา",
-            icon: <FaHeadset size={20} {...pathName === "/contact" ? {color:'#ED1B22'} : ""}/>,
+            icon: edit,
             link: "/contact"
         },
         // {
@@ -45,13 +46,13 @@ const Navbar = () => {
     return (
         <>
             <Box>
-                <Box backgroundColor={"white"} boxShadow={'md'}>
+                <Box bgGradient={"linear(#305553 0%, #162726 49%, #0A1111 100%)"} boxShadow={'md'}>
                     <Container maxW={"container.xl"}>
                         <Flex py={"8px"} position={"relative"} w={"100%"} flexDirection={{ base: "row" }} justifyContent={"space-between"} alignItems={"center"}>
                             {/* ส่วนของ Logo */}
                             <Flex maxW={"100%"} w={{ base: "160px", sm: "240px", md: "30%" }} position={{ base: "relative", md: "absolute", xl: "relative" }} alignItems={"center"}>
                                 <Link href={"/"}>
-                                    <Image src={icon} alt="logo" width={'auto'} height={60} />
+                                    <Image src={icon} alt="logo" width={'auto'} height={50} />
                                 </Link>
                             </Flex>
                             {/* ส่วนเมนูทางด้าน ขวา ของ ขนาด 1024px ขึ้นไป */}
@@ -64,11 +65,9 @@ const Navbar = () => {
                                 {/* ส่วนล่างของเมนู */}
                                 <Flex display={{ base: "none", md: "flex" }} gap={4}>
                                     {manu.map((item, index) => (
-                                        <Flex role='group' key={index} minW={'160px'} zIndex={0} overflow={"hidden"} alignItems={"center"} color={'#676767'} cursor={"pointer"} gap={"8px"} fontSize={{ md: "12px", xl: "14px" }} position={"relative"} className={`${pathName === item.link ? "nav_active" : "nav_hover"}`}>
+                                        <Flex role='group' key={index} minW={'160px'} zIndex={0} overflow={"hidden"} alignItems={"center"} color={'white'} cursor={"pointer"} gap={"8px"} fontSize={{ md: "12px", xl: "14px" }} position={"relative"} className={`${pathName === item.link ? "nav_active" : "nav_hover"}`}>
                                             <Link href={item.link} style={{margin:'8px 0px' ,width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}>
-                                                <Box transitionDuration={'0.3s'}>
-                                                {item.icon}
-                                                </Box>
+                                                <Image src={item.icon} alt="icon" width={20} height={20} />
                                                 <Text>{item.tital}</Text>
                                             </Link>
                                         </Flex>

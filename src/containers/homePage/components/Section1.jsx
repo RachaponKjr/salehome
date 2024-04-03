@@ -6,7 +6,12 @@ import React, { useEffect, useState } from 'react'
 import { FaSearch } from "react-icons/fa";
 
 import { FaVectorSquare, FaThLarge, FaRegBuilding } from "react-icons/fa";
+import { BsBuildings } from "react-icons/bs";
 import { LuHome } from "react-icons/lu";
+
+import area from "@/icons/tab_icons/area.svg"
+import building from "@/icons/tab_icons/building.svg"
+import Image from 'next/image';
 
 function Section1({ datafetch }) {
   const newData = Array.from(datafetch)

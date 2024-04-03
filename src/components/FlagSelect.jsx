@@ -12,7 +12,7 @@ const FlagSelect = () => {
     }
     return (
         <>
-            <Box position={'relative'} boxShadow={'lg'} bg={"white"} px={"8px"} py={"4px"}>
+            <Box position={'relative'} boxShadow={"rgba(0, 0, 0, 0.16) 0px 1px 4px;"} bg={"white"} px={"8px"} py={"4px"} color={"#676767"}>
                 <ul onClick={() => setOpentFlag(!opentFlag)} >
                     <li style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: "8px" }}>{flag === "TH" ? "TH" : "EN"}<FaAngleDown /></li>
                 </ul>
@@ -21,7 +21,7 @@ const FlagSelect = () => {
                     <Flex position={'absolute'} border={"1px solid gray"} borderRadius={'5px'} cursor={"pointer"} gap={2} right={0} zIndex={10} w={"max-content"} h={"max-content"} bg={"white"} p={"8px"} mt={"8px"}
                         onClick={SelectFlag}
                     >
-                        <Text px={"8px"}>{flag === "TH" ? "English" : "Thailand"}</Text>
+                        <Text color={"#676767"} px={"8px"}>{flag === "TH" ? "English" : "Thailand"}</Text>
                     </Flex>
                 )}
 
