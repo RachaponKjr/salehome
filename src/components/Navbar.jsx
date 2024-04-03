@@ -46,7 +46,7 @@ const Navbar = () => {
     return (
         <>
             <Box>
-                <Box bgGradient={"linear(#305553 0%, #162726 49%, #0A1111 100%)"} boxShadow={'md'}>
+                <Box bgGradient={"linear(#305553 0%, #162726 49%, #0A1111 100%)"} boxShadow={'md'} py={2}>
                     <Container maxW={"container.xl"}>
                         <Flex py={"8px"} position={"relative"} w={"100%"} flexDirection={{ base: "row" }} justifyContent={"space-between"} alignItems={"center"}>
                             {/* ส่วนของ Logo */}
@@ -56,16 +56,16 @@ const Navbar = () => {
                                 </Link>
                             </Flex>
                             {/* ส่วนเมนูทางด้าน ขวา ของ ขนาด 1024px ขึ้นไป */}
-                            <Flex flexDirection={"column"} w={{ md: "100%", xl: "70%" }} alignItems={'end'} gap={"8px"}>
+                            <Flex flexDirection={"row-reverse"} w={{ md: "100%", xl: "70%" }} alignItems={'end'} gap={"24px"}>
                                 {/* ส่วนบนของเมนู */}
-                                <Flex gap={2} pr={{ base: "0px", md: "12px" }} alignItems={'center'} h={"100%"} zIndex={10}>
+                                <Flex gap={2} alignItems={'center'} h={"100%"} zIndex={10}>
                                     {/* Select เลือกเปลี่ยนภาษา */}
                                     <FlagSelect />
                                 </Flex>
                                 {/* ส่วนล่างของเมนู */}
-                                <Flex display={{ base: "none", md: "flex" }} gap={4}>
+                                <Flex display={{ base: "none", md: "flex" }} gap={8}>
                                     {manu.map((item, index) => (
-                                        <Flex role='group' key={index} minW={'160px'} zIndex={0} overflow={"hidden"} alignItems={"center"} color={'white'} cursor={"pointer"} gap={"8px"} fontSize={{ md: "12px", xl: "14px" }} position={"relative"} className={`${pathName === item.link ? "nav_active" : "nav_hover"}`}>
+                                        <Flex role='group' key={index} minW={'120px'} zIndex={0} overflow={"hidden"} alignItems={"center"} color={'white'} cursor={"pointer"} gap={"8px"} fontSize={{ md: "12px", xl: "14px" }} position={"relative"} className={`${pathName === item.link ? "nav_active" : "nav_hover"}`}>
                                             <Link href={item.link} style={{margin:'8px 0px' ,width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}>
                                                 <Image src={item.icon} alt="icon" width={20} height={20} />
                                                 <Text>{item.tital}</Text>

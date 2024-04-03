@@ -36,7 +36,7 @@ const Card = ({data}) => {
                     </Flex>
                     <Flex justifyContent={"space-between"} gap={2} flexDirection={{ base: "column", md: "row" }}>
                       <Box color={'#676767'} w={"max-content"} className='line-clamp1'>
-                        <Text variant={'h2'} fontSize={{ base: "12px", md: "14px" }}>{data.detail_product}</Text>
+                        <Text variant={'h2'} color={'#02685C'} fontSize={{ base: "12px", md: "14px" }}>{data.detail_product}</Text>
                       </Box>
                       {/* รหัสสินค้า:  */}
                       <Box color={'#676767'} gap={2} display={{ base: "none", md: "flex" }}>
@@ -66,7 +66,7 @@ const Card = ({data}) => {
                     </Box>
                     <Flex alignItems={"center"} justifyContent={{ base: "end", md: "space-between" }}>
                       <Box className='btn-animetion' role='group' _hover={{ringColor: "#02685C"}} overflow={"hidden"} transitionDuration={"1s"} h={"max-content"} w={'max-content'} maxW={'100%'} ring={"2px"} ringColor={"#F74354"} px={6} py={1} display={{ base: 'none', md: 'flex' }} alignItems={"center"} rounded={"10px"}>
-                        <Text _groupHover={{color: "white"}} zIndex={10} variant={'h6'} color={'#F74354'} transitionDuration={"0.5s"} fontSize={{ base: "12px", md: "14px" }}>Sale</Text>
+                        <Text _groupHover={{color: "white"}} zIndex={10} variant={'h6'} color={'#F74354'} transitionDuration={"0.2s"} fontSize={{ base: "12px", md: "14px" }}>Sale</Text>
                       </Box>
                       <Box my={2} px={2}>
                         <Text variant={'h3'} fontSize={{ base: "14px", md: "16px" }}  whiteSpace={"nowrap"} fontWeight={"bold"} textAlign={"right"} color={'#02685C'}>{data.price_home} บาท</Text>

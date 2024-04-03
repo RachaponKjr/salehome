@@ -1,6 +1,7 @@
 import { Container } from '@chakra-ui/react'
 import React from 'react'
 import Section1 from './components/Section1'
+import next from 'next'
 
 
 
@@ -19,7 +20,7 @@ async function HomePage(){
 }
 
 export async function getData() {
-  const res = await fetch('http://18.140.121.108:5500/getsalehome', { method: 'GET', cache: 'force-cache'})
+  const res = await fetch('http://18.140.121.108:5500/getsalehome', { method: 'GET',next: { revalidate: 0 }})
   if (!res.ok) {
     throw new Error('Failed to fetch data')
   }

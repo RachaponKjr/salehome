@@ -9,9 +9,16 @@ import { FaVectorSquare, FaThLarge, FaRegBuilding } from "react-icons/fa";
 import { BsBuildings } from "react-icons/bs";
 import { LuHome } from "react-icons/lu";
 
-import area from "@/icons/tab_icons/area.svg"
-import building from "@/icons/tab_icons/building.svg"
 import Image from 'next/image';
+
+import area_non from "@/icons/tab_icons/area_non.png"
+import area_at from "@/icons/tab_icons/area_at.png"
+
+import building_non from "@/icons/tab_icons/building_non.png"
+import building_at from "@/icons/tab_icons/building_at.png"
+
+import home_non from "@/icons/tab_icons/home_non.png"
+import home_at from "@/icons/tab_icons/home_at.png"
 
 function Section1({ datafetch }) {
   const newData = Array.from(datafetch)
@@ -63,21 +70,24 @@ function Section1({ datafetch }) {
             </Flex>
             <Divider orientation='vertical' borderLeftWidth={"1px"} />
             <Flex h={'100%'} flexDirection={"row"} gap={'16px'} alignItems={"center"} width={"max-content"} whiteSpace={"nowrap"} px={{base:4,md:8}} py={2} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 1 && { color: "#333333",boxShadow:'rgba(0, 0, 0, 0.16) 0px 1px 4px;', _before: { content: "''", position: "absolute", width: "100%", height: "3.5px", bottom: "0", left: "0", bg: "#305553" } }} onClick={() => handleClicked({ tabs: 1, filter: 'ที่ดิน' })}>
-              <FaVectorSquare size={25} {...tabs === 1 && { color: '#305553' }} />
+              {/* <FaVectorSquare size={25} {...tabs === 1 && { color: '#305553' }} /> */}
+              {tabs === 1 ? <Image src={area_at} width={30} height={30} /> : <Image src={area_non} width={30} height={30} />}
               <Text>
                 ที่ดิน
               </Text>
             </Flex>
             <Divider orientation='vertical' borderLeftWidth={"1px"} />
             <Flex h={'100%'} flexDirection={"row"} gap={'16px'} alignItems={"center"} width={"max-content"} whiteSpace={"nowrap"} px={{base:4,md:8}} py={2} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 2 && { color: "#333333",boxShadow:'rgba(0, 0, 0, 0.16) 0px 1px 4px;', _before: { content: "''", position: "absolute", width: "100%", height: "3.5px", bottom: "0", left: "0", bg: "#305553" } }} onClick={() => handleClicked({ tabs: 2, filter: 'บ้านเดี่ยว 2 ชั้น' })}>
-              <LuHome size={25} {...tabs === 2 && { color: '#305553' }} />
+              {/* <LuHome size={25} {...tabs === 2 && { color: '#305553' }} /> */}
+              {tabs === 2 ? <Image src={home_at} width={30} height={30} /> : <Image src={home_non} width={30} height={30} />}
               <Text>
                 บ้าน
               </Text>
             </Flex>
             <Divider orientation='vertical' borderLeftWidth={"1px"} />
             <Flex h={'100%'} flexDirection={"row"} gap={'16px'} alignItems={"center"} width={"max-content"} whiteSpace={"nowrap"} px={{base:4,md:8}} py={2} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 3 && { color: "#333333",boxShadow:'rgba(0, 0, 0, 0.16) 0px 1px 4px;', _before: { content: "''", position: "absolute", width: "100%", height: "3.5px", bottom: "0", left: "0", bg: "#305553" } }} onClick={() => handleClicked({ tabs: 3, filter: 'ทาวน์เฮ้าส์' })}>
-              <FaRegBuilding size={25} {...tabs === 3 && { color: '#305553' }} />
+              {/* <FaRegBuilding size={25} {...tabs === 3 && { color: '#305553' }} /> */}
+              {tabs === 3 ? <Image src={building_at} width={30} height={30} /> : <Image src={building_non} width={30} height={30} />}
               <Text>
                 ทาวน์เฮ้าส์
               </Text>
