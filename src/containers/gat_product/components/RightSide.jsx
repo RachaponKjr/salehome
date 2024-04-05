@@ -20,7 +20,7 @@ const RightSide = () => {
                 </Flex>
                 {/* ช่องทางการติดต่อ */}
                 <Flex flexDirection={'column'} justifyContent={'center'} alignItems={'start'} gap={2} my={4}>
-                    <Box mx={"auto"}><Text variant={'h5'} fontSize={'18px'}>ช่องทางติดต่อ</Text></Box>
+                    <Box mx={{base:"0",lg:"auto"}}><Text variant={'h5'} fontSize={'18px'}>ช่องทางติดต่อ</Text></Box>
                     {/* Phone // facebook // Messenger */}
                     <Flex gap={2} flexDirection={'column'} >
                         {/* phone contact */}

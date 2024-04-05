@@ -14,6 +14,7 @@ import FlagSelect from './FlagSelect'
 // icons Navbar
 import home from "@/icons/nav_icons/home.png"
 import edit from "@/icons/nav_icons/edit.png"
+import headphone from "@/icons/nav_icons/headphone.png"
 
 const ButtonTop = dynamic(() => import('./BtnTop'), { ssr: false })
 const ButtonContact = dynamic(() => import('./BtnContact'), { ssr: false })
@@ -34,7 +35,7 @@ const Navbar = () => {
         },
         {
             tital: "ติดต่อเรา",
-            icon: edit,
+            icon: headphone,
             link: "/contact"
         },
         // {
@@ -56,19 +57,19 @@ const Navbar = () => {
                                 </Link>
                             </Flex>
                             {/* ส่วนเมนูทางด้าน ขวา ของ ขนาด 1024px ขึ้นไป */}
-                            <Flex flexDirection={"row-reverse"} w={{ md: "100%", xl: "70%" }} alignItems={'end'} gap={"24px"}>
+                            <Flex flexDirection={"row-reverse"} w={{ md: "100%", xl: "70%" }} alignItems={'center'} gap={"24px"}>
                                 {/* ส่วนบนของเมนู */}
                                 <Flex gap={2} alignItems={'center'} h={"100%"} zIndex={10}>
                                     {/* Select เลือกเปลี่ยนภาษา */}
                                     <FlagSelect />
                                 </Flex>
                                 {/* ส่วนล่างของเมนู */}
-                                <Flex display={{ base: "none", md: "flex" }} gap={8}>
+                                <Flex display={{ base: "none", md: "flex" }} gap={{md:4,xl:8}}>
                                     {manu.map((item, index) => (
                                         <Flex role='group' key={index} minW={'120px'} zIndex={0} overflow={"hidden"} alignItems={"center"} color={'white'} cursor={"pointer"} gap={"8px"} fontSize={{ md: "12px", xl: "14px" }} position={"relative"} className={`${pathName === item.link ? "nav_active" : "nav_hover"}`}>
-                                            <Link href={item.link} style={{margin:'8px 0px' ,width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}>
-                                                <Image src={item.icon} alt="icon" width={20} height={20} />
-                                                <Text>{item.tital}</Text>
+                                            <Link href={item.link} style={{margin:'8px 0px' ,width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '16px' }}>
+                                                <Image src={item.icon} alt="icon" width={25} height={25} />
+                                                <Text fontSize={"18px"}>{item.tital}</Text>
                                             </Link>
                                         </Flex>
                                     ))}
