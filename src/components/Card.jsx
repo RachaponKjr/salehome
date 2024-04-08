@@ -64,7 +64,7 @@ const Card = ({ data }) => {
                 </Flex>
               </Flex>
               <Box px={2} my={{base:1.5,md:4}}>
-                <Box w={"100%"} h={'1px'} bg={"#FF8E0D"} opacity={0.4}></Box>
+                <Box w={"100%"} h={'0.8px'} bg={"#FF8E0D"} opacity={0.4}></Box>
               </Box>
               <Flex mb={{ base: 0, md: 2 }} alignItems={"center"} justifyContent={{ base: "end", md: "space-between" }}>
                 <Box className='btn-animetion' role='group' _hover={{ ringColor: "#02685C" }} overflow={"hidden"} transitionDuration={"1s"} h={"max-content"} w={'max-content'} maxW={'100%'} ring={"2px"} ringColor={"#F74354"} px={6} py={1} display={{ base: 'none', md: 'flex' }} alignItems={"center"} rounded={"10px"}>

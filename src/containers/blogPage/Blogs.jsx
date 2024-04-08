@@ -6,17 +6,47 @@ function Blogs() {
     return (
         <>
             <Container maxWidth={"container.xl"}>
-                <Flex flexDirection={"column"} gap={4} boxShadow={"lg"} p={4}>
+                <Flex flexDirection={"column"} gap={4} boxShadow={"lg"} my={4} p={4}>
                     {/* รูปภาพ ที่จะเเสดง */}
-                    <Box w={"100%"} aspectRatio={4 / 1} bg={'gray.100'} position={'relative'}>
+                    <Box w={"100%"} aspectRatio={{ base: 16 / 9, md: 3 / 1}} bg={'gray.100'} position={'relative'}>
 
                     </Box>
                     <Box>
                         {/* หัวข้อ */}
-                        <Text variant={"h1"} fontSize={"20px"}>หัวข้อ</Text>
+                        <Text variant={"h1"} fontSize={"20px"} color={"#676767"}>เส้นทางสุขภาพหนี้ที่ดี 7 วิธีปลดหนี้อย่างมีสุข</Text>
                         {/* เนื้อหา */}
                         <Box w={"100%"} h={'max-content'} mt={4}>
-                            <Text variant={"h6"}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias officia numquam, cumque necessitatibus molestiae quidem dignissimos iure ab voluptates cum est et neque dolore dolores aliquid iusto repellat amet pariatur earum, quam accusamus similique veritatis. Est quas eum aspernatur minus ex cumque pariatur odio, iure dolores molestias molestiae debitis ducimus magni qui? Nulla veniam ad quos corrupti, molestiae temporibus dicta aliquid ducimus accusantium quam suscipit voluptas accusamus dignissimos facere, nemo aspernatur rerum corporis perferendis eaque officiis! Eius veniam autem cum dignissimos nobis praesentium, dolorem adipisci minus iste aliquid. Porro soluta in dignissimos, maxime aut aperiam, rem temporibus a inventore vitae autem ad eveniet ex sapiente similique quas totam? Laborum deleniti eos repellat numquam amet nemo ducimus eligendi est, reiciendis aliquam cum voluptatibus, nesciunt modi placeat sed at! In ipsum eaque suscipit maiores accusantium voluptatibus optio nobis ipsam animi sed vero non, eveniet dicta, repudiandae voluptates ducimus nemo a ullam id architecto. Repudiandae minus distinctio consequuntur maiores perspiciatis, fugit, sapiente omnis facilis sequi provident neque mollitia quos atque placeat pariatur ducimus aut. Eius pariatur ullam debitis dolore sunt accusantium rerum dicta sint. Harum magnam, deleniti maxime excepturi fuga quia tenetur aliquam molestias sunt! Necessitatibus laborum animi, voluptatem totam delectus cupiditate iste!</Text>
+                            <Text variant={"h2"} lineHeight={"28px"} textAlign={"justify"} color={"#676767"} fontSize={{ base: "14px", md: "16px" }}>
+                                1. ตรวจสอบสภาพการเงินและกําหนดเป้าหมายที่เหมาะสม
+                                ก่อนที่จะตัดสินใจว่าจะทําอะไรกับหนี้ ควรทําาการตรวจสอบ สภาพการเงินของคุณให้ดี
+                                กําหนดเป้าหมายการปลดหนี้ที่เหมาะสมและทันสมัยที่สุด ซึ่ง
+                                สามารถทําได้โดยการทํางบประมาณการรายรับรายจ่ายและ
+                                การตรวจสอบหนี้ทั้งหมด <br />
+                                2. สร้างแผนการชําระหนี้ที่ยืดหยุ่น
+                                แผนการชําระหนี้ที่ยืดหยุ่นสามารถช่วยให้คุณมีความสามารถ
+                                ในการจัดการการเงินของคุณได้ดีขึ้น
+                                การทําแผนเหล่านี้จะช่วยให้คุณมีมุมมองที่ชัดเจนเกี่ยวกับวิธี
+                                การลดหนี้อย่างมีระบบ<br />
+                                3. ตรวจสอบและปรับทรัพย์สิน
+                                ทรัพย์สินที่คุณมีอาจจะเป็นเครื่องมือที่สามารถ
+                                ใช้ในการลดหนี้ การตรวจสอบและปรับทรัพย์สินเพื่อให้เหมาะ
+                                สมกับแผนการปลดหนี้ของคุณ<br />
+                                4. พิจารณาหารายได้เสริม
+                                การหาทางที่จะเพิ่มรายได้เสริมสามารถช่วยให้คุณมีเงินมาช่วย ในการชําระหนี้ นอกจากงานที่ทําประจํา คุณสามารถพิจารณา ทางเลือกอื่น ๆ เช่น งานพาร์ทไทม์หรือธุรกิจของตัวเอง<br />
+                                5. ควบคุมการใช้จ่าย
+                                การควบคุมการใช้จ่ายเป็นสิ่งสําคัญในการปลดหนี้ การทํารายการรายจ่ายอย่างรอบคอบและการลดค่าใช้จ่ายที่ไม่ จําเป็นจะช่วยให้คุณมีเงินเก็บสะสมไว้ในการชําระหนี้<br />
+                                6. สร้างฟันเฟืองการเงิน
+                                การสร้างฟันเฟืองการเงินเป็นการป้องกันอันดับในการเสี่ยง
+                                ทางการเงิน การเตรียมตัวกับการสร้างฟันเฟืองจะช่วยให้คุณ
+                                สามารถรับมือกับภาวะฉุกเฉินทางการเงิน<br />
+                                7. รวบรวมกําลังใจและสนับสนุน
+                                การมีกําลังใจและสนับสนุนจากครอบครัวและเพื่อนๆ มีความ
+                                สําคัญมากในการผ่านวิกฤตการเงิน
+                                พูดคุยกับคนที่คุณไว้วางใจเพื่อหาคําปรึกษาและสนับสนุนที่
+                                จําเป็น<br />
+                                ในปี 2024 นี้ ไม่ว่าคุณจะเริ่มต้นการปลดหนี้หรือกําลังต่อสู้กับ มัน การจัดการหนี้อย่างมีสุขสามารถทําให้คุณเดินทางไปสู่
+                                สุขภาพการเงินที่ดีและความปลอดภัยทางการเงิน
+                            </Text>
                         </Box>
                     </Box>
                 </Flex>
