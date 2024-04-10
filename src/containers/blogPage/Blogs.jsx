@@ -10,8 +10,8 @@ function Blogs() {
             <Container maxWidth={"container.xl"}>
                 <Flex flexDirection={"column"} gap={4} boxShadow={'rgba(0, 0, 0, 0.35) 0px 5px 15px'} rounded={"10px"} my={4} p={6}>
                     {/* รูปภาพ ที่จะเเสดง */}
-                    <Box w={"100%"} aspectRatio={{ base: 16 / 9, md: 3 / 1}} position={'relative'}>
-                        <Image src={img1} alt="image" priority fill objectFit='contain' />
+                    <Box w={"100%"} aspectRatio={{ base: 16 / 9, md: 2.4/ 1}} position={'relative'} >
+                        <Image src={img1} alt="image" fill objectFit='cover' objectPosition='top' />
                     </Box>
                     <Box>
                         {/* หัวข้อ */}
