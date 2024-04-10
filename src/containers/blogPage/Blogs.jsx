@@ -1,5 +1,6 @@
 import { Box, Container, Flex, Text } from '@chakra-ui/react'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 import img1 from '@/imgs/img1.png'
@@ -7,11 +8,26 @@ import img1 from '@/imgs/img1.png'
 function Blogs() {
     return (
         <>
+        <Box w={"100%"} h={'max-content'} py={"8px"} boxShadow={"lg"} >
+        <Container maxW={"container.xl"} h={"100%"}>
+          <Flex w={"100%"} gap={2} alignItems={"center"} h={"100%"}>
+            <Link href={"/"}>
+              หน้าเเรก
+            </Link>
+            <p>/</p>
+            <Link href={"/blogs"} color='red'>
+              <Text color={'#02685C'}>
+                บทความเเนะนำ
+              </Text>
+            </Link>
+          </Flex>
+        </Container>
+      </Box>
             <Container maxWidth={"container.xl"}>
                 <Flex flexDirection={"column"} gap={4} boxShadow={'rgba(0, 0, 0, 0.35) 0px 5px 15px'} rounded={"10px"} my={4} p={6}>
                     {/* รูปภาพ ที่จะเเสดง */}
-                    <Box w={"100%"} aspectRatio={{ base: 16 / 9, md: 2.4/ 1}} position={'relative'} >
-                        <Image src={img1} alt="image" fill objectFit='cover' objectPosition='top' />
+                    <Box w={"100%"} aspectRatio={{ base: 16 / 9, md: 7.5/ 3}} position={'relative'}>
+                        <Image src={img1} alt="image" fill objectFit='contain' style={{padding:'5px'}} />
                     </Box>
                     <Box>
                         {/* หัวข้อ */}

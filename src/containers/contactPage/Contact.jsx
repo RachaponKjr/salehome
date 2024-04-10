@@ -5,9 +5,10 @@ import Image from 'next/image'
 
 // icons import
 import service from '@/imgs/service.png'
-import whatsapp from '@/icons/contact_icons/whatsapp.png'
-import line from '@/icons/contact_icons/line.png'
 import qrcode from '@/imgs/qrcode.jpg'
+
+import { FaUser,FaPhoneAlt } from "react-icons/fa";
+import { FaLine } from "react-icons/fa6";
 function Contact() {
   return (
     <>
@@ -30,32 +31,26 @@ function Contact() {
         <Flex h={"100%"} flexDirection={"column"} gap={4}>
           <Text variant={"h2"} fontSize={"24px"}>ติดต่อเรา</Text>
           <Flex w={"50rem"} flexDirection={'column'} maxW={"100%"} boxShadow={'rgba(0, 0, 0, 0.35) 0px 5px 15px'} rounded={"10px"} px={{ base: 6, md: 10 }} py={4} h={"100%"} mx={"auto"}>
-            <Flex flexDirection={{base:"column",md:"row"}} w={"100%"} justifyContent={'space-evenly'}>
+            <Flex flexDirection={{base:"column",md:"row"}} w={"100%"} alignItems={'center'} justifyContent={'space-evenly'}>
             <Flex alignItems={'center'} justifyContent={'center'} rounded={'full'} position={'relative'} maxW={"100%"} w={{ base: '100%', md: '20rem' }} h={'15rem'}>
               <Image src={service} alt='service' width={200} height={200} />
             </Flex>
-            <Box w={{base:"100%",md:"max-content"}} h={"100%"} maxW={"100%"} p={2}>
-              <Flex color={'#676767'} fontSize={"18px"} flexDirection={'column'} alignItems={{ base: 'center', md: 'start' }} justifyContent={{ base: 'center', md: 'start' }} w={{base:"100%",md:"max-content"}} maxW={"100%"} gap={4}>
-                <Flex gap={2}>
+            <Box w={"max-content"} h={"100%"} maxW={"100%"} p={2}>
+              <Flex color={'#676767'} fontSize={"18px"} flexDirection={'column'} alignItems={{ base: 'start', md: 'start' }} justifyContent={{ base: 'center', md: 'start' }} w={{base:"100%",md:"max-content"}} maxW={"100%"} gap={4}>
+                <Flex gap={4}>
                   {/* Image */}
-                  <Box position={"relative"} maxW={"100%"} w={"max-content"} h={"100%"}>
-                    <Image src={line} width={30} height={30} />
-                  </Box>
-                  <Text variant={'h4'}>ชื่อ : คุณวรรณรัตน์ เกยานนท์</Text>
+                  <FaUser size={25} color='#02685C'/>
+                  <Text variant={'h4'}> คุณวรรณรัตน์ เกยานนท์</Text>
                 </Flex>
-                <Flex gap={2}>
+                <Flex gap={4}>
                   {/* Image */}
-                  <Box position={"relative"} maxW={"100%"} w={"max-content"} h={"100%"}>
-                    <Image src={whatsapp} width={30} height={30} />
-                  </Box>
-                  <Text variant={'h4'}>เบอร์โทร : xxxxxxxx</Text>
+                  <FaPhoneAlt size={25} color='#02685C'/>
+                  <Text variant={'h4'}>081-642-7488</Text>
                 </Flex>
-                <Flex gap={2}>
+                <Flex gap={4}>
                   {/* Image */}
-                  <Box position={"relative"} maxW={"100%"} w={"max-content"} h={"100%"}>
-                    <Image src={line} width={30} height={30} />
-                  </Box>
-                  <Text variant={'h4'}>Line : xxxxxxxx</Text>
+                  <FaLine size={25} color='#02685C'/>
+                  <Text variant={'h4'}>@cfam</Text>
                 </Flex>
                 <Flex maxW={"100%"} gap={2}>
                   <Text>เวลาทำการ</Text>

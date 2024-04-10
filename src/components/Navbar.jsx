@@ -53,7 +53,7 @@ const Navbar = () => {
                             {/* ส่วนของ Logo */}
                             <Flex maxW={"100%"} w={{ base: "160px", sm: "240px", md: "30%" }} position={{ base: "relative", md: "absolute", xl: "relative" }} alignItems={"center"}>
                                 <Link href={"/"}>
-                                    <Image src={icon} alt="logo" width={'auto'} height={50} />
+                                    <Image src={icon} alt="logo" width={'auto'} height={35} />
                                 </Link>
                             </Flex>
                             {/* ส่วนเมนูทางด้าน ขวา ของ ขนาด 1024px ขึ้นไป */}
