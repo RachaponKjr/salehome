@@ -5,7 +5,7 @@ import React from 'react'
 
 import icon from '@/imgs/logo.png'
 
-import Link from 'next/link';
+import {Link} from '../navigation';
 
 import { usePathname } from 'next/navigation'
 import dynamic from 'next/dynamic'
@@ -16,25 +16,26 @@ import home from "@/icons/nav_icons/home.png"
 import edit from "@/icons/nav_icons/edit.png"
 import headphone from "@/icons/nav_icons/headphone.png"
 
+
 const ButtonTop = dynamic(() => import('./BtnTop'), { ssr: false })
 const ButtonContact = dynamic(() => import('./BtnContact'), { ssr: false })
 const MobileMenu = dynamic(() => import('./MobileMenu'), { ssr: false })
-const Navbar = () => {
+const Navbar = ({homeManu, blogsManu, contactManu}) => {
     const pathName = usePathname()
 
     const manu = [
         {
-            tital: "หน้าเเรก",
+            tital: homeManu,
             icon: home,
             link: "/"
         },
         {
-            tital: "บทความเเนะนำ",
+            tital: blogsManu,
             icon: edit,
             link: "/blogs"
         },
         {
-            tital: "ติดต่อเรา",
+            tital: contactManu,
             icon: headphone,
             link: "/contact"
         },
@@ -67,7 +68,7 @@ const Navbar = () => {
                                 <Flex display={{ base: "none", md: "flex" }} gap={{md:4,xl:8}}>
                                     {manu.map((item, index) => (
                                         <Flex role='group' key={index} minW={'120px'} zIndex={0} overflow={"hidden"} alignItems={"center"} color={'white'} cursor={"pointer"} gap={"8px"} fontSize={{ md: "12px", xl: "14px" }} position={"relative"} className={`${pathName === item.link ? "nav_active" : "nav_hover"}`}>
-                                            <Link href={item.link} style={{margin:'8px 0px' ,width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '16px' }}>
+                                            <Link href={`/${item.link}`} style={{margin:'8px 0px' ,width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '16px' }}>
                                                 <Image src={item.icon} alt="icon" width={25} height={25} />
                                                 <Text fontSize={"18px"}>{item.tital}</Text>
                                             </Link>

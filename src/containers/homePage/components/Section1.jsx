@@ -5,23 +5,12 @@ import React, { useEffect, useState } from 'react'
 
 import { FaSearch } from "react-icons/fa";
 
-import { FaVectorSquare,FaHome, FaThLarge, FaRegBuilding } from "react-icons/fa";
+import { FaHome, FaThLarge } from "react-icons/fa";
 
 import { BsBuildings,BsBoundingBoxCircles } from "react-icons/bs";
-import { LuHome } from "react-icons/lu";
 
-import Image from 'next/image';
 
-import area_non from "@/icons/tab_icons/area_non.png"
-import area_at from "@/icons/tab_icons/area_at.png"
-
-import building_non from "@/icons/tab_icons/building_non.png"
-import building_at from "@/icons/tab_icons/building_at.png"
-
-import home_non from "@/icons/tab_icons/home_non.png"
-import home_at from "@/icons/tab_icons/home_at.png"
-
-function Section1({ datafetch }) {
+function Section1({ datafetch, allTags, areaTags, homeTags, buildingTags }) {
   const newData = Array.from(datafetch)
   const [tabs, setTabs] = useState(0)
   const [filter, setFilter] = useState("ทั้งหมด")
@@ -66,7 +55,7 @@ function Section1({ datafetch }) {
             <Flex h={'100%'} flexDirection={"row"} gap={'16px'} alignItems={"center"} width={"max-content"} whiteSpace={"nowrap"} px={{base:4,md:8}} py={2} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 0 && { color: "#333333",boxShadow:'rgba(0, 0, 0, 0.16) 0px 1px 4px;', _before: { content: "''", position: "absolute", width: "100%", height: "3.5px", bottom: "0", left: "0", bg: "#305553" } }} onClick={() => handleClicked({ tabs: 0, filter: 'ทั้งหมด' })}>
               <FaThLarge size={30} {...tabs === 0 && { color: '#305553' }} />
               <Text>
-                ทั้งหมด
+                {allTags}
               </Text>
             </Flex>
             <Divider orientation='vertical' borderLeftWidth={"1px"} />
@@ -74,7 +63,7 @@ function Section1({ datafetch }) {
               <BsBoundingBoxCircles size={30} {...tabs === 1 && { color: '#305553' }} />
               {/* {tabs === 1 ? <Image src={area_at} width={30} height={30} /> : <Image src={area_non} width={30} height={30} />} */}
               <Text>
-                ที่ดิน
+                {areaTags}
               </Text>
             </Flex>
             <Divider orientation='vertical' borderLeftWidth={"1px"} />
@@ -82,7 +71,7 @@ function Section1({ datafetch }) {
               <FaHome size={30} {...tabs === 2 && { color: '#305553' }} />
               {/* {tabs === 2 ? <Image src={home_at} width={30} height={30} /> : <Image src={home_non} width={30} height={30} />} */}
               <Text>
-                บ้าน
+                {homeTags}
               </Text>
             </Flex>
             <Divider orientation='vertical' borderLeftWidth={"1px"} />
@@ -90,7 +79,7 @@ function Section1({ datafetch }) {
               <BsBuildings size={30} {...tabs === 3 && { color: '#305553' }} />
               {/* {tabs === 3 ? <Image src={building_at} width={30} height={30} /> : <Image src={building_non} width={30} height={30} />} */}
               <Text>
-                ทาวน์เฮ้าส์
+                {buildingTags}
               </Text>
             </Flex>
           </Flex>

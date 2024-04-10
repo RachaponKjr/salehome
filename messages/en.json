@@ -1,0 +1,13 @@
+{
+    "NavbarManu": {
+        "HomeManu": "Home",
+        "BlogManu": "Blogs",
+        "ContactManu": "Contact"
+    },
+    "Tags": {
+        "All": "All",
+        "Area": "Area",
+        "Home": "Home",
+        "Building": "Building"
+    }
+  }

@@ -1,6 +1,6 @@
 import { Box, Divider, Flex, GridItem, Text } from '@chakra-ui/react'
 import Image from 'next/image'
-import Link from 'next/link'
+import {Link} from '../navigation';
 import React from 'react'
 
 import location from '@/icons/location.png'

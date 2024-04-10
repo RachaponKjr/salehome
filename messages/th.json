@@ -1,0 +1,13 @@
+{
+    "NavbarManu": {
+        "HomeManu": "หน้าแรก",
+        "BlogManu": "บทความเเนะนำ",
+        "ContactManu": "ติดต่อเรา"
+    },
+    "Tags": {
+        "All": "ทั้งหมด",
+        "Area": "ที่ดิน",
+        "Home": "บ้าน",
+        "Building": "ทาวน์เฮ้าส์"
+    }
+}
