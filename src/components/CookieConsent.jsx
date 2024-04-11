@@ -20,6 +20,7 @@ function CookieConsent() {
         }
     },[])
     return (
+        <>
         <Flex display={cookies ? "none" : "flex"} justifyContent={"center"} position={"fixed"} bottom={0} w={"100%"} zIndex={{ base: 1000, sm: 1000 }} py={{ base: 0, md: 2 }} className='cookie'>
             <Box bg={'white'} w={'800px'} h={'min-content'} py={4} px={8} rounded={{ base: "0", md: "10px" }} boxShadow={'xl'}>
                 {/* HeadText */}
@@ -37,6 +38,7 @@ function CookieConsent() {
                 </Flex>
             </Box>
         </Flex>
+        </>
     )
 }
 
