@@ -48,7 +48,8 @@ const Navbar = ({homeManu, blogsManu, contactManu}) => {
     return (
         <>
             <Box>
-                <Box bgGradient={"linear(#305553 0%, #162726 49%, #0A1111 100%)"} boxShadow={'md'} py={2}>
+            {/* bgGradient={"linear(#305553 0%, #162726 49%, #0A1111 100%)"} */}
+                <Box bgColor={"#2F5553"} boxShadow={'md'} py={2}>
                     <Container maxW={"container.xl"}>
                         <Flex py={"8px"} position={"relative"} w={"100%"} flexDirection={{ base: "row" }} justifyContent={"space-between"} alignItems={"center"}>
                             {/* ส่วนของ Logo */}
@@ -70,7 +71,7 @@ const Navbar = ({homeManu, blogsManu, contactManu}) => {
                                         <Flex role='group' key={index} minW={'120px'} zIndex={0} overflow={"hidden"} alignItems={"center"} color={'white'} cursor={"pointer"} gap={"8px"} fontSize={{ md: "12px", xl: "14px" }} position={"relative"} className={`${pathName === item.link ? "nav_active" : "nav_hover"}`}>
                                             <Link href={`/${item.link}`} style={{margin:'8px 0px' ,width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '16px' }}>
                                                 <Image src={item.icon} alt="icon" width={25} height={25} />
-                                                <Text fontSize={"18px"}>{item.tital}</Text>
+                                                <Text fontSize={"16px"}>{item.tital}</Text>
                                             </Link>
                                         </Flex>
                                     ))}

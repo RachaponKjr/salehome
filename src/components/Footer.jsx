@@ -8,7 +8,7 @@ const Footer = () => {
         <Box bg={"#305553"} mb={{base:"64px",md:"0px"}}>
             <Container maxW={'container.xl'}>
                 <Flex h={"min-content"} flexDirection={{base:"column",md:"row"}} justifyContent={"center"} py={"16px"}>
-                <Text variant={"h6"} textAlign={"center"} color={'white'}>Copyright © 2024 Lorem ipsum dolor sit. All rights reserved.</Text>
+                <Text variant={"h6"} textAlign={"center"} color={'white'}>Copyright © 2024 บริษัท เชฎฐ์ เอเชีย จำกัด (มหาชน)</Text>
                 </Flex>
             </Container>
         </Box>

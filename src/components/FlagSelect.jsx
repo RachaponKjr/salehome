@@ -1,11 +1,9 @@
 'use client'
-import { Box, Flex, Text } from '@chakra-ui/react'
-import React, { useState } from 'react'
-import { FaAngleDown } from "react-icons/fa";
+import { Box } from '@chakra-ui/react'
+import React from 'react'
 import { Link } from '../navigation';
 import { useLocale } from 'next-intl';
 const FlagSelect = () => {
-    const [opentFlag, setOpentFlag] = useState(false)
     const locale = useLocale()
 
     // debug
@@ -13,19 +11,13 @@ const FlagSelect = () => {
 
     return (
         <>
-            <Box position={'relative'} boxShadow={"rgba(0, 0, 0, 0.16) 0px 1px 4px;"} bg={"white"} px={"8px"} py={"4px"} color={"#676767"}>
-                <ul onClick={() => setOpentFlag(!opentFlag)} >
-                    <li style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: "8px" }}>{locale.toUpperCase()}<FaAngleDown /></li>
-                </ul>
-                {/* Menu */}
-                {opentFlag && (
-                    <Flex position={'absolute'} border={"1px solid gray"} borderRadius={'5px'} cursor={"pointer"} gap={2} right={0} zIndex={10} w={"max-content"} h={"max-content"} bg={"white"} p={"8px"} mt={"8px"}>
-                        <Link href={"/"} locale={locale === "th" ? "en" : "th"}>
-                            <Text color={"#676767"} px={"8px"}>{locale === "th" ? "English" : "Thailand"}</Text>
-                        </Link>
-                    </Flex>
-                )}
+            <Box role='group' position={'relative'} px={"8px"} py={"4px"} color={"white"}>
+                <Link href={"/"} locale={locale === "th" ? "en" : "th"} style={{ cursor: "pointer" }}>
+                    {locale.toUpperCase()}
+                </Link>
+                <Box position={'absolute'} bottom={0} left={0} bg={'red'} _groupHover={{width:'100%'}} transitionDuration={'0.3s'} w={'0%'} h={'2px'} >
 
+                </Box>
             </Box>
         </>
     )

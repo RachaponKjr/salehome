@@ -1,14 +1,19 @@
 'use client'
 import Card from '@/components/Card';
+import Image from 'next/image'
 import { Box, Divider, Flex, Grid, GridItem, Input, InputGroup, InputRightElement, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 
+import headicon from '@/imgs/headicon.png'
+
 import { FaSearch } from "react-icons/fa";
 
-import { FaHome, FaThLarge } from "react-icons/fa";
+import { FaThLarge } from "react-icons/fa";
 
-import { BsBuildings, BsBoundingBoxCircles } from "react-icons/bs";
+import { BsBoundingBoxCircles } from "react-icons/bs";
 
+import { GoHome } from "react-icons/go";
+import { HiOutlineHomeModern } from "react-icons/hi2";
 
 function Section1({ datafetch, allTags, areaTags, homeTags, buildingTags }) {
   const newData = Array.from(datafetch)
@@ -22,7 +27,8 @@ function Section1({ datafetch, allTags, areaTags, homeTags, buildingTags }) {
     if (query !== '') {
       const resSearch = newData.filter((item) => item.name_home.includes(query))
       const citySearch = newData.filter((item) => item.province.includes(query))
-      const combined = [...resSearch, ...citySearch]
+      const numberProduct = newData.filter((item) => item.number_home.includes(query))
+      const combined = [...resSearch, ...citySearch,...numberProduct]
       const res = Array.from(new Set(combined))
       return setResQuery(res)
     } else if (filter === "ทั้งหมด") {
@@ -49,8 +55,15 @@ function Section1({ datafetch, allTags, areaTags, homeTags, buildingTags }) {
 
   return (
     <>
-      <Box variant={"h1"} fontSize={"24px"} my={"16px"}>รวมประกาศขาย</Box>
-      <Box h="min-content" mb={"16px"} w={"100%"} boxShadow={'rgba(0, 0, 0, 0.35) 0px 5px 15px'} rounded={"10px"} p={{ base: 2, md: 4 }} >
+      <Flex variant={"h1"} fontSize={"24px"} my={"16px"}>
+        <Box position={"relative"} top={"-5px"}>
+          <Image src={headicon} alt="logo" width={32} height={32} />
+        </Box>
+        <Text variant={'h4'} position={"relative"} right={"10px"}>
+          รวมประกาศขาย
+        </Text>
+      </Flex>
+      <Box h="min-content" mb={"24px"} w={"100%"} boxShadow={'rgba(0, 0, 0, 0.35) 0px 5px 15px'} rounded={"10px"} p={{ base: 2, md: 4 }} >
         {/* ส่วนหัว มี Input กับ Dropdown */}
         <Flex flexDirection={{ base: "column-reverse", md: "row" }} gap={{ md: "16px", xl: "8px" }} alignItems={"center"} justifyContent={"space-between"}>
           {/* Tabs ต่างๆ */}
@@ -70,8 +83,8 @@ function Section1({ datafetch, allTags, areaTags, homeTags, buildingTags }) {
               </Text>
             </Flex>
             <Divider orientation='vertical' borderLeftWidth={"1px"} />
-            <Flex h={'100%'} flexDirection={"row"} gap={'16px'} alignItems={"center"} width={"max-content"} whiteSpace={"nowrap"} px={{ base: 4, md: 8 }} py={2} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 2 && { color: "#333333", boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px;', _before: { content: "''", position: "absolute", width: "100%", height: "3.5px", bottom: "0", left: "0", bg: "#305553" } }} onClick={() => handleClicked({ tabs: 2, filter: 'บ้านเดี่ยว 2 ชั้น' })}>
-              <FaHome size={30} {...tabs === 2 && { color: '#305553' }} />
+            <Flex h={'100%'} flexDirection={"row"} gap={'16px'} alignItems={"center"} width={"max-content"} whiteSpace={"nowrap"} px={{ base: 4, md: 8 }} py={2} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 2 && { color: "#333333", boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px;', _before: { content: "''", position: "absolute", width: "100%", height: "3.5px", bottom: "0", left: "0", bg: "#305553" } }} onClick={() => handleClicked({ tabs: 2, filter: 'บ้าน' })}>
+              <GoHome size={30} {...tabs === 2 && { color: '#305553' }} />
               {/* {tabs === 2 ? <Image src={home_at} width={30} height={30} /> : <Image src={home_non} width={30} height={30} />} */}
               <Text>
                 {homeTags}
@@ -79,7 +92,7 @@ function Section1({ datafetch, allTags, areaTags, homeTags, buildingTags }) {
             </Flex>
             <Divider orientation='vertical' borderLeftWidth={"1px"} />
             <Flex h={'100%'} flexDirection={"row"} gap={'16px'} alignItems={"center"} width={"max-content"} whiteSpace={"nowrap"} px={{ base: 4, md: 8 }} py={2} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 3 && { color: "#333333", boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px;', _before: { content: "''", position: "absolute", width: "100%", height: "3.5px", bottom: "0", left: "0", bg: "#305553" } }} onClick={() => handleClicked({ tabs: 3, filter: 'ทาวน์เฮ้าส์' })}>
-              <BsBuildings size={30} {...tabs === 3 && { color: '#305553' }} />
+              <HiOutlineHomeModern size={30} {...tabs === 3 && { color: '#305553' }} />
               {/* {tabs === 3 ? <Image src={building_at} width={30} height={30} /> : <Image src={building_non} width={30} height={30} />} */}
               <Text>
                 {buildingTags}
@@ -87,7 +100,7 @@ function Section1({ datafetch, allTags, areaTags, homeTags, buildingTags }) {
             </Flex>
           </Flex>
           <InputGroup w={{ base: "100%", md: "320px" }} size={"md"} m={{ base: 'auto', md: '0' }} mb={{ base: "8px", md: "0px" }} >
-            <Input rounded={" 10px"} focusBorderColor='#305553' placeholder='Search' type='text' value={query} onChange={(e) => setQuery(e.target.value)} />
+            <Input rounded={" 10px"} focusBorderColor='#305553' placeholder='ค้นหารายการ' type='text' value={query} onChange={(e) => setQuery(e.target.value)} />
             <InputRightElement rounded={"0 10px 10px 0"} cursor={"pointer"} bg={'#305553'} color={'white'}><FaSearch /></InputRightElement>
           </InputGroup>
         </Flex>
