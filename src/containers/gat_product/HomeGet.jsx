@@ -15,8 +15,8 @@ import { chacklenghts } from '@/utils/chacklenghts';
 
 // lib import Gallery
 import { mapImages } from '@/utils/mapImages';
+import Carousel from '@/components/Carousel';
 
-export const Carousel = dynamic(() => import('@/components/Carousel'), { ssr: false })
 export const LeftSide = dynamic(() => import('./components/LeftSide'), { ssr: false })
 export const RightSide = dynamic(() => import('./components/RightSide'), { ssr: false })
 
