@@ -1,7 +1,6 @@
-import { Box, Flex, Grid, GridItem, Text } from '@chakra-ui/react'
+import { Flex, Grid, GridItem, Text } from '@chakra-ui/react'
 import React from 'react'
 
-import { FaHeadset, FaEdit } from "react-icons/fa";
 
 // icons Navbar
 import home from "@/icons/nav_icons/home.png"
@@ -10,8 +9,8 @@ import headphone from "@/icons/nav_icons/headphone.png"
 
 
 import Image from 'next/image';
+import { Link } from '@/navigation'
 
-import Link from 'next/link';
 const MobileMenu = () => {
     return (
         <>
