@@ -21,7 +21,7 @@ async function HomePage(){
 }
 
 export async function getData() {
-  const res = await fetch('http://18.140.121.108:5500/getsalehome', { method: 'GET',next: { revalidate: 0 }})
+  const res = await fetch('http://18.140.121.108:5500/getsalehome', { method: 'GET',cache: 'no-store'})
   if (!res.ok) {
     throw new Error('Failed to fetch data')
   }

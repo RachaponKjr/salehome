@@ -1,14 +1,10 @@
 'use client'
-import React, { useCallback, useEffect, useState } from 'react'
-import { useParams } from 'next/navigation';
+import React, { useCallback, useState } from 'react'
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
 // chakra import
 import { Box, Container, Divider, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
-
-// components import
-import Loading from '@/components/Loading';
 
 // function import
 import { chacklenghts } from '@/utils/chacklenghts';
@@ -22,7 +18,7 @@ export const RightSide = dynamic(() => import('./components/RightSide'), { ssr: 
 
 function HomeGet({ datafetch }) {
     // ดึง data
-    const res = datafetch.data
+    const res = datafetch?.data
     const [selectImg, setSelectImg] = useState(null)
     //เรียกใช้ function
     const chacklenght = useCallback(chacklenghts(res), [res])

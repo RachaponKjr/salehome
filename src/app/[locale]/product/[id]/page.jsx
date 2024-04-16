@@ -1,4 +1,5 @@
-import HomeGet from "@/containers/gat_product/HomeGet";
+
+import Loading from "@/components/Loading";
 import dynamic from "next/dynamic";
 
 
@@ -15,7 +16,7 @@ const DynamicGetProductPage = dynamic(() => import("@/containers/gat_product/Hom
 export async function getData({id}) {
   const res = await fetch(`http://18.140.121.108:5500/getsalehome/${id}`, {
     method: 'GET',
-    next: { revalidate: 0 }
+    cache: 'no-store'
 })
   if (!res.ok) {
     throw new Error('Failed to fetch data')
