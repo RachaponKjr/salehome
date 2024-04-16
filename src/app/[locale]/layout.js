@@ -28,7 +28,6 @@ export default function RootLayout({ children , params: {locale}}) {
 
   return (
     <html lang={locale}>
-      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       <meta name="keywords" content="บริษัท บริหารสินทรัพย์ ขายบ้าน,แล้วก็มีอีกอัน เป็น CFAM ขายบ้าน"/>
       <body className={inter.className}>
         {/* เรียกใช้ Provider Chakra เพื่อให้ สามารถใช้ Chakra ได้ */}
