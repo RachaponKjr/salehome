@@ -2,8 +2,6 @@ import { Prompt } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/Navbar";
-// import Footer from "@/components/Footer";
-// import CookieConsent from "@/components/CookieConsent";
 import dynamic from "next/dynamic";
 import Providers from "@/chakaUi_Provider/Providers";
 
