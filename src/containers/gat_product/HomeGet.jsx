@@ -82,9 +82,11 @@ function HomeGet({ datafetch }) {
                     </Flex>
                 </Box>
             </Container>
+            <Box>
             {
-                                selectImg === null ? null : <Carousel images={images} selectImg={selectImg} setSelectImg={setSelectImg} />
+                selectImg === null ? null : <Carousel images={images} selectImg={selectImg} setSelectImg={setSelectImg} />
             }
+            </Box>
         </>
     )
 }

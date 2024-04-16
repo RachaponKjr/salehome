@@ -89,7 +89,7 @@ const Navbar = ({homeManu, blogsManu, contactManu}) => {
                 </Box>
             </Box>
             {/* เมนู ของส่วนมือถือ อยู่ทางด้านล่าง */}
-            <MobileMenu />
+            <MobileMenu homeManu={homeManu} blogsManu={blogsManu} contactManu={contactManu} />
         </>
     )
 }
