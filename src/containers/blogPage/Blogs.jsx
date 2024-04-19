@@ -23,11 +23,11 @@ function Blogs() {
         </Container>
       </Box>
             <Container maxWidth={"container.xl"}>
-                <Flex flexDirection={"column"} gap={4} boxShadow={'rgba(0, 0, 0, 0.35) 0px 5px 15px'} rounded={"10px"} my={4} p={6}>
+                <Flex flexDirection={"column"} gap={4} boxShadow={'rgba(0, 0, 0, 0.35) 0px 5px 15px'} rounded={"10px"} my={4} p={{base:3,md:6}}>
                     {/* รูปภาพ ที่จะเเสดง */}
                     <Box w={"100%"} aspectRatio={{ base: 16 / 9, md: 7.5/ 3}} position={'relative'}>
-                        {/* <Image src={img2} alt="image" fill objectFit='cover' style={{padding:'5px'}} /> */}
-                        <Box bgImage={"url('/img2.jpg')"} bgSize={"contain"} bgPosition={'center'} bgRepeat={'no-repeat'} w={"100%"} h={'100%'}></Box>
+                        <Image src={"/img2.jpg"} alt="image" fill objectFit='cover' style={{padding:'5px'}} />
+                        {/* <Box bgImage={"url('/img2.jpg')"} bgSize={"contain"} bgPosition={'center'} bgRepeat={'no-repeat'} w={"100%"} h={'100%'}></Box> */}
                     </Box>
                     <Box>
                         {/* หัวข้อ */}
