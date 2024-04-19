@@ -18,18 +18,18 @@ const RightSide = () => {
                 <Flex flexDirection={'column'} justifyContent={'center'} alignItems={'start'} gap={2} my={4}>
                     <Box mx={{base:"0",lg:"auto"}}><Text variant={'h5'} fontSize={'18px'}>ช่องทางติดต่อ</Text></Box>
                     {/* Phone // facebook // Messenger */}
-                    <Flex gap={2} flexDirection={'column'} >
+                    <Flex gap={4} flexDirection={'column'} fontSize={'18px'}>
                         {/* phone contact */}
                         <Box display={'flex'} gap={4} alignItems={'center'}>
-                            <Box w={"48px"} aspectRatio={1} boxShadow={'lg'} display={'flex'} justifyContent={'center'} alignItems={'center'} rounded={'lg'} cursor={'pointer'} color={'#4A90E4'}>
+                            <Box w={"48px"} aspectRatio={1} boxShadow={'rgba(0, 0, 0, 0.16) 0px 1px 4px;'} display={'flex'} justifyContent={'center'} alignItems={'center'} rounded={'lg'} color={'#4A90E4'}>
                                 {/* <FaPhoneAlt size={25} /> */}
-                                <Image src={"/icons/contact_icons/whatsapp.png"} alt="phonenumber contact" width={35} height={35} />
+                                <Image src={"/icons/contact_icons/phone.png"} alt="phonenumber contact" width={35} height={35} />
                             </Box>
                             <Text>081-642-7488</Text>
                         </Box>
                         {/* line id */}
                         <Box display={'flex'} gap={4} alignItems={'center'}>
-                            <Box w={"48px"} aspectRatio={1} boxShadow={'lg'} display={'flex'} justifyContent={'center'} alignItems={'center'} rounded={'lg'} cursor={'pointer'} color={'#4A90E4'}>
+                            <Box w={"48px"} aspectRatio={1} boxShadow={'rgba(0, 0, 0, 0.16) 0px 1px 4px;'} display={'flex'} justifyContent={'center'} alignItems={'center'} rounded={'lg'} color={'#4A90E4'}>
                                 {/* <FaFacebookMessenger size={25} /> */}
                                 <Image src={"/icons/contact_icons/line.png"} alt="line contact" width={35} height={35}/>
                             </Box>

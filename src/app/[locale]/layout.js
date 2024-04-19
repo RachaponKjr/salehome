@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import Providers from "@/chakaUi_Provider/Providers";
 
 import {useTranslations} from 'next-intl';
+import Script from "next/script";
 
 
 const inter = Prompt({ subsets: ["latin", "thai"],weight:"500" });

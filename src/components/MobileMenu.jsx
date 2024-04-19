@@ -27,13 +27,13 @@ const MobileMenu = ({homeManu, blogsManu, contactManu}) => {
                     </GridItem>
                     <GridItem display={'flex'} flexDirection={"column"} alignItems={"center"} _active={{ bg: "gray.500" }} gap={0.5} pt={2} position={"relative"}>
                         <Link href="/blogs" style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-                        <Image src={"url('/icons/nav_icons/edit.png')"} alt='service' width={30} height={30} />
+                        <Image src={"/icons/nav_icons/edit.png"} alt='service' width={30} height={30} />
                             <Text fontSize={'10px'} mt={1.5}>{blogsManu}</Text>
                         </Link>
                     </GridItem>
                     <GridItem display={'flex'} flexDirection={"column"} alignItems={"center"} _active={{ bg: "gray.500" }} gap={0.5} pt={2} position={"relative"}>
                         <Link href="/contact" style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-                        <Image src={"url('/icons/nav_icons/headphone.png')"} alt='service' width={30} height={30} />
+                        <Image src={"/icons/nav_icons/headphone.png"} alt='service' width={30} height={30} />
                             <Text fontSize={'10px'} mt={1.5}>{contactManu}</Text>
                         </Link>
                     </GridItem>
