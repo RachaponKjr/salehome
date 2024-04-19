@@ -44,7 +44,7 @@ const Card = ({ data }) => {
               <Flex justifyContent={"space-between"} flexDirection={{ base: "column", md: "row" }} mt={"8px"} gap={{ base: "8px", md: "16px" }}>
                 <Flex gap={2} minW={{ base: "100%", md: "max-content" }}>
                   <Flex gap={"8px"} color={'#676767'} alignItems={"center"}>
-                    <Image src={"/icons/bathroom.png"} alt="bathroom" width={"25"} height={"25"} />
+                    <Image src={"/icons/badroom.png"} alt="badroom" width={"25"} height={"25"} />
                     <Text variant={"h6"} fontSize={{ base: "12px", md: "14px" }}>{data.bedroom != null ? `${data.bedroom}` : "-"}</Text>
                   </Flex>
                   <Divider orientation='vertical' />
