@@ -1,8 +1,5 @@
 import React from 'react'
 
-// icons import
-import whatsapp from '@/icons/contact_icons/whatsapp.png'
-import line from '@/icons/contact_icons/line.png'
 import { Avatar, Box, Flex, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 const RightSide = () => {
@@ -26,7 +23,7 @@ const RightSide = () => {
                         <Box display={'flex'} gap={4} alignItems={'center'}>
                             <Box w={"48px"} aspectRatio={1} boxShadow={'lg'} display={'flex'} justifyContent={'center'} alignItems={'center'} rounded={'lg'} cursor={'pointer'} color={'#4A90E4'}>
                                 {/* <FaPhoneAlt size={25} /> */}
-                                <Image src={whatsapp} alt="phonenumber contact" width={35} height={35} />
+                                <Image src={"/icons/contact_icons/whatsapp.png"} alt="phonenumber contact" width={35} height={35} />
                             </Box>
                             <Text>081-642-7488</Text>
                         </Box>
@@ -34,7 +31,7 @@ const RightSide = () => {
                         <Box display={'flex'} gap={4} alignItems={'center'}>
                             <Box w={"48px"} aspectRatio={1} boxShadow={'lg'} display={'flex'} justifyContent={'center'} alignItems={'center'} rounded={'lg'} cursor={'pointer'} color={'#4A90E4'}>
                                 {/* <FaFacebookMessenger size={25} /> */}
-                                <Image src={line} alt="line contact" width={35} height={35}/>
+                                <Image src={"/icons/contact_icons/line.png"} alt="line contact" width={35} height={35}/>
                             </Box>
                             <Text>@cfam</Text>
                         </Box>

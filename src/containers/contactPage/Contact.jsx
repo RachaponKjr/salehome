@@ -3,10 +3,6 @@ import React from 'react'
 import Link from 'next/link';
 import Image from 'next/image'
 
-// icons import
-import service from '@/imgs/service.png'
-import qrcode from '@/imgs/qrcode.jpg'
-
 import { FaUser,FaPhoneAlt } from "react-icons/fa";
 import { FaLine } from "react-icons/fa6";
 function Contact() {
@@ -33,7 +29,7 @@ function Contact() {
           <Flex w={"50rem"} flexDirection={'column'} maxW={"100%"} boxShadow={'rgba(0, 0, 0, 0.35) 0px 5px 15px'} rounded={"10px"} px={{ base: 6, md: 10 }} py={4} h={"100%"} mx={"auto"}>
             <Flex flexDirection={{base:"column",md:"row"}} w={"100%"} alignItems={'center'} justifyContent={'space-evenly'}>
             <Flex alignItems={'center'} justifyContent={'center'} rounded={'full'} position={'relative'} maxW={"100%"} w={{ base: '100%', md: '20rem' }} h={'15rem'}>
-              <Image src={service} alt='service' width={200} height={200} />
+              <Image src={"/imgs/service.png"} alt='service' width={200} height={200} />
             </Flex>
             <Box w={"max-content"} h={"100%"} maxW={"100%"} p={2}>
               <Flex color={'#676767'} fontSize={"18px"} flexDirection={'column'} alignItems={{ base: 'start', md: 'start' }} justifyContent={{ base: 'center', md: 'start' }} w={{base:"100%",md:"max-content"}} maxW={"100%"} gap={4}>
@@ -60,7 +56,7 @@ function Contact() {
             </Box>
             </Flex>
             <Flex alignItems={"center"} justifyContent={"center"} position={'relative'} maxW={"100%"} w={"100%"} h={"max-content"} p={5}>
-              <Image src={qrcode} width={150} height={150} />
+              <Image src={"/imgs/qrcode.jpg"} width={150} height={150} />
             </Flex>
           </Flex>
         </Flex>

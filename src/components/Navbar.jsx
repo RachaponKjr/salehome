@@ -3,7 +3,7 @@ import { Box, Container, Flex, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import React from 'react'
 
-import icon from '@/imgs/logo.png'
+// import icon from '@/imgs/logo.png'
 
 import {Link} from '../navigation';
 
@@ -12,9 +12,7 @@ import dynamic from 'next/dynamic'
 import FlagSelect from './FlagSelect'
 
 // icons Navbar
-import home from "@/icons/nav_icons/home.png"
-import edit from "@/icons/nav_icons/edit.png"
-import headphone from "@/icons/nav_icons/headphone.png"
+
 
 
 const ButtonTop = dynamic(() => import('./BtnTop'), { ssr: false })
@@ -26,17 +24,17 @@ const Navbar = ({homeManu, blogsManu, contactManu}) => {
     const manu = [
         {
             tital: homeManu,
-            icon: home,
+            icon: "/icons/nav_icons/home.png",
             link: "/"
         },
         {
             tital: blogsManu,
-            icon: edit,
+            icon: "/icons/nav_icons/edit.png",
             link: "/blogs"
         },
         {
             tital: contactManu,
-            icon: headphone,
+            icon: "/icons/nav_icons/headphone.png",
             link: "/contact"
         },
         // {
@@ -55,7 +53,7 @@ const Navbar = ({homeManu, blogsManu, contactManu}) => {
                             {/* ส่วนของ Logo */}
                             <Flex maxW={"100%"} w={{ base: "160px", sm: "240px", md: "30%" }} position={{ base: "relative", md: "absolute", xl: "relative" }} alignItems={"center"}>
                                 <Link href={"/"}>
-                                    <Image src={icon} alt="logo" width={'auto'} height={35} />
+                                    <Image src={"/imgs/logo.png"} alt="logo" width={100} height={35} />
                                 </Link>
                             </Flex>
                             {/* ส่วนเมนูทางด้าน ขวา ของ ขนาด 1024px ขึ้นไป */}

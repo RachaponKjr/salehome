@@ -3,11 +3,6 @@ import Image from 'next/image'
 import {Link} from '../navigation';
 import React from 'react'
 
-import location from '@/icons/location.png'
-import bathroom from '@/icons/bathroom.png'
-import area from '@/icons/area.png'
-import bedroom from '@/icons/bedroom.png'
-
 const Card = ({ data }) => {
   return (
     <>
@@ -33,7 +28,7 @@ const Card = ({ data }) => {
               </Text>
               {/* ข้อมูลตำเเหน่ง */}
               <Flex alignItems={"center"} gap={"4px"} my={"4px"} color={'#676767'}>
-                <Image src={location} alt="location" width={20} height={20} />
+                <Image src={"icons/location.png"} alt="location" width={20} height={20} />
                 <Text variant={'h2'} fontSize={{ base: "12px", md: "14px" }} className='line-clamp1'>{data.province}</Text>
               </Flex>
               <Flex justifyContent={"space-between"} gap={2} flexDirection={{ base: "column", md: "row" }}>
@@ -49,17 +44,17 @@ const Card = ({ data }) => {
               <Flex justifyContent={"space-between"} flexDirection={{ base: "column", md: "row" }} mt={"8px"} gap={{ base: "8px", md: "16px" }}>
                 <Flex gap={2} minW={{ base: "100%", md: "max-content" }}>
                   <Flex gap={"8px"} color={'#676767'} alignItems={"center"}>
-                    <Image src={bedroom} alt="bathroom" width={"25"} height={"25"} />
+                    <Image src={"/icons/bathroom.png"} alt="bathroom" width={"25"} height={"25"} />
                     <Text variant={"h6"} fontSize={{ base: "12px", md: "14px" }}>{data.bedroom != null ? `${data.bedroom}` : "-"}</Text>
                   </Flex>
                   <Divider orientation='vertical' />
                   <Flex gap={"8px"} color={'#676767'} alignItems={"center"}>
-                    <Image src={bathroom} alt="bathroom" width={"25"} height={"25"} />
+                    <Image src={"/icons/bathroom.png"} alt="bathroom" width={"25"} height={"25"} />
                     <Text variant={"h6"} fontSize={{ base: "12px", md: "14px" }}>{data.bathroom != null ? `${data.bathroom}` : "-"}</Text>
                   </Flex>
                 </Flex>
                 <Flex gap={"8px"} color={'#676767'} alignItems={"center"} justifyContent={{ base: "start", md: "end" }} >
-                  <Image src={area} alt="bathroom" width={"27"} height={"27"} />
+                  <Image src={"/icons/area.png"} alt="bathroom" width={"27"} height={"27"} />
                   <Text variant={"h6"} fontSize={{ base: "12px", md: "14px" }} className='line-clamp1'>{data.centimate !== null ? data.centimate : "0000"}</Text>
                 </Flex>
               </Flex>

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Box, Divider, Flex, Grid, GridItem, Input, InputGroup, InputRightElement, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 
-import headicon from '@/imgs/headicon.png'
+// import headicon from '@/imgs/headicon.png'
 
 import { FaSearch } from "react-icons/fa";
 
@@ -57,7 +57,7 @@ function Section1({ datafetch, allTags, areaTags, homeTags, buildingTags }) {
     <>
       <Flex variant={"h1"} fontSize={"24px"} my={"16px"}>
         <Box position={"relative"} top={"-5px"}>
-          <Image src={headicon} alt="logo" width={32} height={32} />
+          <Image src={"/imgs/headicon.png"} alt="logo" width={32} height={32} />
         </Box>
         <Text variant={'h4'} position={"relative"} right={"10px"}>
           รวมประกาศขาย

@@ -3,9 +3,9 @@ import React from 'react'
 
 
 // icons Navbar
-import home from "@/icons/nav_icons/home.png"
-import edit from "@/icons/nav_icons/edit.png"
-import headphone from "@/icons/nav_icons/headphone.png"
+// import home from "@/icons/nav_icons/home.png"
+// import edit from "@/icons/nav_icons/edit.png"
+// import headphone from "@/icons/nav_icons/headphone.png"
 
 
 import Image from 'next/image';
@@ -19,7 +19,7 @@ const MobileMenu = ({homeManu, blogsManu, contactManu}) => {
                 <Grid templateColumns={'repeat(3, 1fr)'} w={'100%'}>
                     <GridItem display={'flex'} flexDirection={"column"} alignItems={"center"} _active={{ bg: "gray.500" }} gap={0.5} pt={2} position={"relative"}>
                             <Link href="/" style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-                                    <Image src={home} alt='service' width={30} height={30} />
+                                    <Image src={"/icons/nav_icons/home.png"} alt='service' width={30} height={30} />
                                 {/* กล่องเเสดงว่ามีอะไรใหม่ */}
                                 {/* <Box position={'absolute'} top={0} right={-2} bg={'red'} w={'16px'} h={'16px'} color={'white'} fontSize={'10px'} textAlign={'center'} rounded={'full'}>N</Box> */}
                                 <Text fontSize={'10px'} mt={1.5}>{homeManu}</Text>
@@ -27,13 +27,13 @@ const MobileMenu = ({homeManu, blogsManu, contactManu}) => {
                     </GridItem>
                     <GridItem display={'flex'} flexDirection={"column"} alignItems={"center"} _active={{ bg: "gray.500" }} gap={0.5} pt={2} position={"relative"}>
                         <Link href="/blogs" style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-                        <Image src={edit} alt='service' width={30} height={30} />
+                        <Image src={"url('/icons/nav_icons/edit.png')"} alt='service' width={30} height={30} />
                             <Text fontSize={'10px'} mt={1.5}>{blogsManu}</Text>
                         </Link>
                     </GridItem>
                     <GridItem display={'flex'} flexDirection={"column"} alignItems={"center"} _active={{ bg: "gray.500" }} gap={0.5} pt={2} position={"relative"}>
                         <Link href="/contact" style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-                        <Image src={headphone} alt='service' width={30} height={30} />
+                        <Image src={"url('/icons/nav_icons/headphone.png')"} alt='service' width={30} height={30} />
                             <Text fontSize={'10px'} mt={1.5}>{contactManu}</Text>
                         </Link>
                     </GridItem>

@@ -13,7 +13,7 @@ const inter = Prompt({ subsets: ["latin", "thai"],weight:"500" });
 export const metadata = {
   title:{
     template: "%s | CFAM",
-    default: "CFAM",
+    default: "CF Asia Asset Management",
   },
   description: "CFAM ขาบบ้าน",
 };
@@ -27,6 +27,7 @@ export default function RootLayout({ children , params: {locale}}) {
   return (
     <html lang={locale}>
       <meta name="keywords" content="บริษัท บริหารสินทรัพย์ ขายบ้าน,แล้วก็มีอีกอัน เป็น CFAM ขายบ้าน"/>
+      <link rel="icon" href="/imgs/headicon.png" />
       <body className={inter.className}>
         {/* เรียกใช้ Provider Chakra เพื่อให้ สามารถใช้ Chakra ได้ */}
         <Providers>

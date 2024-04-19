@@ -5,10 +5,7 @@ import React from 'react'
 // function import
 import { reformatDate } from '@/utils/reformatDate';
 
-// icons import
-import bathroom from '@/icons/bathroom.png'
-import area from '@/icons/area.png'
-import bedroom from '@/icons/bedroom.png'
+
 const LeftSide = ({ res }) => {
     return (
         <>
@@ -35,7 +32,9 @@ const LeftSide = ({ res }) => {
                         {/* เเสดงขนานห้อง */}
                         <GridItem border={"1px solid #676767"} rounded={"10px"} py={2} px={2} m={1}>
                             <Flex alignItems={"center"} gap={2} h={"100%"}>
-                                <Image src={area} alt="image" />
+                                <Box w={10} h={10} display={"flex"} justifyContent={"center"} alignItems={"center"}>
+                                    <Image src={"/icons/area.png"} alt="image" width={50} height={50} />
+                                </Box>
                                 <Text variant={'h6'} fontSize={'14px'} mt={2} whiteSpace={'nowrap'}>{res.centimate != null ? res.centimate : '-'}</Text>
                             </Flex>
                         </GridItem>
@@ -43,7 +42,7 @@ const LeftSide = ({ res }) => {
                         <GridItem border={"1px solid #676767"} rounded={"10px"} py={2} px={3} m={1}>
                             <Flex alignItems={"center"} gap={4} h={"100%"}>
                                 <Box w={10} h={10} display={"flex"} justifyContent={"center"} alignItems={"center"}>
-                                    <Image src={bedroom} alt="image" />
+                                    <Image src={"/icons/bedroom.png"} alt="image" width={50} height={50} />
                                 </Box>
                                 <Text variant={'h6'} fontSize={'14px'} mt={2}>{res.bedroom != null ? `${res.bedroom} ห้อง` : '-'}</Text>
                             </Flex>
@@ -52,7 +51,7 @@ const LeftSide = ({ res }) => {
                         <GridItem border={"1px solid #676767"} rounded={"10px"} py={2} px={3} m={1}>
                             <Flex alignItems={"center"} gap={4} h={"100%"}>
                                 <Box w={10} h={10} display={"flex"} justifyContent={"center"} alignItems={"center"}>
-                                    <Image src={bathroom} alt="image" />
+                                    <Image src={"/icons/bathroom.png"} alt="image" width={50} height={50} />
                                 </Box>
                                 <Text variant={'h6'} fontSize={'14px'} mt={2}>{res.bathroom != null ? `${res.bathroom} ห้อง` : '-'}</Text>
                             </Flex>

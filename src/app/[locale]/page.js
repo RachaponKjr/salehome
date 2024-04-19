@@ -7,7 +7,7 @@ const DynamicHomePage = dynamic(() => import("@/containers/homePage/HomePage"), 
 })
 
 export const metadata = {
-  title: "CFAM ขายบ้าน",
+  title: "CF Asia Asset Management",
   description: "บริษัท บริหารสินทรัพย์ ขายบ้าน",  
 }
 export default function Home() {
