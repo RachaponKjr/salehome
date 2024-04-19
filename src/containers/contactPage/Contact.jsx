@@ -41,7 +41,7 @@ function Contact() {
                 </Flex>
                 {/* ส่นล่างที่มีqrcord */}
                 <Flex h={"100%"} flexDirection={{ base: "column", sm: "row" }} gap={2} justifyContent={"row"}>
-                  <Flex flexDirection={'column'} gap={6} w={"50%"}>
+                  <Flex flexDirection={'column'} gap={6} w={{base:"100%",md:"50%"}}>
                     <Flex flexDirection={'column'} gap={4}>
                       <Text variant={'h6'} fontWeight={"bold"} textColor={'#2F5553'} fontSize={{ base: "14px", md: "18px" }}>ช่องทางติดต่อ</Text>
                       <Flex flexDirection={'column'} gap={3}>
