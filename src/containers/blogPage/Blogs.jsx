@@ -34,7 +34,7 @@ function Blogs() {
                         <Text variant={"h1"} fontSize={"20px"} color={"#676767"}>เส้นทางสุขภาพหนี้ที่ดี 7 วิธีปลดหนี้อย่างมีสุข</Text>
                         {/* เนื้อหา */}
                         <Box w={"100%"} h={'max-content'} mt={4}>
-                            <Text variant={"h2"} lineHeight={"28px"} textAlign={"justify"} color={"#676767"} fontSize={{ base: "14px", md: "16px" }}>
+                            <Text variant={"h2"} lineHeight={"28px"} textAlign={{base:"start",md:"justify"}} color={"#676767"} fontSize={{ base: "14px", md: "16px" }}>
                                 1.ตรวจสอบสภาพการเงินและกําหนดเป้าหมายที่เหมาะสม
                                 ก่อนที่จะตัดสินใจว่าจะทําอะไรกับหนี้ ควรทําาการตรวจสอบ สภาพการเงินของคุณให้ดี
                                 กําหนดเป้าหมายการปลดหนี้ที่เหมาะสมและทันสมัยที่สุด ซึ่ง
