@@ -25,14 +25,19 @@ function Contact() {
           </Flex>
         </Container>
       </Box>
-      <Container maxW={"container.xl"} mb={{ base: "16px",md:"28px" ,lg: "254px" }} mt={"16px"} w={"100%"} h={"max-content"}>
+      <Container maxW={"container.xl"} mb={{ base: "16px", md: "28px", lg: "254px" }} mt={"16px"} w={"100%"} h={"max-content"}>
         <Flex h={"100%"} flexDirection={"column"} gap={4}>
           <Text variant={"h2"} fontSize={"24px"}>ติดต่อเรา</Text>
           <Flex w={"60rem"} maxW={"100%"} boxShadow={'rgba(0, 0, 0, 0.16) 0px 1px 4px;'} rounded={"10px"} px={{ base: 6, md: 2, lg: 10 }} py={6} h={"100%"} mx={"auto"}>
-            <Flex flexDirection={{ base: "column-reverse", md: "row" }} w={"100%"} h={"100%"} gap={2}>
-              <Box maxW={"100%"} w={"600px"} aspectRatio={'1/1'}>
-                <GoogleMapBox />
-              </Box>
+            <Flex flexDirection={{ base: "column-reverse", lg: "row" }} w={"100%"} h={"100%"} gap={2}>
+              {/* <GoogleMapBox /> */}
+              <Flex justifyContent={"center"} alignItems={"center"} maxW={"100%"} w={"100%"}>
+                <Link href={"https://www.google.co.th/maps/place/%E0%B8%9A%E0%B8%9A%E0%B8%AA.%E0%B8%8B%E0%B8%B5%E0%B9%80%E0%B8%AD%E0%B8%9F+%E0%B9%80%E0%B8%AD%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2+%E0%B8%88%E0%B8%B3%E0%B8%81%E0%B8%B1%E0%B8%94/@13.938895,100.6252457,17z/data=!3m1!4b1!4m6!3m5!1s0x311d7df48272c2f5:0x4b183062bf5a0965!8m2!3d13.938895!4d100.6252457!16s%2Fg%2F11dxf0mvc1?hl=th&entry=ttu"} target='_blank'>
+                  <Box position={'relative'} maxW={"100%"} w={{base:"250px",sm:"350px",md:"450px"}} aspectRatio={'1/1'} boxShadow={'rgba(0, 0, 0, 0.16) 0px 1px 4px;'}>
+                    <Image src={"/googlemap.png"} alt="googleMap" fill objectFit='cover' />
+                  </Box>
+                </Link>
+              </Flex>
               <Flex minW={"min-content"} flexDirection={'column'} gap={6} p={{ base: 0, md: 4 }}>
                 {/* ส่วนหัวของหัวข้อ */}
                 <Flex flexDirection={'column'} gap={4}>
@@ -41,20 +46,20 @@ function Contact() {
                 </Flex>
                 {/* ส่นล่างที่มีqrcord */}
                 <Flex h={"100%"} flexDirection={{ base: "column", sm: "row" }} gap={2} justifyContent={"row"}>
-                  <Flex flexDirection={'column'} gap={6} w={{base:"100%",md:"50%"}}>
+                  <Flex flexDirection={'column'} gap={6} w={{ base: "100%", md: "50%" }}>
                     <Flex flexDirection={'column'} gap={4}>
                       <Text variant={'h6'} fontWeight={"bold"} textColor={'#2F5553'} fontSize={{ base: "14px", md: "18px" }}>ช่องทางติดต่อ</Text>
                       <Flex flexDirection={'column'} gap={3}>
                         <Text>คุณวรรณรัตน์ เกยานนท์</Text>
                         <Flex alignItems={'center'} gap={2}>
-                          <FaPhoneAlt size={20}/><Text ml={4}>081-642-7488</Text>
+                          <FaPhoneAlt size={20} /><Text ml={4}>081-642-7488</Text>
                         </Flex>
                         <Flex alignItems={'center'} gap={2}>
-                          <GiRotaryPhone size={29}/><Text ml={2}>02-821-1055</Text>
+                          <GiRotaryPhone size={29} /><Text ml={2}>02-821-1055</Text>
                         </Flex>
                         <Flex alignItems={'center'} gap={2}>
-                          <FaLine size={25}/>
-                        <Text ml={3}> @CFAM</Text>
+                          <FaLine size={25} />
+                          <Text ml={3}> @CFAM</Text>
                         </Flex>
                       </Flex>
                     </Flex>

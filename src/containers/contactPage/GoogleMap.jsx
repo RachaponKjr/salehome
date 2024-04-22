@@ -8,6 +8,12 @@ const GoogleMapBox = () => {
         lat: -3.745,
         lng: -38.523
     };
+    // ของที่ต้องใช้
+    // AIzaSyB1JhTFiz1-StdwG0AiC07JTQfpHZee1c0
+
+
+    // AIzaSyANhTkFmVEF5G1TV50Qe58VV3LH3hyjGtw
+
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
