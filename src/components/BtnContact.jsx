@@ -10,7 +10,7 @@ const BtnContact = () => {
     <>  
     <Flex w={'56px'}
       h={'56px'} bg={"#305553"} _hover={{ bg: '#305553' }} cursor={'pointer'} color={'white'} rounded={'full'} justifyContent={'center'} alignItems={'center'}>
-      <Link href={'https://line.me/ti/p/8DryyAJLo5'} target='_blank' style={{width:'100%',height:'100%',display:'flex',justifyContent:'center',alignItems:'center'}} children={<RiLineFill size={30} />} />
+      <Link href={'https://lin.ee/xKpZRCE'} target='_blank' style={{width:'100%',height:'100%',display:'flex',justifyContent:'center',alignItems:'center'}} children={<RiLineFill size={30} />} />
     </Flex>
     </>
   )
