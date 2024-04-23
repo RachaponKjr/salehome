@@ -46,7 +46,6 @@ const Navbar = ({homeManu, blogsManu, contactManu}) => {
     return (
         <>
             <Box>
-            {/* bgGradient={"linear(#305553 0%, #162726 49%, #0A1111 100%)"} */}
                 <Box bgColor={"#2F5553"} boxShadow={'md'} py={2}>
                     <Container maxW={"container.xl"}>
                         <Flex py={"8px"} position={"relative"} w={"100%"} flexDirection={{ base: "row" }} justifyContent={"space-between"} alignItems={"center"}>

@@ -24,39 +24,39 @@ const LeftSide = ({ res }) => {
                     <Text variant={'h6'} fontSize={'13px'}>{reformatDate(res.createdAt)}</Text>
                 </Flex>
                 {/* ข้อมูลอสังหา */}
-                <Flex gap={4} flexDirection={'column'} mt={4}>
+                <Flex gap={4} flexDirection={'column'} w={"100%"} mt={4}>
                     {/* หัวเรื่อง Head */}
                     <Text variant={'h3'} fontSize={'18px'}>ข้อมูลอสังหาฯ</Text>
                     {/* รายละเอียด */}
-                    <Grid templateColumns={"repeat(auto-fit, minmax(100px, 150px))"} color={'#676767'} gap={{ base: 1, md: 4 }}>
+                    <Flex flexWrap={"wrap"} w={"100%"} color={'#676767'} gap={{ base: 1, md: 4 }}>
                         {/* เเสดงขนานห้อง */}
-                        <GridItem border={"1px solid #676767"} rounded={"10px"} py={2} px={2} m={1}>
-                            <Flex alignItems={"center"} gap={2} h={"100%"}>
+                        <Flex border={"1px solid #676767"} w={'min-content'} rounded={"10px"} py={2} px={2} m={1}>
+                            <Flex alignItems={"center"} gap={2} w={'min-content'} h={"100%"}>
                                 <Box w={10} h={10} display={"flex"} justifyContent={"center"} alignItems={"center"}>
                                     <Image src={"/icons/area.png"} alt="image" width={50} height={50} />
                                 </Box>
                                 <Text variant={'h6'} fontSize={'14px'} mt={2} whiteSpace={'nowrap'}>{res.centimate != null ? res.centimate : '-'}</Text>
                             </Flex>
-                        </GridItem>
+                        </Flex>
                         {/* เเสดงจำนวนห้องนอน */}
-                        <GridItem border={"1px solid #676767"} rounded={"10px"} py={2} px={3} m={1}>
+                        <Flex border={"1px solid #676767"} rounded={"10px"} py={2} px={3} m={1}>
                             <Flex alignItems={"center"} gap={4} h={"100%"}>
                                 <Box w={10} h={10} display={"flex"} justifyContent={"center"} alignItems={"center"}>
                                     <Image src={"/icons/bedroom.png"} alt="image" width={50} height={50} />
                                 </Box>
                                 <Text variant={'h6'} fontSize={'14px'} mt={2}>{res.bedroom != null ? `${res.bedroom} ห้อง` : '-'}</Text>
                             </Flex>
-                        </GridItem>
+                        </Flex>
                         {/* เเสดงจำนวนห้องน้ำ */}
-                        <GridItem border={"1px solid #676767"} rounded={"10px"} py={2} px={3} m={1}>
+                        <Flex border={"1px solid #676767"} rounded={"10px"} py={2} px={3} m={1}>
                             <Flex alignItems={"center"} gap={4} h={"100%"}>
                                 <Box w={10} h={10} display={"flex"} justifyContent={"center"} alignItems={"center"}>
                                     <Image src={"/icons/bathroom.png"} alt="image" width={50} height={50} />
                                 </Box>
                                 <Text variant={'h6'} fontSize={'14px'} mt={2}>{res.bathroom != null ? `${res.bathroom} ห้อง` : '-'}</Text>
                             </Flex>
-                        </GridItem>
-                    </Grid>
+                        </Flex>
+                    </Flex>
 
                 </Flex>
                 {/* Divider */}

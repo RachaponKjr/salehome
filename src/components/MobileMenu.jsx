@@ -15,9 +15,9 @@ import { Link } from '@/navigation'
 const MobileMenu = ({homeManu, blogsManu, contactManu}) => {
     return (
         <>
-            <Flex bg={'#02685C'} w={'100%'} display={{ base: "flex", md: "none" }} h={'72px'} position={'fixed'} bottom={0} zIndex={1000} color={'white'}>
+            <Flex bgColor={"#2F5553"} w={'100%'} display={{ base: "flex", md: "none" }} h={'72px'} position={'fixed'} bottom={0} zIndex={1000} color={'white'}>
                 <Grid templateColumns={'repeat(3, 1fr)'} w={'100%'}>
-                    <GridItem display={'flex'} flexDirection={"column"} alignItems={"center"} _active={{ bg: "gray.500" }} gap={0.5} pt={2} position={"relative"}>
+                    <GridItem display={'flex'} flexDirection={"column"} alignItems={"center"} gap={0.5} pt={2} position={"relative"}>
                             <Link href="/" style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
                                     <Image src={"/icons/nav_icons/home.png"} alt='service' width={30} height={30} />
                                 {/* กล่องเเสดงว่ามีอะไรใหม่ */}

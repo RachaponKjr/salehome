@@ -50,7 +50,7 @@ function Contact() {
                     <Flex flexDirection={'column'} gap={4}>
                       <Text variant={'h6'} fontWeight={"bold"} textColor={'#2F5553'} fontSize={{ base: "14px", md: "18px" }}>ช่องทางติดต่อ</Text>
                       <Flex flexDirection={'column'} gap={3}>
-                        <Text>คุณวรรณรัตน์ เกยานนท์</Text>
+                        <Text whiteSpace={'nowrap'}>คุณวรรณรัตน์ เกยานนท์</Text>
                         <Flex alignItems={'center'} gap={2}>
                           <FaPhoneAlt size={20} /><Text ml={4}>081-642-7488</Text>
                         </Flex>

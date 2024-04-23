@@ -32,9 +32,7 @@ export default function RootLayout({ children, params: { locale } }) {
 
   return (
     <html lang={locale}>
-      <Head>
-        <link rel="icon" href="/imgs/headicon.png" />
-      </Head>
+      <link rel="icon" href="/imgs/headicon.png" />
       <body className={inter.className}>
         {/* เรียกใช้ Provider Chakra เพื่อให้ สามารถใช้ Chakra ได้ */}
         <Providers>
