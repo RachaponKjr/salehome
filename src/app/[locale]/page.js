@@ -1,15 +1,24 @@
 import Loading from "@/components/Loading";
-// import HomePage from "@/pages/homePage/HomePage";
 import dynamic from "next/dynamic";
+import Head from "next/head";
 
-const DynamicHomePage = dynamic(() => import("@/containers/homePage/HomePage"), {
-  loading: () => <Loading />,
-})
+const DynamicHomePage = dynamic(
+  () => import("@/containers/homePage/HomePage"),
+  {
+    loading: () => <Loading />,
+  }
+);
 
-export const metadata = {
-  title: "CF Asia Asset Management",
-  description: "บริษัท บริหารสินทรัพย์ ขายบ้าน",  
-}
 export default function Home() {
-  return <DynamicHomePage />;
+  return (
+    <>
+      <Head>
+        <meta
+          name="keywords"
+          content="CFAM ขายบ้าน, คอนโด cfam, ทาวน์เฮาส์ cfam"
+        />
+      </Head>
+      <DynamicHomePage />;
+    </>
+  );
 }
