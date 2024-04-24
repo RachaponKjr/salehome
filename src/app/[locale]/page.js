@@ -12,12 +12,6 @@ const DynamicHomePage = dynamic(
 export default function Home() {
   return (
     <>
-      <Head>
-        <meta
-          name="keywords"
-          content="CFAM ขายบ้าน, คอนโด cfam, ทาวน์เฮาส์ cfam"
-        />
-      </Head>
       <DynamicHomePage />;
     </>
   );

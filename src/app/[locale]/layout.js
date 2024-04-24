@@ -14,10 +14,10 @@ const inter = Prompt({ subsets: ["latin", "thai"], weight: "500" });
 export const metadata = {
   title: {
     template: "%s | CFAM",
-    default: "บริษัท บริหารสินทรัพย์ ซีเอฟ เอเชีย จำกัด ขายบ้าน",
+    default: "cfam ขายบ้าน",
   },
   description:
-    "บริษัท บริหารสินทรัพย์ ซีเอฟ เอเชีย จำกัด ขายบ้าน มือสอง ทาวน์เฮาส์ และ อื่นๆอีกมากมายให้ติดตาม",
+    "บริษัทบริหารสินทรัพย์ ซีเอฟเอเชีย จำกัด ขายทรัพยืสิน ที่ดินว่างเปล่า บ้านเดี่ยว ทาวน์เฮ้าส์ อาคารพาณิชย์ ตึกแถว ห้องชุดพักอาศัย",
 };
 
 export const Footer = dynamic(() => import("@/components/Footer"), {
@@ -33,6 +33,10 @@ export default function RootLayout({ children, params: { locale } }) {
   return (
     <html lang={locale}>
       <link rel="icon" href="/imgs/headicon.png" />
+        <meta
+          name="keywords"
+          content="cfam ขายบ้าน, cf asia ทรัพย์รอการขาย"
+        />
       <body className={inter.className}>
         {/* เรียกใช้ Provider Chakra เพื่อให้ สามารถใช้ Chakra ได้ */}
         <Providers>
