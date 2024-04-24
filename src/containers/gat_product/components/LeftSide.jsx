@@ -19,7 +19,7 @@ const LeftSide = ({ res }) => {
                 {/* ข้อมูลการอัพเดต */}
                 <Flex gap={4} flexDirection={'column'} mt={4}>
                     {/* หัวเรื่อง Head */}
-                    <Text variant={'h3'} fontSize={'18px'}>ข้อมูลการอัพเดตประกาษนี้</Text>
+                    <Text variant={'h3'} fontSize={'18px'}>ข้อมูลการอัพเดตประกาศนี้</Text>
                     {/* รายละเอียด */}
                     <Text variant={'h6'} fontSize={'13px'}>{reformatDate(res.createdAt)}</Text>
                 </Flex>
