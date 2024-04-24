@@ -1,9 +1,0 @@
-User-agent: Googlebot
-Disallow: 
-User-agent: googlebot-mobile
-Disallow: 
-User-agent: Slurp
-Disallow: 
-User-agent: *
-Disallow: 
-Sitemap: https://d1khbhemldrtbs.cloudfront.net/sitemap.xml
