@@ -37,6 +37,7 @@ export default function RootLayout({ children, params: { locale } }) {
           name="keywords"
           content="cfam ขายบ้าน, cf asia ทรัพย์รอการขาย"
         />
+        {/* <meta name="robots" content="noindex, nofollow"/> */}
       <body className={inter.className}>
         {/* เรียกใช้ Provider Chakra เพื่อให้ สามารถใช้ Chakra ได้ */}
         <Providers>
