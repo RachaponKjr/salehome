@@ -4,6 +4,7 @@ import {Link} from '../navigation';
 import React from 'react'
 
 const Card = ({ data }) => {
+  console.log(data)
   return (
     <>
       <GridItem w={"100%"} p={{ base: "4px", md: "8px" }} key={data.number_home}>
@@ -12,7 +13,7 @@ const Card = ({ data }) => {
           <Box w={"100%"} h={{ base: "96px", md: "192px" }} position={"relative"} cursor={"pointer"} overflow={"hidden"}>
             <Link href={"/product/" + data._id}>
               <Box position={"relative"} w={"100%"} h={"100%"}>
-                <Image src={`http://18.140.121.108:5500/public/img_all/${data.img_all[0]}`} alt={`รูปภาพขาย + ${data.detail_product}`} fill priority className='image_hover' />
+                <Image src={`http://18.140.121.108:5500/public/img_all/${data.img_all[0]}`} alt={`ขาย ${data.detail_product} ที่อยู่ในจังหวัด ${data.province}`} fill priority className='image_hover' />
               </Box>
             </Link>
             <Flex display={{ base: 'flex', md: 'none' }} justifyContent={"center"} alignItems={"center"} w={"max-content"} h={"max-content"} bg={'#02685C'} opacity={0.8} position={"absolute"} top={2} left={2} px={4} py={1} rounded={'5px'} zIndex={10}>
