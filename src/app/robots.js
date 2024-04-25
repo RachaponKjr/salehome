@@ -6,6 +6,6 @@ export default function robots() {
                 allow: "/",
             },
         ],
-        sitemap: "https://d1khbhemldrtbs.cloudfront.net/sitemap.xml",
+        sitemap: "https://www.cfasia.co.th/sitemap.xml",
     };
 }

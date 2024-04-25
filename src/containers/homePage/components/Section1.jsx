@@ -55,11 +55,11 @@ function Section1({ datafetch, allTags, areaTags, homeTags, buildingTags }) {
 
   return (
     <>
-      <Flex variant={"h1"} fontSize={"24px"} my={"16px"}>
+      <Flex fontSize={"24px"} my={"16px"}>
         <Box position={"relative"} top={"-5px"}>
           <Image src={"/imgs/headicon.png"} alt="logo" width={32} height={32} />
         </Box>
-        <Text variant={'h4'} position={"relative"} right={"10px"}>
+        <Text variant={'h5'} position={"relative"} right={"10px"}>
           รวมประกาศขาย
         </Text>
       </Flex>
