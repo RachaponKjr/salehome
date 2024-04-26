@@ -2,7 +2,6 @@
 import { Flex } from '@chakra-ui/react'
 import React from 'react'
 
-// import loading from '../imgs/load.svg'
 import Image from 'next/image'
 
 function Loading() {

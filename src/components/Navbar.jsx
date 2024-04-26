@@ -3,17 +3,11 @@ import { Box, Container, Flex, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import React from 'react'
 
-// import icon from '@/imgs/logo.png'
-
 import {Link} from '../navigation';
 
 import { usePathname } from 'next/navigation'
 import dynamic from 'next/dynamic'
 import FlagSelect from './FlagSelect'
-
-// icons Navbar
-
-
 
 const ButtonTop = dynamic(() => import('./BtnTop'), { ssr: false })
 const ButtonContact = dynamic(() => import('./BtnContact'), { ssr: false })

@@ -1,13 +1,6 @@
 import { Flex, Grid, GridItem, Text } from '@chakra-ui/react'
 import React from 'react'
 
-
-// icons Navbar
-// import home from "@/icons/nav_icons/home.png"
-// import edit from "@/icons/nav_icons/edit.png"
-// import headphone from "@/icons/nav_icons/headphone.png"
-
-
 import Image from 'next/image';
 import { Link } from '@/navigation'
 
