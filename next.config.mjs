@@ -4,7 +4,7 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['https://www.cfasia.co.th/public/img_all'],
+        domains: ['https://www.cfasia.co.th/public/img_all/'],
         unoptimized: true
     },
 };
