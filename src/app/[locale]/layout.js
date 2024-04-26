@@ -14,7 +14,7 @@ const inter = Prompt({ subsets: ["latin", "thai"], weight: "500" });
 export const metadata = {
   title: {
     template: "%s | CFAM",
-    default: "cfam ขายบ้าน",
+    default: "cf asia ทรัพย์รอการขาย",
   },
   description:
     "บริษัทบริหารสินทรัพย์ ซีเอฟเอเชีย จำกัด ขายทรัพยืสิน ที่ดินว่างเปล่า บ้านเดี่ยว ทาวน์เฮ้าส์ อาคารพาณิชย์ ตึกแถว ห้องชุดพักอาศัย",
