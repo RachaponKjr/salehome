@@ -49,7 +49,7 @@ export default function RootLayout({ children, params: { locale } }) {
             blogsManu={t("BlogManu")}
             contactManu={t("ContactManu")}
           />
-          <Box bgImage={"/bg-service.jpg"} py={4} bgRepeat={"no-repeat"} bgPosition={"top"} bgSize={"cover"}>{children}</Box>
+          <Box bgImage={"/bg-service.jpg"} pb={4} bgRepeat={"no-repeat"} bgPosition={'top'} bgSize={"cover"} bgColor={"#D6D6D6"}>{children}</Box>
           {/* ส่วน Footer */}
           <Footer />
           {/* Cookie Consent */}

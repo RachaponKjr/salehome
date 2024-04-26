@@ -10,7 +10,7 @@ import { getTranslations } from 'next-intl/server';
 function Contact({homeManu, contactManu}) {
   return (
     <>
-      <Box w={"100%"} h={'max-content'} py={"8px"} boxShadow={"lg"} >
+      <Box w={"100%"} h={'max-content'} py={"8px"} boxShadow={'rgba(0, 0, 0, 0.16) 0px 1px 4px;'} >
         <Container maxW={"container.xl"} h={"100%"}>
           <Flex w={"100%"} gap={2} alignItems={"center"} h={"100%"}>
             <Link href={"/"}>

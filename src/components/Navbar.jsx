@@ -40,7 +40,8 @@ const Navbar = ({homeManu, blogsManu, contactManu}) => {
     return (
         <>
             <Box>
-                <Box bgColor={"#2F5553"} boxShadow={'md'} py={2}>
+            {/* linear-gradient(90deg, rgba(47,85,83,1) 28%, rgba(49,112,109,1) 98%) */}
+                <Box bgGradient={"linear-gradient(90deg, rgba(47,85,83,1) 28%, rgba(49,112,109,1) 98%)"} boxShadow={'md'} py={2}>
                     <Container maxW={"container.xl"}>
                         <Flex py={"8px"} position={"relative"} w={"100%"} flexDirection={{ base: "row" }} justifyContent={"space-between"} alignItems={"center"}>
                             {/* ส่วนของ Logo */}
