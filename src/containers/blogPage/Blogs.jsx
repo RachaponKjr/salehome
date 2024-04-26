@@ -4,19 +4,19 @@ import Link from 'next/link'
 import React from 'react'
 
 
-function Blogs() {
+function Blogs({homeManu, blogManu}) {
     return (
         <>
         <Box w={"100%"} h={'max-content'} py={"8px"} boxShadow={"lg"} >
         <Container maxW={"container.xl"} h={"100%"}>
           <Flex w={"100%"} gap={2} alignItems={"center"} h={"100%"}>
             <Link href={"/"}>
-              หน้าเเรก
+              {homeManu}
             </Link>
             <p>/</p>
             <Link href={"/blogs"} color='red'>
               <Text color={'#02685C'}>
-                บทความเเนะนำ
+                {blogManu}
               </Text>
             </Link>
           </Flex>

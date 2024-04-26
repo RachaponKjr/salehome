@@ -1,4 +1,5 @@
 import Contact from '@/containers/contactPage/Contact'
+import { useTranslations } from 'next-intl'
 import React from 'react'
 
 export const metadata = {
@@ -6,8 +7,9 @@ export const metadata = {
     
   }
 function page() {
+    const t = useTranslations('NavbarManu')
     return (
-        <Contact />
+        <Contact homeManu={t("HomeManu")} contactManu={t("ContactManu")}/>
     )
 }
 

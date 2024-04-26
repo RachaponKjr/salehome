@@ -6,19 +6,20 @@ import Image from 'next/image'
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLine } from "react-icons/fa6";
 import { GiRotaryPhone } from "react-icons/gi";
-function Contact() {
+import { getTranslations } from 'next-intl/server';
+function Contact({homeManu, contactManu}) {
   return (
     <>
       <Box w={"100%"} h={'max-content'} py={"8px"} boxShadow={"lg"} >
         <Container maxW={"container.xl"} h={"100%"}>
           <Flex w={"100%"} gap={2} alignItems={"center"} h={"100%"}>
             <Link href={"/"}>
-              หน้าเเรก
+              {homeManu}
             </Link>
             <p>/</p>
             <Link href={"/contact"} color='red'>
               <Text color={'#02685C'}>
-                Contact
+                {contactManu}
               </Text>
             </Link>
           </Flex>
