@@ -14,7 +14,7 @@ async function HomePage() {
 
   return (
     <>
-      <Container maxW={"container.xl"} w={"100%"}>
+      <Container maxW={"container.xl"} w={"100%"} h={"max-content"}>
         <Section1 datafetch={newData} allTags={t('All')} areaTags={t('Area')} homeTags={t('Home')} buildingTags={t('Building')} />
       </Container>
     </>

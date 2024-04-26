@@ -24,10 +24,10 @@ function Contact() {
           </Flex>
         </Container>
       </Box>
-      <Container maxW={"container.xl"} mb={{ base: "16px", md: "28px", lg: "254px" }} mt={"16px"} w={"100%"} h={"max-content"}>
+      <Container maxW={"container.xl"}  mb={{ base: "16px", md: "28px", lg: "254px" }} mt={"16px"} w={"100%"} h={"max-content"}>
         <Flex h={"100%"} flexDirection={"column"} gap={4}>
           <Text variant={"h2"} fontSize={"24px"}>ติดต่อเรา</Text>
-          <Flex w={"60rem"} maxW={"100%"} boxShadow={'rgba(0, 0, 0, 0.16) 0px 1px 4px;'} rounded={"10px"} px={{ base: 6, md: 2, lg: 10 }} py={6} h={"100%"} mx={"auto"}>
+          <Flex w={"60rem"} maxW={"100%"} bgColor={"white"} boxShadow={'rgba(0, 0, 0, 0.16) 0px 1px 4px;'} rounded={"10px"} px={{ base: 6, md: 2, lg: 10 }} py={6} h={"100%"} mx={"auto"}>
             <Flex flexDirection={{ base: "column-reverse", lg: "row" }} w={"100%"} h={"100%"} gap={2}>
               {/* <GoogleMapBox /> */}
               <Flex justifyContent={"center"} alignItems={"center"} maxW={"100%"} w={"100%"}>

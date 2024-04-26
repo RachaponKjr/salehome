@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import Providers from "@/chakaUi_Provider/Providers";
 
 import { useTranslations } from "next-intl";
+import { Box } from "@chakra-ui/react";
 
 const inter = Prompt({ subsets: ["latin", "thai"], weight: "500" });
 
@@ -17,8 +18,10 @@ export const metadata = {
   description:
     "บริษัทบริหารสินทรัพย์ ซีเอฟเอเชีย จำกัด ขายทรัพยืสิน ที่ดินว่างเปล่า บ้านเดี่ยว ทาวน์เฮ้าส์ อาคารพาณิชย์ ตึกแถว ห้องชุดพักอาศัย",
   keywords: "cfam ขายบ้าน, cf asia ทรัพย์รอการขาย",
+  verification: {
+    google : "aXfud9hhKU1z6xKBoth1bRbs3x-aXJ0xtzmG_g9Ka0I"
+  }
 };
-
 export const Footer = dynamic(() => import("@/components/Footer"), {
   ssr: false,
 });
@@ -32,11 +35,11 @@ export default function RootLayout({ children, params: { locale } }) {
   return (
     <html lang={locale}>
       <link rel="icon" href="/imgs/headicon.png" />
-        {/* <meta
+      {/* <meta
           name="keywords"
           content="cfam ขายบ้าน, cf asia ทรัพย์รอการขาย"
         /> */}
-        {/* <meta name="robots" content="noindex, nofollow"/> */}
+      {/* <meta name="robots" content="noindex, nofollow"/> */}
       <body className={inter.className}>
         {/* เรียกใช้ Provider Chakra เพื่อให้ สามารถใช้ Chakra ได้ */}
         <Providers>
@@ -46,7 +49,7 @@ export default function RootLayout({ children, params: { locale } }) {
             blogsManu={t("BlogManu")}
             contactManu={t("ContactManu")}
           />
-          {children}
+          <Box bgImage={"/bg-service.jpg"} py={4} bgRepeat={"no-repeat"} bgPosition={"top"} bgSize={"cover"}>{children}</Box>
           {/* ส่วน Footer */}
           <Footer />
           {/* Cookie Consent */}

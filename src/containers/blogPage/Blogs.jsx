@@ -23,7 +23,7 @@ function Blogs() {
         </Container>
       </Box>
             <Container maxWidth={"container.xl"}>
-                <Flex flexDirection={"column"} gap={4} boxShadow={'rgba(0, 0, 0, 0.35) 0px 5px 15px'} rounded={"10px"} my={4} p={{base:3,md:6}}>
+                <Flex flexDirection={"column"} gap={4} boxShadow={'rgba(0, 0, 0, 0.16) 0px 1px 4px;'} rounded={"10px"} mt={4} bgColor={"white"} p={{base:3,md:6}}>
                     {/* รูปภาพ ที่จะเเสดง */}
                     <Box w={"100%"} aspectRatio={{ base: 16 / 9, md: 7.5/ 3}} position={'relative'}>
                         <Image src={"/img2.jpg"} alt="image" fill style={{objectFit:'cover'}} />

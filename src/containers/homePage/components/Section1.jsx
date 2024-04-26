@@ -63,7 +63,7 @@ function Section1({ datafetch, allTags, areaTags, homeTags, buildingTags }) {
           รวมประกาศขาย
         </Text>
       </Flex>
-      <Box h="min-content" mb={"24px"} w={"100%"} boxShadow={'rgba(0, 0, 0, 0.35) 0px 5px 15px'} rounded={"10px"} p={{ base: 2, md: 4 }} >
+      <Box h="min-content" w={"100%"} bgColor={'white'} boxShadow={'rgba(0, 0, 0, 0.16) 0px 1px 4px;'} rounded={"10px"} p={{ base: 2, md: 4 }} >
         {/* ส่วนหัว มี Input กับ Dropdown */}
         <Flex flexDirection={{ base: "column-reverse", md: "row" }} gap={{ md: "16px", xl: "8px" }} alignItems={"center"} justifyContent={"space-between"}>
           {/* Tabs ต่างๆ */}

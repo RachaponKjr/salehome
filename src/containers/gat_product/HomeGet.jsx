@@ -34,7 +34,7 @@ function HomeGet({ datafetch }) {
             <Container maxW={"container.xl"} py={"8px"}>
                 {/* ส่วนหัวข้อของหน้า */}
                 <Text variant={"h1"} fontSize={"24px"} fontWeight={"bold"} my={"16px"} color={'#676767'}>{res.name_home}</Text>
-                <Box boxShadow={'rgba(0, 0, 0, 0.35) 0px 5px 15px'} rounded={"10px"} mb={"16px"} p={4}>
+                <Box bgColor={"white"} boxShadow={'rgba(0, 0, 0, 0.16) 0px 1px 4px;'} rounded={"10px"} mb={"16px"} p={4}>
                     {/* รูปที่ใช้เเสดง */}
                     <Box w={"100%"} h={"500px"} my={"16px"} position={"relative"}>
                         {/* รูปที่ 1 */}

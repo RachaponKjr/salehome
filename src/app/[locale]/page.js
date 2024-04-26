@@ -11,7 +11,7 @@ const DynamicHomePage = dynamic(
 export default function Home() {
   return (
     <>
-      <DynamicHomePage />;
+      <DynamicHomePage />
     </>
   );
 }
