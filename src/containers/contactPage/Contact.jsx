@@ -6,7 +6,6 @@ import Image from 'next/image'
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLine } from "react-icons/fa6";
 import { GiRotaryPhone } from "react-icons/gi";
-import GoogleMapBox from './GoogleMap';
 function Contact() {
   return (
     <>
