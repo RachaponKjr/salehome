@@ -18,6 +18,7 @@ export const metadata = {
   },
   description:
     "บริษัทบริหารสินทรัพย์ ซีเอฟเอเชีย จำกัด ขายทรัพยืสิน ที่ดินว่างเปล่า บ้านเดี่ยว ทาวน์เฮ้าส์ อาคารพาณิชย์ ตึกแถว ห้องชุดพักอาศัย",
+  keywords: "cfam ขายบ้าน, cf asia ทรัพย์รอการขาย",
 };
 
 export const Footer = dynamic(() => import("@/components/Footer"), {
@@ -33,10 +34,10 @@ export default function RootLayout({ children, params: { locale } }) {
   return (
     <html lang={locale}>
       <link rel="icon" href="/imgs/headicon.png" />
-        <meta
+        {/* <meta
           name="keywords"
           content="cfam ขายบ้าน, cf asia ทรัพย์รอการขาย"
-        />
+        /> */}
         {/* <meta name="robots" content="noindex, nofollow"/> */}
       <body className={inter.className}>
         {/* เรียกใช้ Provider Chakra เพื่อให้ สามารถใช้ Chakra ได้ */}

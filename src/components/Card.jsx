@@ -4,7 +4,6 @@ import {Link} from '../navigation';
 import React from 'react'
 
 const Card = ({ data }) => {
-  console.log(data)
   return (
     <>
       <GridItem w={"100%"} p={{ base: "4px", md: "8px" }} key={data.number_home}>

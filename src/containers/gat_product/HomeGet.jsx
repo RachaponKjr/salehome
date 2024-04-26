@@ -46,22 +46,22 @@ function HomeGet({ datafetch }) {
                         >
                             <GridItem rowSpan={{ base: 2, md: 3 }} colSpan={{ base: 3, md: 3 }} overflow={"hidden"} rounded={{ base: "none", md: "10px 0 0 10px" }} onClick={() => setSelectImg(0)}>
                                 <Box w={"100%"} h={"100%"} position={"relative"} cursor={"pointer"}>
-                                    <Image src={`http://18.140.121.108:5500/public/img_all/${res.img_all[0]}`} alt={`รูปภาพ + ${res.detail_product}`} fill style={{objectFit:'cover'}} />
+                                    <Image src={`https://www.cfasia.co.th/public/img_all/${res.img_all[0]}`} alt={`รูปภาพ + ${res.detail_product}`} fill style={{objectFit:'cover'}} />
                                 </Box>
                             </GridItem>
                             <GridItem colSpan={{ base: 1, md: 2 }} rowSpan={{ base: 1, md: 2 }} overflow={"hidden"} rounded={{ base: "none", md: "0 10px 0 0" }} onClick={() => setSelectImg(1)}>
                                 <Box w={"100%"} h={"100%"} position={"relative"} cursor={"pointer"}>
-                                    <Image src={`http://18.140.121.108:5500/public/img_all/${res.img_all[1]}`} alt={`รูปภาพ + ${res.detail_product}`} fill style={{objectFit:'cover'}} />
+                                    <Image src={`https://www.cfasia.co.th/public/img_all/${res.img_all[1]}`} alt={`รูปภาพ + ${res.detail_product}`} fill style={{objectFit:'cover'}} />
                                 </Box>
                             </GridItem>
                             <GridItem colSpan={1} overflow={"hidden"} >
                                 <Box w={"100%"} h={"100%"} position={"relative"} cursor={"pointer"} onClick={() => setSelectImg(2)}>
-                                    <Image src={`http://18.140.121.108:5500/public/img_all/${res.img_all[2]}`} alt={`รูปภาพ + ${res.detail_product}`} fill style={{objectFit:'cover'}} />
+                                    <Image src={`https://www.cfasia.co.th/public/img_all/${res.img_all[2]}`} alt={`รูปภาพ + ${res.detail_product}`} fill style={{objectFit:'cover'}} />
                                 </Box>
                             </GridItem>
                             <GridItem colSpan={1} overflow={"hidden"} rounded={{ base: "none", md: "0 0 10px 0" }}>
                                 {res.img_all[3] ? <Box w={"100%"} h={"100%"} position={"relative"} cursor={"pointer"} onClick={() => setSelectImg(3)}>
-                                    <Image src={`http://18.140.121.108:5500/public/img_all/${res.img_all[3]}`} alt={`รูปภาพ + ${res.detail_product}`} fill style={{objectFit:'cover'}} />
+                                    <Image src={`https://www.cfasia.co.th/public/img_all/${res.img_all[3]}`} alt={`รูปภาพ + ${res.detail_product}`} fill style={{objectFit:'cover'}} />
                                     {chacklenght
                                         ? <Box position={'absolute'} w={'100%'} h={'100%'} bg={'rgba(0,0,0,0.5)'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
                                             <Text color={'white'} fontSize={24}>+{chacklenght} รูป</Text>
