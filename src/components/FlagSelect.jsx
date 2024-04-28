@@ -16,7 +16,6 @@ const FlagSelect = () => {
                     {locale.toUpperCase()}
                 </Link>
                 <Box position={'absolute'} bottom={0} left={0} bg={'red'} _groupHover={{width:'100%'}} transitionDuration={'0.3s'} w={'0%'} h={'2px'} >
-
                 </Box>
             </Box>
         </>

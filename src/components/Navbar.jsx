@@ -19,17 +19,17 @@ const Navbar = ({homeManu, blogsManu, contactManu}) => {
         {
             tital: homeManu,
             icon: "/icons/nav_icons/home.png",
-            link: "/"
+            link: ""
         },
         {
             tital: blogsManu,
             icon: "/icons/nav_icons/edit.png",
-            link: "/blogs"
+            link: "blogs"
         },
         {
             tital: contactManu,
             icon: "/icons/nav_icons/headphone.png",
-            link: "/contact"
+            link: "contact"
         },
         // {
         //     tital: "ประกาศเเนะนำ",
