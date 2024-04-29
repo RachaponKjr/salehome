@@ -5,6 +5,13 @@ export default createMiddleware({
   defaultLocale: "th",
   locales,
   localePrefixes,
+  domains: [
+    {
+      domain: "https://www.cfasia.co.th",
+      defaultLocale: "th",
+      locales: ["th", "en"],
+    }
+  ]
 });
 
 export const config = {
