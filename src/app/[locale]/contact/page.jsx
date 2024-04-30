@@ -5,7 +5,6 @@ import React from 'react'
 
 export const metadata = {
     title: 'Contact',
-
 }
 function page() {
     const t = useTranslations('NavbarManu')
