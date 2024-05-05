@@ -1,4 +1,5 @@
-import { Box, Container, Text, Flex, Divider } from '@chakra-ui/react'
+'use client'
+import { Box, Container, Text, Flex} from '@chakra-ui/react'
 import React from 'react'
 import Link from 'next/link';
 import Image from 'next/image'
@@ -6,10 +7,17 @@ import Image from 'next/image'
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLine } from "react-icons/fa6";
 import { GiRotaryPhone } from "react-icons/gi";
-import { getTranslations } from 'next-intl/server';
-function Contact({homeManu, contactManu}) {
+import Head from 'next/head';
+import { usePathname } from 'next/navigation';
+function Contact({ homeManu, contactManu }) {
+  const router = usePathname()
   return (
     <>
+      <Head>
+        <link rel="alternate" hrefLang="th" href="https://cfasia.co.th/th/contact" />
+        <link rel="alternate" hrefLang="en" href="https://cfasia.co.th/en/contact" />
+        <link rel="canonical" href={`https://cfasia.co.th${router}`} />
+      </Head>
       <Box w={"100%"} h={'max-content'} py={"8px"} boxShadow={'rgba(0, 0, 0, 0.16) 0px 1px 4px;'} >
         <Container maxW={"container.xl"} h={"100%"}>
           <Flex w={"100%"} gap={2} alignItems={"center"} h={"100%"}>
@@ -25,7 +33,7 @@ function Contact({homeManu, contactManu}) {
           </Flex>
         </Container>
       </Box>
-      <Container maxW={"container.xl"}  mb={{ base: "16px", md: "28px", lg: "254px" }} mt={"16px"} w={"100%"} h={"max-content"}>
+      <Container maxW={"container.xl"} mb={{ base: "16px", md: "28px", lg: "254px" }} mt={"16px"} w={"100%"} h={"max-content"}>
         <Flex h={"100%"} flexDirection={"column"} gap={4}>
           <Text variant={"h2"} fontSize={"24px"}>ติดต่อเรา</Text>
           <Flex w={"60rem"} maxW={"100%"} bgColor={"white"} boxShadow={'rgba(0, 0, 0, 0.16) 0px 1px 4px;'} rounded={"10px"} px={{ base: 6, md: 2, lg: 10 }} py={6} h={"100%"} mx={"auto"}>
@@ -33,7 +41,7 @@ function Contact({homeManu, contactManu}) {
               {/* <GoogleMapBox /> */}
               <Flex justifyContent={"center"} alignItems={"center"} maxW={"100%"} w={"100%"}>
                 <Link href={"https://www.google.co.th/maps/place/%E0%B8%9A%E0%B8%9A%E0%B8%AA.%E0%B8%8B%E0%B8%B5%E0%B9%80%E0%B8%AD%E0%B8%9F+%E0%B9%80%E0%B8%AD%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2+%E0%B8%88%E0%B8%B3%E0%B8%81%E0%B8%B1%E0%B8%94/@13.938895,100.6252457,17z/data=!3m1!4b1!4m6!3m5!1s0x311d7df48272c2f5:0x4b183062bf5a0965!8m2!3d13.938895!4d100.6252457!16s%2Fg%2F11dxf0mvc1?hl=th&entry=ttu"} target='_blank'>
-                  <Box position={'relative'} maxW={"100%"} w={{base:"250px",sm:"350px",md:"450px"}} aspectRatio={'1/1'} boxShadow={'rgba(0, 0, 0, 0.16) 0px 1px 4px;'}>
+                  <Box position={'relative'} maxW={"100%"} w={{ base: "250px", sm: "350px", md: "450px" }} aspectRatio={'1/1'} boxShadow={'rgba(0, 0, 0, 0.16) 0px 1px 4px;'}>
                     <Image src={"/googlemap.png"} alt="googleMap" fill objectFit='cover' />
                   </Box>
                 </Link>

@@ -10,10 +10,6 @@ function page() {
   const t = useTranslations('NavbarManu')
   return (
     <>
-      <Head>
-        <link rel="alternate" hrefLang="th" href="http://cfasia.co.th/th/blogs" />
-        <link rel="alternate" hrefLang="en" href="http://cfasia.co.th/en/blogs" />
-      </Head>
       <Blogs homeManu={t("HomeManu")} blogManu={t("BlogManu")} />
     </>
   )

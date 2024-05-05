@@ -12,6 +12,8 @@ import { chacklenghts } from '@/utils/chacklenghts';
 // lib import Gallery
 import { mapImages } from '@/utils/mapImages';
 import Carousel from '@/components/Carousel';
+import Head from 'next/head';
+import { usePathname } from 'next/navigation';
 
 export const LeftSide = dynamic(() => import('./components/LeftSide'), { ssr: false })
 export const RightSide = dynamic(() => import('./components/RightSide'), { ssr: false })
@@ -20,6 +22,7 @@ function HomeGet({ datafetch }) {
     // ดึง data
     const res = datafetch?.data
     const [selectImg, setSelectImg] = useState(null)
+    const router = usePathname()
     //เรียกใช้ function
     const chacklenght = useCallback(chacklenghts(res), [res])
     // mapimages
@@ -29,8 +32,14 @@ function HomeGet({ datafetch }) {
     // console.log(chacklenght)
     // console.log(images)
     // console.log(res)
+    // console.log(router)
     return (
         <>
+            <Head>
+                <link rel="alternate" hrefLang="th" href="https://cfasia.co.th/th/" />
+                <link rel="alternate" hrefLang="en" href="https://cfasia.co.th/en" />
+                <link rel="canonical" href={`https://cfasia.co.th/${router}`} />
+            </Head>
             <Container maxW={"container.xl"} py={"8px"}>
                 {/* ส่วนหัวข้อของหน้า */}
                 <Text variant={"h1"} fontSize={"24px"} fontWeight={"bold"} my={"16px"} color={'#676767'}>{res.name_home}</Text>
@@ -46,22 +55,22 @@ function HomeGet({ datafetch }) {
                         >
                             <GridItem rowSpan={{ base: 2, md: 3 }} colSpan={{ base: 3, md: 3 }} overflow={"hidden"} rounded={{ base: "none", md: "10px 0 0 10px" }} onClick={() => setSelectImg(0)}>
                                 <Box w={"100%"} h={"100%"} position={"relative"} cursor={"pointer"}>
-                                    <Image src={`https://www.cfasia.co.th/public/img_all/${res.img_all[0]}`} alt={`รูปภาพ + ${res.detail_product}`} fill style={{objectFit:'cover'}} />
+                                    <Image src={`https://www.cfasia.co.th/public/img_all/${res.img_all[0]}`} alt={`รูปภาพ + ${res.detail_product}`} fill style={{ objectFit: 'cover' }} />
                                 </Box>
                             </GridItem>
                             <GridItem colSpan={{ base: 1, md: 2 }} rowSpan={{ base: 1, md: 2 }} overflow={"hidden"} rounded={{ base: "none", md: "0 10px 0 0" }} onClick={() => setSelectImg(1)}>
                                 <Box w={"100%"} h={"100%"} position={"relative"} cursor={"pointer"}>
-                                    <Image src={`https://www.cfasia.co.th/public/img_all/${res.img_all[1]}`} alt={`รูปภาพ + ${res.detail_product}`} fill style={{objectFit:'cover'}} />
+                                    <Image src={`https://www.cfasia.co.th/public/img_all/${res.img_all[1]}`} alt={`รูปภาพ + ${res.detail_product}`} fill style={{ objectFit: 'cover' }} />
                                 </Box>
                             </GridItem>
                             <GridItem colSpan={1} overflow={"hidden"} >
                                 <Box w={"100%"} h={"100%"} position={"relative"} cursor={"pointer"} onClick={() => setSelectImg(2)}>
-                                    <Image src={`https://www.cfasia.co.th/public/img_all/${res.img_all[2]}`} alt={`รูปภาพ + ${res.detail_product}`} fill style={{objectFit:'cover'}} />
+                                    <Image src={`https://www.cfasia.co.th/public/img_all/${res.img_all[2]}`} alt={`รูปภาพ + ${res.detail_product}`} fill style={{ objectFit: 'cover' }} />
                                 </Box>
                             </GridItem>
                             <GridItem colSpan={1} overflow={"hidden"} rounded={{ base: "none", md: "0 0 10px 0" }}>
                                 {res.img_all[3] ? <Box w={"100%"} h={"100%"} position={"relative"} cursor={"pointer"} onClick={() => setSelectImg(3)}>
-                                    <Image src={`https://www.cfasia.co.th/public/img_all/${res.img_all[3]}`} alt={`รูปภาพ + ${res.detail_product}`} fill style={{objectFit:'cover'}} />
+                                    <Image src={`https://www.cfasia.co.th/public/img_all/${res.img_all[3]}`} alt={`รูปภาพ + ${res.detail_product}`} fill style={{ objectFit: 'cover' }} />
                                     {chacklenght
                                         ? <Box position={'absolute'} w={'100%'} h={'100%'} bg={'rgba(0,0,0,0.5)'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
                                             <Text color={'white'} fontSize={24}>+{chacklenght} รูป</Text>
@@ -83,9 +92,9 @@ function HomeGet({ datafetch }) {
                 </Box>
             </Container>
             <Box>
-            {
-                selectImg === null ? null : <Carousel images={images} selectImg={selectImg} setSelectImg={setSelectImg} />
-            }
+                {
+                    selectImg === null ? null : <Carousel images={images} selectImg={selectImg} setSelectImg={setSelectImg} />
+                }
             </Box>
         </>
     )
