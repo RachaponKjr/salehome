@@ -14,7 +14,7 @@ export default function Home() {
       <Head>
         <link rel="alternate" hrefLang="th" href="https://cfasia.co.th/th" />
         <link rel="alternate" hrefLang="en" href="https://cfasia.co.th/en" />
-        <link rel="canonical" href={`https://cfasia.co.th/}`} />
+        <link rel="canonical" href={`https://cfasia.co.th/`} />
       </Head>
       <HomePage />
     </>
