@@ -36,9 +36,9 @@ function HomeGet({ datafetch }) {
     return (
         <>
             <Head>
-                <link rel="alternate" hrefLang="th" href="https://cfasia.co.th/th/" />
-                <link rel="alternate" hrefLang="en" href="https://cfasia.co.th/en" />
-                <link rel="canonical" href={`https://cfasia.co.th/${router}`} />
+                <link rel="alternate" hrefLang="th" href="https://www.cfasia.co.th/th/" />
+                <link rel="alternate" hrefLang="en" href="https://www.cfasia.co.th/en" />
+                <link rel="canonical" href={`https://www.cfasia.co.th/${router}`} />
             </Head>
             <Container maxW={"container.xl"} py={"8px"}>
                 {/* ส่วนหัวข้อของหน้า */}

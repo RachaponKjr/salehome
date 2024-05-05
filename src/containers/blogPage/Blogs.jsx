@@ -1,3 +1,4 @@
+'use client'
 import { Box, Container, Flex, Text } from '@chakra-ui/react'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -11,9 +12,9 @@ function Blogs({ homeManu, blogManu }) {
   return (
     <>
       <Head>
-        <link rel="alternate" hrefLang="th" href="https://cfasia.co.th/th/blogs" />
-        <link rel="alternate" hrefLang="en" href="https://cfasia.co.th/en/blogs" />
-        <link rel="canonical" href={`https://cfasia.co.th${router}`} />
+        <link rel="alternate" hrefLang="th" href="https://www.cfasia.co.th/th/blogs" />
+        <link rel="alternate" hrefLang="en" href="https://www.cfasia.co.th/en/blogs" />
+        <link rel="canonical" href={`https://www.cfasia.co.th${router}`} />
       </Head>
       <Box w={"100%"} h={'max-content'} py={"8px"} boxShadow={'rgba(0, 0, 0, 0.16) 0px 1px 4px;'} >
         <Container maxW={"container.xl"} h={"100%"}>
