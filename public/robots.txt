@@ -7,4 +7,3 @@ Host: https://www.cfasia.co.th
 
 # Sitemaps
 Sitemap: https://www.cfasia.co.th/sitemap.xml
-Sitemap: https://www.cfasia.co.th/sitemap-2.xml

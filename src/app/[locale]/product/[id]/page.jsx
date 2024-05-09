@@ -5,16 +5,16 @@ import HomeGet from "@/containers/gat_product/HomeGet";
 //   loading: () => <Loading />,
 // })
 
-export async function generateMetadata({ params: id }) {
-  // fetch data
-  const product = await getData(id)
-  return {
-    title: product?.data?.number_home,
-    // description: product?.data?.detail_home,
-    keywords: product?.data?.name_home +  product?.data?.province
-  }
+// export async function generateMetadata({ params: id }) {
+//   // fetch data
+//   const product = await getData(id)
+//   return {
+//     title: product?.data?.number_home,
+//     // description: product?.data?.detail_home,
+//     keywords: product?.data?.name_home +  product?.data?.province
+//   }
 
-}
+// }
 
 async function Page({ params: { id } }) {
   const data = await getData({ id })

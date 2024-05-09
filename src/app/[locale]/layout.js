@@ -18,10 +18,10 @@ export const metadata = {
   description:
     "บริษัทบริหารสินทรัพย์ ซีเอฟเอเชีย จำกัด ขายทรัพยืสิน ที่ดินว่างเปล่า บ้านเดี่ยว ทาวน์เฮ้าส์ อาคารพาณิชย์ ตึกแถว ห้องชุดพักอาศัย",
   keywords: "CFAM ทรัพย์รอการขาย",
-
+  
   // ยืนยัน Google Site Verification
   verification: {
-    google: "KeIk_P740J-6obP1awqzp-HIAEjkJDoQN43jXKeuS2E",
+    google: "3C7W_6p8Idn6N8jODM4yPspVQ5ZHENaqYslgJ2Qeeqo",
   }
 };
 export const Footer = dynamic(() => import("@/components/Footer"), {
