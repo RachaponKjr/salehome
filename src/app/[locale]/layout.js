@@ -15,10 +15,8 @@ export const metadata = {
     template: "%s | CFAM",
     default: "CFAM ทรัพย์รอการขาย",
   },
-  description:
-    "บริษัทบริหารสินทรัพย์ ซีเอฟเอเชีย จำกัด ขายทรัพยืสิน ที่ดินว่างเปล่า บ้านเดี่ยว ทาวน์เฮ้าส์ อาคารพาณิชย์ ตึกแถว ห้องชุดพักอาศัย",
+  description: "บริษัทบริหารสินทรัพย์ ซีเอฟเอเชีย จำกัด ขายทรัพย์สิน ที่ดินว่างเปล่า บ้านเดี่ยว ทาวน์เฮ้าส์ อาคารพาณิชย์ ตึกแถว ห้องชุดพักอาศัย",
   keywords: "CFAM ทรัพย์รอการขาย",
-  
   // ยืนยัน Google Site Verification
   verification: {
     google: "3C7W_6p8Idn6N8jODM4yPspVQ5ZHENaqYslgJ2Qeeqo",
