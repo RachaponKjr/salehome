@@ -15,7 +15,7 @@ import { BsBoundingBoxCircles } from "react-icons/bs";
 import { GoHome } from "react-icons/go";
 import { HiOutlineHomeModern } from "react-icons/hi2";
 
-function Section1({ datafetch, allTags, areaTags, homeTags, buildingTags }) {
+function Section1({ datafetch, all, area, home, building }) {
   const newData = Array.from(datafetch)
   const [tabs, setTabs] = useState(0)
   const [filter, setFilter] = useState("ทั้งหมด")
@@ -71,7 +71,7 @@ function Section1({ datafetch, allTags, areaTags, homeTags, buildingTags }) {
             <Flex h={'100%'} flexDirection={"row"} gap={'16px'} alignItems={"center"} width={"max-content"} whiteSpace={"nowrap"} px={{ base: 4, md: 8 }} py={2} fontSize={{ base: "12px", md: "16px" }} cursor={"pointer"} position={"relative"} {...tabs === 0 && { color: "#333333", boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px;', _before: { content: "''", position: "absolute", width: "100%", height: "3.5px", bottom: "0", left: "0", bg: "#305553" } }} onClick={() => handleClicked({ tabs: 0, filter: 'ทั้งหมด' })}>
               <FaThLarge size={30} {...tabs === 0 && { color: '#305553' }} />
               <Text>
-                {allTags}
+                {all}
               </Text>
             </Flex>
             <Divider orientation='vertical' borderLeftWidth={"1px"} />
@@ -79,7 +79,7 @@ function Section1({ datafetch, allTags, areaTags, homeTags, buildingTags }) {
               <BsBoundingBoxCircles size={30} {...tabs === 1 && { color: '#305553' }} />
               {/* {tabs === 1 ? <Image src={area_at} width={30} height={30} /> : <Image src={area_non} width={30} height={30} />} */}
               <Text>
-                {areaTags}
+                {area}
               </Text>
             </Flex>
             <Divider orientation='vertical' borderLeftWidth={"1px"} />
@@ -87,7 +87,7 @@ function Section1({ datafetch, allTags, areaTags, homeTags, buildingTags }) {
               <GoHome size={30} {...tabs === 2 && { color: '#305553' }} />
               {/* {tabs === 2 ? <Image src={home_at} width={30} height={30} /> : <Image src={home_non} width={30} height={30} />} */}
               <Text>
-                {homeTags}
+                {home}
               </Text>
             </Flex>
             <Divider orientation='vertical' borderLeftWidth={"1px"} />
@@ -95,7 +95,7 @@ function Section1({ datafetch, allTags, areaTags, homeTags, buildingTags }) {
               <HiOutlineHomeModern size={30} {...tabs === 3 && { color: '#305553' }} />
               {/* {tabs === 3 ? <Image src={building_at} width={30} height={30} /> : <Image src={building_non} width={30} height={30} />} */}
               <Text>
-                {buildingTags}
+                {building}
               </Text>
             </Flex>
           </Flex>

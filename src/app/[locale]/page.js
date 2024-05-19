@@ -1,4 +1,5 @@
 import HomePage from "@/containers/homePage/HomePage";
+import { useTranslations } from "next-intl";
 import Head from "next/head";
 
 // const DynamicHomePage = dynamic(
@@ -14,6 +15,7 @@ export const metadata = {
 };
 
 export default function Home() {
+  const t = useTranslations('Tags')
   return (
     <>
       <Head>
@@ -29,7 +31,7 @@ export default function Home() {
         />
         <link rel="canonical" href={`https://www.cfasia.co.th/`} />
       </Head>
-      <HomePage />
+      <HomePage allTags={t('All')} areaTags={t('Area')} homeTags={t('Home')} buildingTags={t('Building')} />
     </>
   );
 }

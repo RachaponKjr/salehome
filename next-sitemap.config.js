@@ -4,6 +4,8 @@ module.exports = {
     siteUrl: 'https://www.cfasia.co.th/',
     changefreq: 'daily',
     generateRobotsTxt: true,
+    sitemapSize: 7000,
+    outDir: './public',
     exclude: ['/blogs', '/contact'],
     alternateRefs: [
       {

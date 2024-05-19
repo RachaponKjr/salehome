@@ -3,17 +3,14 @@ import { Container } from '@chakra-ui/react'
 import React from 'react'
 import Section1 from './components/Section1'
 
-import { getTranslations } from 'next-intl/server';
-
-async function HomePage() {
+async function HomePage({ allTags, areaTags, homeTags, buildingTags }) {
   const data = await getData()
   const newData = Array.from(data.data)
-  const t = await getTranslations('Tags')
 
   return (
     <>
       <Container maxW={"container.xl"} w={"100%"} h={"max-content"}>
-        <Section1 datafetch={newData} allTags={t('All')} areaTags={t('Area')} homeTags={t('Home')} buildingTags={t('Building')} />
+        <Section1 datafetch={newData} all={allTags} area={areaTags} home={homeTags} building={buildingTags} />
       </Container>
     </>
   )
