@@ -8,11 +8,11 @@ import Head from "next/head";
 //     loading: () => <Loading />,
 //   }
 // );
-export const metadata = {
-  title: "CFAM ทรัพย์รอการขาย",
-  description: "บริษัทบริหารสินทรัพย์ ซีเอฟเอเชีย จำกัด ขายทรัพย์สิน ที่ดินว่างเปล่า บ้านเดี่ยว ทาวน์เฮ้าส์ อาคารพาณิชย์ ตึกแถว ห้องชุดพักอาศัย",
-  keywords: "CFAM ทรัพย์รอการขาย",
-};
+// export const metadata = {
+//   title: "CFAM ทรัพย์รอการขาย",
+//   description: "บริษัทบริหารสินทรัพย์ ซีเอฟเอเชีย จำกัด ขายทรัพย์สิน ที่ดินว่างเปล่า บ้านเดี่ยว ทาวน์เฮ้าส์ อาคารพาณิชย์ ตึกแถว ห้องชุดพักอาศัย",
+//   keywords: "CFAM ทรัพย์รอการขาย",
+// };
 
 export default function Home() {
   const t = useTranslations('Tags')
