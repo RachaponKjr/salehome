@@ -73,7 +73,7 @@ function Contact({ homeManu, contactManu }) {
                     </Flex>
                     <Flex flexDirection={'column'} gap={4}>
                       <Text variant={'h6'} fontWeight={"bold"} textColor={'#2F5553'} fontSize={{ base: "14px", md: "18px" }}>เวลาทำการ</Text>
-                      <Text>09.00 - 17.00</Text>
+                      <Text>08.30 - 17.30</Text>
                     </Flex>
                   </Flex>
                   <Flex my={{ base: 2, sm: 0 }} flexDirection={'column'} mx={'auto'} w={"max-content"} h={"100%"} rounded={"20px"} justifyContent={"start"} alignItems={"center"} p={4}>
