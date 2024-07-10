@@ -42,7 +42,7 @@ function Contact({ homeManu, contactManu }) {
               <Flex justifyContent={"center"} alignItems={"center"} maxW={"100%"} w={"100%"}>
                 <Link href={"https://www.google.co.th/maps/place/%E0%B8%9A%E0%B8%9A%E0%B8%AA.%E0%B8%8B%E0%B8%B5%E0%B9%80%E0%B8%AD%E0%B8%9F+%E0%B9%80%E0%B8%AD%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2+%E0%B8%88%E0%B8%B3%E0%B8%81%E0%B8%B1%E0%B8%94/@13.938895,100.6252457,17z/data=!3m1!4b1!4m6!3m5!1s0x311d7df48272c2f5:0x4b183062bf5a0965!8m2!3d13.938895!4d100.6252457!16s%2Fg%2F11dxf0mvc1?hl=th&entry=ttu"} target='_blank'>
                   <Box position={'relative'} maxW={"100%"} w={{ base: "250px", sm: "350px", md: "450px" }} aspectRatio={'1/1'} boxShadow={'rgba(0, 0, 0, 0.16) 0px 1px 4px;'}>
-                    <Image src={"/googlemap.png"} alt="googleMap" fill objectFit='cover' />
+                    <Image src={"/googlemap.jpg"} alt="googleMap" fill objectFit='cover' />
                   </Box>
                 </Link>
               </Flex>
