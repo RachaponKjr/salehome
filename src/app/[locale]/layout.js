@@ -47,7 +47,7 @@ export default function RootLayout({ children, params: { locale } }) {
           />
           <Box
             bgImage={'/bg-service.jpg'}
-            pb={4}
+            // pb={4}
             bgRepeat={'no-repeat'}
             bgPosition={'top'}
             bgSize={'cover'}
