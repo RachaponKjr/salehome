@@ -1,13 +1,14 @@
 {
-    "NavbarManu": {
-        "HomeManu": "Home",
-        "BlogManu": "Blogs",
-        "ContactManu": "Contact"
-    },
-    "Tags": {
-        "All": "All",
-        "Area": "Area",
-        "Home": "Home",
-        "Building": "Townhome"
-    }
+  "NavbarManu": {
+    "HomeManu": "Home",
+    "BlogManu": "Blogs",
+    "ContactManu": "Contact",
+    "docHome": "Dochome"
+  },
+  "Tags": {
+    "All": "All",
+    "Area": "Area",
+    "Home": "Home",
+    "Building": "Townhome"
   }
+}
