@@ -133,7 +133,7 @@ const MobileMenu = ({ homeManu, blogsManu, contactManu, docHome }) => {
               }}
             >
               <Image
-                src={'/icons/nav_icons/headphone.png'}
+                src={'/icons/nav_icons/dokhome.png'}
                 alt="service"
                 width={30}
                 height={30}

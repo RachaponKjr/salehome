@@ -33,7 +33,7 @@ const Navbar = ({ homeManu, blogsManu, contactManu, docHome }) => {
     },
     {
       tital: docHome,
-      icon: '/icons/nav_icons/headphone.png',
+      icon: '/icons/nav_icons/dokhome.png',
       link: '/dokhome',
     },
   ];
