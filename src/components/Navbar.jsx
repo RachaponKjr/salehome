@@ -1,10 +1,8 @@
 'use client';
-import { Box, Container, Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, Text, Spacer } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
-
 import { Link } from '../navigation';
-
 import { usePathname } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import FlagSelect from './FlagSelect';
@@ -12,159 +10,136 @@ import FlagSelect from './FlagSelect';
 const ButtonTop = dynamic(() => import('./BtnTop'), { ssr: false });
 const ButtonContact = dynamic(() => import('./BtnContact'), { ssr: false });
 const MobileMenu = dynamic(() => import('./MobileMenu'), { ssr: false });
-const Navbar = ({ homeManu, blogsManu, contactManu, docHome }) => {
-  const pathName = usePathname();
 
+export default function Navbar({
+  homeManu,
+  blogsManu,
+  contactManu,
+  Payment,
+  Product,
+  docHome,
+}) {
+  const pathName = usePathname();
+  const current = pathName.replace(/^\/+/, ''); // "" (home) | "payment" | ...
+
+  // รายการเมนู (ไม่มีไอคอนแล้ว)
   const manu = [
-    {
-      tital: homeManu,
-      icon: '/icons/nav_icons/home.png',
-      link: '',
-    },
-    {
-      tital: blogsManu,
-      icon: '/icons/nav_icons/edit.png',
-      link: 'blogs',
-    },
-    {
-      tital: contactManu,
-      icon: '/icons/nav_icons/headphone.png',
-      link: 'contact',
-    },
-    {
-      tital: docHome,
-      icon: '/icons/nav_icons/dokhome.png',
-      link: '/dokhome',
-    },
+    { tital: homeManu, link: '' },
+    { tital: Product, link: 'product' },
+    { tital: Payment, link: 'payment' },
+    // { tital: blogsManu, link: 'blogs' },
+    { tital: docHome, link: 'announcement' },
+    { tital: contactManu, link: 'contact' },
   ];
+
+  const hrefOf = (p) => (p ? `/${p}` : '/');
+
   return (
     <>
-      <Box>
-        {/* linear-gradient(90deg, rgba(47,85,83,1) 28%, rgba(49,112,109,1) 98%) */}
-        <Box
-          bgGradient={
-            'linear-gradient(90deg, rgba(47,85,83,1) 28%, rgba(49,112,109,1) 98%)'
-          }
-          boxShadow={'md'}
-          py={2}
-        >
-          <Container maxW={'container.xl'}>
-            <Flex
-              py={'8px'}
-              position={'relative'}
-              w={'100%'}
-              flexDirection={{ base: 'row' }}
-              justifyContent={'space-between'}
-              alignItems={'center'}
-            >
-              {/* ส่วนของ Logo */}
-              <Flex
-                maxW={'100%'}
-                w={{ base: '160px', sm: '240px', md: '30%' }}
-                position={{ base: 'relative', md: 'absolute', xl: 'relative' }}
-                alignItems={'center'}
-              >
-                <Link href={'/'}>
-                  <Image
-                    src={'/imgs/logo.png'}
-                    alt="logo"
-                    width={100}
-                    height={35}
-                  />
-                </Link>
-              </Flex>
-              {/* ส่วนเมนูทางด้าน ขวา ของ ขนาด 1024px ขึ้นไป */}
-              <Flex
-                flexDirection={'row-reverse'}
-                w={{ md: '100%', xl: '70%' }}
-                alignItems={'center'}
-                gap={'24px'}
-              >
-                {/* ส่วนบนของเมนู */}
-                <Flex gap={2} alignItems={'center'} h={'100%'} zIndex={10}>
-                  {/* Select เลือกเปลี่ยนภาษา */}
-                  <FlagSelect />
-                </Flex>
-                {/* ส่วนล่างของเมนู */}
+      {/* แถบ Navbar พื้นหลัง Gradient */}
+      <Box
+        bgGradient="linear-gradient(90deg, rgba(47,85,83,1) 28%, rgba(49,112,109,1) 98%)"
+        boxShadow="md"
+        py={4}
+      >
+        {/* ใช้ Flex ให้เต็มจอ — ไม่มี Container เพื่อเลี่ยง padding ซ้าย/ขวา */}
+        <Flex w="100%" px={0} align="center">
+          {/* โลโก้ชิดซ้าย (ขยับซ้าย/ขวาด้วย ml ได้) */}
+          <Box ml={10}>
+            <Link href="/">
+              <Image src="/imgs/logo.png" alt="logo" width={100} height={35} />
+            </Link>
+          </Box>
+
+          <Spacer />
+
+          {/* เมนูหลัก (เดสก์ท็อป) — วางก่อน FlagSelect เพื่อให้เมนูชิดขวาสุดได้จริง */}
+          <Flex
+            as="nav"
+            display={{ base: 'none', md: 'flex' }}
+            align="center"
+            gap={{ md: 2, xl: 4 }} // ✅ ปรับช่องว่างระหว่างเมนูตรงนี้
+            ml={4}
+            pr={0} // ✅ ไม่มี padding ด้านขวา
+          >
+            {manu.map((item, idx) => {
+              const active = current === item.link;
+              const isLast = idx === manu.length - 1;
+
+              return (
                 <Flex
-                  display={{ base: 'none', md: 'flex' }}
-                  gap={{ md: 4, xl: 8 }}
+                  key={item.link || 'home'}
+                  as={Link}
+                  href={hrefOf(item.link)}
+                  role="group" // ✅ ใช้กับ _groupHover ของเส้นใต้
+                  position="relative" // ✅ ให้เส้นใต้วาง absolute ได้
+                  align="center"
+                  px={3}
+                  py={2}
+                  pr={isLast ? 0 : 3} // ✅ เอา padding ขวาออกจากอันสุดท้ายเพื่อชิดขวา
+                  borderRadius="md"
+                  color="white"
+                  cursor="pointer"
+                  _hover={{ bg: 'whiteAlpha.200' }}
+                  transition="all 0.2s ease"
                 >
-                  {manu.map((item, index) => (
-                    <Flex
-                      role="group"
-                      key={index}
-                      minW={'120px'}
-                      zIndex={0}
-                      overflow={'hidden'}
-                      alignItems={'center'}
-                      color={'white'}
-                      cursor={'pointer'}
-                      gap={'8px'}
-                      fontSize={{ md: '12px', xl: '14px' }}
-                      position={'relative'}
-                      className={`${
-                        pathName === item.link ? 'nav_active' : 'nav_hover'
-                      }`}
-                    >
-                      <Link
-                        href={`/${item.link}`}
-                        style={{
-                          margin: '8px 0px',
-                          width: '100%',
-                          height: '100%',
-                          display: 'flex',
-                          justifyContent: 'center',
-                          alignItems: 'center',
-                          gap: '16px',
-                        }}
-                      >
-                        <Image
-                          src={item.icon}
-                          alt="icon"
-                          width={25}
-                          height={25}
-                        />
-                        <Text fontSize={'16px'}>{item.tital}</Text>
-                      </Link>
-                    </Flex>
-                  ))}
+                  <Text
+                    fontSize={{ md: '14px', xl: '16px' }}
+                    whiteSpace="nowrap"
+                  >
+                    {item.tital}
+                  </Text>
+
+                  {/* เส้นวิ่งใต้เมนูแบบ FlagSelect */}
+                  <Box
+                    position="absolute"
+                    bottom="0"
+                    left="0"
+                    h="2px"
+                    bg="red.400" // ✅ เปลี่ยนสีได้ตามต้องการ
+                    w={active ? '100%' : '0%'} // ✅ หน้าที่ active ให้เส้นเต็ม 100%
+                    _groupHover={{ w: '100%' }} // ✅ hover แล้วขยายเต็ม
+                    transition="width 0.5s ease"
+                  />
                 </Flex>
-              </Flex>
-            </Flex>
-          </Container>
-        </Box>
-        {/* ปุ่มติดต่อ กับ ปุ่ม เลื่อน ขึ้นด้านบน */}
-        <Box
-          position={'fixed'}
-          right={0}
-          bottom={0}
-          width={'64px'}
-          height={'max-content'}
-          display={{ base: 'none', md: 'flex' }}
-          flexDirection={'column'}
-          justifyContent={'center'}
-          alignItems={'center'}
-          gap={2}
-          mx={2}
-          py={4}
-          zIndex={999}
-        >
-          {/* ติดต่อ */}
-          <ButtonContact />
-          {/* เลื่อนขึ้นบน */}
-          <ButtonTop />
-        </Box>
+              );
+            })}
+          </Flex>
+
+          {/* ตัวเปลี่ยนภาษา — อยู่ริมขวาสุด */}
+          <Flex align="center" ml={6} mr={6}>
+            <FlagSelect />
+          </Flex>
+        </Flex>
       </Box>
-      {/* เมนู ของส่วนมือถือ อยู่ทางด้านล่าง */}
+
+      {/* ปุ่มลอยขวาล่าง */}
+      <Box
+        position="fixed"
+        right={0}
+        bottom={0}
+        w="64px"
+        display={{ base: 'none', md: 'flex' }}
+        flexDir="column"
+        align="center"
+        gap={2}
+        mx={2}
+        py={4}
+        zIndex={999}
+      >
+        <ButtonContact />
+        <ButtonTop />
+      </Box>
+
+      {/* เมนูมือถือ */}
       <MobileMenu
         homeManu={homeManu}
-        blogsManu={blogsManu}
-        contactManu={contactManu}
+        // blogsManu={blogsManu}
+        Product={Product}
+        Payment={Payment}
         docHome={docHome}
+        contactManu={contactManu}
       />
     </>
   );
-};
-
-export default Navbar;
+}

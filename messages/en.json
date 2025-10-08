@@ -1,9 +1,10 @@
 {
   "NavbarManu": {
     "HomeManu": "Home",
-    "BlogManu": "Blogs",
-    "ContactManu": "Contact",
-    "docHome": "News/Announcement"
+    "Product": "NPA",
+    "Payment": "Payment Form",
+    "docHome": "Rates and Fees",
+    "ContactManu": "Contact"
   },
   "Tags": {
     "All": "All",

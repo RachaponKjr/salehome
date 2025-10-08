@@ -41,7 +41,9 @@ export default function RootLayout({ children, params: { locale } }) {
           {/* ส่วนของ Navbar */}
           <Navbar
             homeManu={t('HomeManu')}
-            blogsManu={t('BlogManu')}
+            Payment={t('Payment')}
+            Product={t('Product')}
+            // blogsManu={t('BlogManu')}
             contactManu={t('ContactManu')}
             docHome={t('docHome')}
           />

@@ -1,5 +1,4 @@
-
-import HomeGet from "@/containers/gat_product/HomeGet";
+import HomeGet from '@/containers/gat_product/HomeGet';
 
 // const DynamicGetProductPage = dynamic(() => import("@/containers/gat_product/HomeGet"), {
 //   loading: () => <Loading />,
@@ -17,11 +16,11 @@ import HomeGet from "@/containers/gat_product/HomeGet";
 // }
 
 async function Page({ params: { id } }) {
-  const data = await getData({ id })
+  const data = await getData({ id });
   return (
     <>
       {/* <DynamicGetProductPage datafetch={data} /> */}
-      <HomeGet datafetch={data}/>
+      <HomeGet datafetch={data} />
     </>
   );
 }
@@ -30,10 +29,10 @@ export async function getData({ id }) {
   const res = await fetch(`http://18.140.121.108:5500/getsalehome/${id}`, {
     method: 'GET',
     cache: 'no-store',
-  }).then(res => res.json()).catch(err => console.log(err))
-  return res
+  })
+    .then((res) => res.json())
+    .catch((err) => console.log(err));
+  return res;
 }
 
-export default Page
-
-
+export default Page;

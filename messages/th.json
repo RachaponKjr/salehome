@@ -1,9 +1,10 @@
 {
   "NavbarManu": {
     "HomeManu": "หน้าแรก",
-    "BlogManu": "บทความเเนะนำ",
-    "ContactManu": "ติดต่อเรา",
-    "docHome": "ข่าวสาร/ประกาศ"
+    "Product": "ทรัพย์รอการขาย",
+    "Payment": "แบบฟอร์มชำระเงิน",
+    "docHome": "ประกาศอัตราดอกเบี้ย",
+    "ContactManu": "ติดต่อเรา"
   },
   "Tags": {
     "All": "ทั้งหมด",

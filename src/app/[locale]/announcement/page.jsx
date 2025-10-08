@@ -6,33 +6,9 @@ export default function page() {
   return (
     <>
       <Box h="calc(100vh - 8rem)" display={'flex'}>
-        {/* <Box w={'100%'}>
-          <Box display={'flex'} justifyContent={'end'}>
-            <Box style={{ margin: '20px' }}>
-              <a href="/dokhome.pdf" download>
-                <Button
-                  mr={10}
-                  display={'flex'}
-                  bg={'gray.200'}
-                  color={'#2f5553'}
-                >
-                  <Box>
-                    <img
-                      src="/icons/nav_icons/download.png"
-                      alt=""
-                      width={'25px'}
-                    />
-                  </Box>
-                  <Box ml={2}>DOWLOAD</Box>
-                </Button>
-              </a>
-            </Box>
-          </Box>
-        </Box> */}
-
         <Box
           flex="1"
-          my={{ base: '2rem', md: '0' }}
+          my={{ base: '2rem', md: '2rem' }}
           display="flex"
           justifyContent="center"
           alignItems="center"
@@ -54,8 +30,11 @@ export default function page() {
                 <Box>
                   <img src="/ann.png" alt="" width={'35px'} />
                 </Box>
-                <Box ml={3}>ประกาศอัตราดอกเบี้ย</Box>
+                <Box ml={3} fontSize={{ base: '14px' }}>
+                  อัตราดอกเบี้ย ค่าปรับ ค่าบริการและค่าธรรมเนียม
+                </Box>
               </Box>
+
               <Box>
                 <hr style={{ borderColor: 'red', borderWidth: '1px' }} />
               </Box>
@@ -66,21 +45,44 @@ export default function page() {
                 flexDirection={{ base: 'column', md: 'row' }}
                 mt={5}
               >
-                <Box>
-                  อัตราดอกเบี้ย ค่าบริการ ค่าธรรมเนียม และค่าใช้จ่ายต่างๆ
-                </Box>
-                <a href="/dokhome.pdf" target="blank">
-                  <Button display={'flex'} p={5} mt={{ base: 3, md: 0 }}>
+                <a href="/cfam_t.pdf" target="blank">
+                  <Box
+                    display={'flex'}
+                    justifyContent={'start'}
+                    alignItems={'center'}
+                  >
                     <Box>
                       <img src="/pdf.png" alt="" width={'30px'} />
                     </Box>
-                    <Box ml={3} color={'#305A58'}>
-                      View File
+                    <Box color={'#305A58'} ml={3} fontSize={{ base: '14px' }}>
+                      มีผลบังคับใช้ตั้งแต่วันที่ &nbsp;1 กุมภาพันธ์ 2568
                     </Box>
-                  </Button>
+                  </Box>
                 </a>
               </Box>
-              <br />
+
+              <Box
+                display={'flex'}
+                justifyContent={'space-between'}
+                flexDirection={{ base: 'column', md: 'row' }}
+                mt={5}
+              >
+                <a href="/dokhome.pdf" target="blank">
+                  <Box
+                    display={'flex'}
+                    justifyContent={'start'}
+                    alignItems={'center'}
+                  >
+                    <Box>
+                      <img src="/pdf.png" alt="" width={'30px'} />
+                    </Box>
+                    <Box color={'#305A58'} ml={3} fontSize={{ base: '14px' }}>
+                      มีผลบังคับใช้ตั้งแต่วันที่ 31 กรกฎาคม 2567
+                    </Box>
+                  </Box>
+                </a>
+              </Box>
+
               <br />
             </Box>
           </Box>
