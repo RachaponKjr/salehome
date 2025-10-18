@@ -202,9 +202,7 @@ function Payment({ homeManu, Payment: paymentText }) {
   };
 
   // ชื่อองค์กรสำหรับหัวรูป (แก้ได้ หรือใช้ env ก็ได้)
-  const COMPANY_TITLE =
-    (typeof process !== 'undefined' && process.env.NEXT_PUBLIC_COMPANY_TITLE) ||
-    'QR สำหรับชำระเงิน';
+  const COMPANY_TITLE = 'บริษัท บริหารสินทรัพย์ ซีเอฟ เอเชีย จำกัด';
 
   function downloadQrImage() {
     if (!qrDataUrl) {
@@ -221,9 +219,6 @@ function Payment({ homeManu, Payment: paymentText }) {
     const selected = normalizedResults[pickedIndex ?? 0] || null;
     const contractNo =
       picked?.customerId || selected?.customerId || selected?.contractNo || '';
-    const productName = selected?.productName
-      ? `บัญชี ${selected.productName}`
-      : '';
 
     const img = new Image();
     img.crossOrigin = 'anonymous';
@@ -233,17 +228,23 @@ function Payment({ homeManu, Payment: paymentText }) {
       const qrW = img.naturalWidth || 300;
       const qrH = img.naturalHeight || 300;
 
-      // layout params (เหมือนโค้ดเดิม)
+      // ===== layout base =====
       const padding = 48;
-      const headerH = 88;
       const gapHrTop = 24;
-      const gapText = productName ? 64 : 36; // ถ้ามีชื่อบัญชี เผื่อบรรทัดเพิ่ม
+      const gapText = 36;
       const footerH = 34;
 
       const Cw = Math.max(520, qrW + padding * 2);
+
+      // เตรียม ctx ชั่วคราวเพื่อคำนวณฟอนต์หัวเรื่อง
+      const tmp = document.createElement('canvas').getContext('2d');
+      const maxHeaderWidth = Cw - padding * 2;
+      const fit = fitFontSize(tmp, COMPANY_TITLE, maxHeaderWidth, 2, 20, 12);
+      const headerH = Math.max(72, fit.lineHeight * fit.lines + 40);
+
       const Ch = headerH + qrH + gapHrTop + gapText + footerH + padding * 2;
 
-      // Retina
+      // ===== สร้าง canvas จริง (รองรับ Retina) =====
       const dpr = window.devicePixelRatio || 1;
       const canvas = document.createElement('canvas');
       canvas.width = Math.round(Cw * dpr);
@@ -256,16 +257,16 @@ function Payment({ homeManu, Payment: paymentText }) {
       ctx.fillRect(0, 0, Cw, Ch);
       ctx.textAlign = 'center';
 
-      // header (บริษัท)
+      // ===== วาดหัวบริษัท =====
       ctx.fillStyle = '#0f766e';
-      ctx.font = 'bold 24px sans-serif';
+      ctx.font = `bold ${fit.fontSize}px sans-serif`;
       drawWrappedText(
         ctx,
         COMPANY_TITLE,
         Cw / 2,
-        padding + 34,
-        Cw - padding * 2,
-        28,
+        padding + 24,
+        maxHeaderWidth,
+        fit.lineHeight,
         true
       );
 
@@ -284,7 +285,7 @@ function Payment({ homeManu, Payment: paymentText }) {
 
       // ข้อความสัญญา
       ctx.fillStyle = '#0b0f10';
-      ctx.font = 'bold 20px sans-serif';
+      ctx.font = 'bold 16px sans-serif';
       const bottomY = hrAboveContractY + 32;
       const contractText = contractNo ? `เลขที่สัญญา : ${contractNo}` : '';
       drawWrappedText(
@@ -297,23 +298,8 @@ function Payment({ homeManu, Payment: paymentText }) {
         false
       );
 
-      // บรรทัดชื่อบัญชี (ถ้ามี)
-      if (productName) {
-        ctx.font = '16px sans-serif';
-        ctx.fillStyle = '#1f2937';
-        drawWrappedText(
-          ctx,
-          productName,
-          Cw / 2,
-          bottomY + 26,
-          Cw - padding * 2,
-          22,
-          true
-        );
-      }
-
       // ดาวน์โหลดไฟล์
-      const fileName = 'qrcode.png';
+      const fileName = `QR_บริษัท_บริหารสินทรัพย์ซีเอฟเอเชีย_จำกัด_${contractNo}`;
       if (canvas.toBlob) {
         canvas.toBlob((blob) => {
           const url = URL.createObjectURL(blob);
@@ -325,11 +311,7 @@ function Payment({ homeManu, Payment: paymentText }) {
     };
 
     img.onerror = function () {
-      toast({
-        title: 'โหลดรูป QR ไม่ได้',
-        status: 'error',
-        position: 'top',
-      });
+      toast({ title: 'โหลดรูป QR ไม่ได้', status: 'error', position: 'top' });
     };
 
     // ===== helpers =====
@@ -381,17 +363,38 @@ function Payment({ homeManu, Payment: paymentText }) {
       ctx.fillText(line, centerX, y);
     }
 
-    function sanitize(s) {
-      return (
-        (s || '').replace(/\s+/g, '_').replace(/[^\wก-๙_.-]/g, '') ||
-        'payment_qr'
-      );
-    }
-
-    function makeFileName(company, contract) {
-      let name = sanitize(company).slice(0, 60);
-      if (contract) name += '_' + contract;
-      return name + '.png';
+    function fitFontSize(
+      ctx,
+      text,
+      maxWidth,
+      maxLines = 2,
+      maxFont = 24,
+      minFont = 12
+    ) {
+      for (let fs = maxFont; fs >= minFont; fs--) {
+        ctx.font = `bold ${fs}px sans-serif`;
+        const words = String(text || '')
+          .trim()
+          .split(/\s+/);
+        let line = '',
+          lines = 1;
+        for (let i = 0; i < words.length; i++) {
+          const test = line ? line + ' ' + words[i] : words[i];
+          if (ctx.measureText(test).width > maxWidth && i > 0) {
+            lines++;
+            line = words[i];
+            if (lines > maxLines) break;
+          } else {
+            line = test;
+          }
+        }
+        if (lines <= maxLines) {
+          const lineHeight = Math.round(fs * 1.15);
+          return { fontSize: fs, lineHeight, lines };
+        }
+      }
+      const lineHeight = Math.round(minFont * 1.15);
+      return { fontSize: minFont, lineHeight, lines: maxLines };
     }
 
     function triggerDownload(url, fileName) {

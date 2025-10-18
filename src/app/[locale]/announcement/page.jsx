@@ -34,7 +34,6 @@ export default function page() {
                   อัตราดอกเบี้ย ค่าปรับ ค่าบริการและค่าธรรมเนียม
                 </Box>
               </Box>
-
               <Box>
                 <hr style={{ borderColor: 'red', borderWidth: '1px' }} />
               </Box>
@@ -45,7 +44,7 @@ export default function page() {
                 flexDirection={{ base: 'column', md: 'row' }}
                 mt={5}
               >
-                <a href="/cfam_t.pdf" target="blank">
+                <a href="/CFAM_announcement20250201.pdf" target="blank">
                   <Box
                     display={'flex'}
                     justifyContent={'start'}
@@ -55,19 +54,18 @@ export default function page() {
                       <img src="/pdf.png" alt="" width={'30px'} />
                     </Box>
                     <Box color={'#305A58'} ml={3} fontSize={{ base: '14px' }}>
-                      มีผลบังคับใช้ตั้งแต่วันที่ &nbsp;1 กุมภาพันธ์ 2568
+                      มีผลบังคับใช้ตั้งแต่วันที่&nbsp;1 กุมภาพันธ์ 2568
                     </Box>
                   </Box>
                 </a>
               </Box>
-
               <Box
                 display={'flex'}
                 justifyContent={'space-between'}
                 flexDirection={{ base: 'column', md: 'row' }}
                 mt={5}
               >
-                <a href="/dokhome.pdf" target="blank">
+                <a href="/CFAM_announcement20240801.pdf" target="blank">
                   <Box
                     display={'flex'}
                     justifyContent={'start'}
@@ -77,7 +75,7 @@ export default function page() {
                       <img src="/pdf.png" alt="" width={'30px'} />
                     </Box>
                     <Box color={'#305A58'} ml={3} fontSize={{ base: '14px' }}>
-                      มีผลบังคับใช้ตั้งแต่วันที่ 31 กรกฎาคม 2567
+                      มีผลบังคับใช้ตั้งแต่วันที่ 1 สิงหาคม 2567
                     </Box>
                   </Box>
                 </a>

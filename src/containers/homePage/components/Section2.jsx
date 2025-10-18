@@ -41,7 +41,7 @@ export default function Section2() {
         >
           {/* Left Side - Text Content */}
           <GridItem>
-            <VStack align="start" spacing={6}>
+            <VStack align="start">
               <Text
                 fontSize={{ base: '1xl', md: '2xl' }}
                 color="#FF8E00"
@@ -49,12 +49,16 @@ export default function Section2() {
               >
                 บริษัท บริหารสินทรัพย์ ซีเอฟ เอเชีย จำกัด
               </Text>
+              <Text>CF Asia Asset Management</Text>
 
               <Text
                 fontSize={{ base: 'md', md: 'lg' }}
                 color="FFB800"
-                lineHeight="tall"
+                lineHeight="normal"
+                mb={3}
               >
+                {/* บริษัท บริหารสินทรัพย์ ซีเอฟ เอเชีย จำกัด
+                ประกอบธุรกิจบริหารจัดการสินทรัพย์ด้อยคุณภาพ */}
                 บริษัท บริหารสินทรัพย์ ซีเอฟ เอเชีย จำกัด
                 ประกอบธุรกิจบริหารจัดการสินทรัพย์ด้อยคุณภาพ
               </Text>
@@ -94,10 +98,29 @@ export default function Section2() {
                 <Text fontSize="md" color="gray.600" lineHeight="tall">
                   แอปพลิเคชันที่ลูกค้าสามารถตรวจสอบยอดหนี้ค้างชำระ
                   ประวัติการชำระด้วยตนเอง รวมถึงสามารถขอเอกสารต่างๆ เช่น
-                  หนังสือปิดบัญชี หนังสือเจือจำนองในการชำระ ในเสร็จรับเงิน
-                  หรือเอกสารอื่นที่เกี่ยวข้องได้ มีฟังก์ชันแชทที่สามารถตั้งคำถาม
-                  และเสนอการใช้งาน ได้ทั้งระบบ iOS และ Android
+                  หนังสือปิดบัญชี หนังสือเงื่อนไขการชำระ ใบเสร็จรับเงิน
+                  หรือเอกสารอื่นที่เกี่ยวข้องได้
+                  มีฟังก์ชั่นแชทที่สามารถโต้ตอบกับเจ้าหน้าที่ได้
+                  ลูกค้าสามารถดาวน์โหลดติดตั้งได้ทั้งระบบ iOS และ Android
                 </Text>
+                <Box display={'flex'} mt={3}>
+                  <Box>
+                    <a
+                      href="https://apps.apple.com/th/app/arma/id6472656294?l=th"
+                      target="_blank"
+                    >
+                      <Image src="/imgs/applestore.svg" alt="loading" />
+                    </a>
+                  </Box>
+                  <Box ml={5}>
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.chase.arma&pcampaignid=web_share"
+                      target="_blank"
+                    >
+                      <Image src="/imgs/playstore.svg" alt="loading" />
+                    </a>
+                  </Box>
+                </Box>
               </Box>
             </VStack>
           </GridItem>
