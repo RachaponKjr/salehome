@@ -28,12 +28,7 @@ import React, { useMemo, useState, useRef } from 'react';
 import { IoQrCodeOutline } from 'react-icons/io5';
 import { IoMdDownload } from 'react-icons/io';
 
-// const API_BASE =
-//   (typeof process !== 'undefined' &&
-//     process.env?.NEXT_PUBLIC_API_BASE?.replace(/\/+$/, '')) ||
-//   'http://localhost:5140';
-
-const API_BASE = 'http://18.140.121.108:5120';
+// const API_BASE = 'http://18.140.121.108:5120';
 
 // ===== Build payload (ตาม C# ที่ให้มา) =====
 function buildBillBarcodePayload({
@@ -133,7 +128,7 @@ function Payment({ homeManu, Payment: paymentText }) {
     setPicked(null);
 
     try {
-      const res = await fetch(`${API_BASE}/getpay/${id}`, {
+      const res = await fetch(`/api/getpay/${id}`, {
         cache: 'no-store',
         mode: 'cors',
         headers: { 'ngrok-skip-browser-warning': 'true' },

@@ -30,6 +30,10 @@ export async function getData({ id }) {
     method: 'GET',
     cache: 'no-store',
   })
+    // const res = await fetch(`/api/getsalehome/${id}`, {
+    //   method: 'GET',
+    //   cache: 'no-store',
+    // })
     .then((res) => res.json())
     .catch((err) => console.log(err));
   return res;
