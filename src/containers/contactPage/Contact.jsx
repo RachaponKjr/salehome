@@ -422,7 +422,7 @@ function Contact({ homeManu, contactManu }) {
                           <MdEmail color="white" size={20} />
                         </Flex>
                         <Text fontSize={{ base: '14px', md: '16px' }}>
-                          cfam@cfam.co.th
+                          cfam@cfasia.co.th
                         </Text>
                       </Flex>
 
