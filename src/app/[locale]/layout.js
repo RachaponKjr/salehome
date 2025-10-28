@@ -46,6 +46,7 @@ export default function RootLayout({ children, params: { locale } }) {
             // blogsManu={t('BlogManu')}
             contactManu={t('ContactManu')}
             docHome={t('docHome')}
+            pdpa={t('pdpa')}
           />
           <Box
             bgImage={'/bg-service.jpg'}

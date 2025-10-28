@@ -1,178 +1,155 @@
 'use client';
 import {
-  Flex,
-  Grid,
-  GridItem,
-  Text,
   Box,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  useBreakpointValue,
+  VStack,
   HStack,
+  Text,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerHeader,
+  DrawerBody,
+  DrawerFooter,
+  IconButton,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Divider,
 } from '@chakra-ui/react';
-import React, { useMemo } from 'react';
 import Image from 'next/image';
-import { FiChevronDown } from 'react-icons/fi';
 import { Link } from '../navigation';
+import { FiX } from 'react-icons/fi';
+import FlagSelect from './FlagSelect';
 
-const toHref = (v) => (v?.startsWith('/') ? v : `/${v || ''}`);
-
-export default function MobileMenu({
-  homeManu,
-  contactManu,
-  Payment,
-  Product,
-  docHome,
+export default function MobileDrawer({
+  isOpen,
+  onClose,
+  manu,
+  hrefOf,
+  current,
 }) {
-  const menuWidth = useBreakpointValue({ base: '92vw', sm: '80vw' });
-  const itemFont = useBreakpointValue({ base: '13px', sm: '14px' });
+  const isItemActive = (item) => {
+    if (!item.children) return current === item.link;
+    const inChild = item.children?.some(
+      (c) => current === c.link || current.startsWith(`${c.link}/`)
+    );
+    return (
+      current === item.link || inChild || current.startsWith(`${item.link}/`)
+    );
+  };
 
-  const items = useMemo(
-    () => [
-      { href: '/', icon: '/icons/nav_icons/home.png', label: homeManu },
-      { href: '/payment', icon: '/icons/nav_icons/credit.png', label: Payment },
-      { href: '/product', icon: '/icons/nav_icons/sale.png', label: Product },
-      {
-        icon: '/icons/nav_icons/edit.png',
-        label: docHome,
-        children: [
-          {
-            key: '1',
-            label: 'ประกาศอัตราดอกเบี้ย ค่าปรับ ค่าบริการและค่าธรรมเนียม',
-            href: '/announcement/dokbea',
-          },
-          {
-            key: '2',
-            label: 'การคุ้มครองข้อมูลส่วนบุคคล (PDPA)',
-            href: '/announcement/pdpa',
-          },
-          {
-            key: '3',
-            label: 'งบการเงิน',
-            href: '/announcement/money',
-          },
-        ],
-      },
-      {
-        href: '/contact',
-        icon: '/icons/nav_icons/headphone.png',
-        label: contactManu,
-      },
-    ],
-    [homeManu, Payment, Product, docHome, contactManu]
-  );
+  const Item = ({ item }) => {
+    const active = isItemActive(item);
+
+    if (!item.children) {
+      return (
+        <Box
+          as={Link}
+          href={hrefOf(item.link)}
+          onClick={onClose}
+          px={3}
+          py={2.5}
+          rounded="lg"
+          bg={active ? 'teal.600' : 'transparent'}
+          color={active ? 'white' : 'whiteAlpha.900'}
+          _hover={{ bg: active ? 'teal.700' : 'whiteAlpha.200' }}
+          transition="all 0.15s ease"
+        >
+          {item.title}
+        </Box>
+      );
+    }
+
+    return (
+      <Accordion allowToggle reduceMotion>
+        <AccordionItem border="none">
+          <h2>
+            <AccordionButton
+              px={3}
+              py={2.5}
+              rounded="lg"
+              bg={active ? 'teal.600' : 'transparent'}
+              color={active ? 'white' : 'whiteAlpha.900'}
+              _hover={{ bg: active ? 'teal.700' : 'whiteAlpha.200' }}
+            >
+              <Box as="span" flex="1" textAlign="left">
+                {item.title}
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel
+            px={2}
+            pt={2}
+            pb={1}
+            bg="white"
+            color="gray.800"
+            rounded="md"
+          >
+            <VStack align="stretch" spacing={1}>
+              {item.children.map((c) => (
+                <Box
+                  as={Link}
+                  href={hrefOf(c.link)}
+                  key={c.key}
+                  onClick={onClose}
+                  px={3}
+                  py={2}
+                  rounded="md"
+                  _hover={{ bg: 'teal.50', color: 'teal.700' }}
+                >
+                  {c.label}
+                </Box>
+              ))}
+            </VStack>
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
+    );
+  };
 
   return (
-    <Flex
-      bgColor="#2F5553"
-      w="100%"
-      display={{ base: 'flex', md: 'none' }}
-      h="75px"
-      position="fixed"
-      bottom={0}
-      zIndex={1000}
-      color="white"
-    >
-      <Grid templateColumns="repeat(5, 1fr)" w="100%" h="100%">
-        {items.map((item, i) => (
-          <GridItem
-            key={`${item.label}-${i}`}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            {/* ถ้ามี children ให้แสดงลูกศร FiChevronDown */}
-            {item.children ? (
-              <Menu isLazy placement="top" closeOnSelect>
-                <MenuButton
-                  as={Box}
-                  display="flex"
-                  flexDir="column"
-                  alignItems="center"
-                  justifyContent="center"
-                  cursor="pointer"
-                  px={2}
-                  py={2}
-                  _active={{ opacity: 0.9 }}
-                >
-                  <Box
-                    display={'flex'}
-                    justifyContent={'center'}
-                    alignItems={'center'}
-                  >
-                    <Image
-                      src={item.icon}
-                      alt={item.label}
-                      width={22}
-                      height={22}
-                    />
-                  </Box>
+    <Drawer isOpen={isOpen} placement="left" onClose={onClose} size="xs">
+      <DrawerOverlay />
+      <DrawerContent bg="#2F5553" color="white">
+        <DrawerHeader borderBottomWidth="0" pb={2}>
+          <HStack justify="space-between" align="center">
+            <HStack>
+              <Image src="/imgs/logo.png" alt="logo" width={90} height={30} />
+            </HStack>
+            <IconButton
+              aria-label="Close"
+              icon={<FiX />}
+              onClick={onClose}
+              variant="ghost"
+              color="white"
+              _hover={{ bg: 'whiteAlpha.200' }}
+            />
+          </HStack>
+        </DrawerHeader>
 
-                  {/* ✅ ปรับ layout ของข้อความ + ลูกศรให้อยู่กึ่งกลางกันจริง ๆ */}
-                  <Flex align="center" justify="center" mt={1}>
-                    <Text fontSize="10px" lineHeight="1" whiteSpace="nowrap">
-                      {item.label}
-                    </Text>
-                    <Box as={FiChevronDown} fontSize="12px" mt="1px" />
-                  </Flex>
-                </MenuButton>
+        <DrawerBody>
+          <VStack align="stretch" spacing={1.5} mt={2}>
+            {manu.map((item) => (
+              <Item key={item.link || 'home'} item={item} />
+            ))}
+          </VStack>
+        </DrawerBody>
 
-                {/* Dropdown list */}
-                <MenuList
-                  w={menuWidth}
-                  maxW="95vw"
-                  borderRadius="14px"
-                  boxShadow="lg"
-                  p={2}
-                  zIndex={2000}
-                  bg="white"
-                  color="gray.800"
-                >
-                  {item.children.map((c) => (
-                    <MenuItem
-                      as={Link}
-                      href={toHref(c.href)}
-                      key={c.key}
-                      fontSize={itemFont}
-                      py={2}
-                      whiteSpace="normal"
-                      lineHeight="1.4"
-                      _hover={{ bg: 'teal.50', color: 'teal.700' }}
-                    >
-                      {c.label}
-                    </MenuItem>
-                  ))}
-                </MenuList>
-              </Menu>
-            ) : (
-              <Link
-                href={toHref(item.href)}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  padding: '8px',
-                }}
-              >
-                <Image
-                  src={item.icon}
-                  alt={item.label}
-                  width={22}
-                  height={22}
-                />
-                <Text fontSize="10px" mt={1} noOfLines={1}>
-                  {item.label}
-                </Text>
-              </Link>
-            )}
-          </GridItem>
-        ))}
-      </Grid>
-    </Flex>
+        <DrawerFooter borderTopWidth="0" pt={0} pb={4}>
+          <VStack w="100%" spacing={3}>
+            <Divider borderColor="whiteAlpha.300" />
+            <HStack w="100%" justify="space-between">
+              <Text fontSize="sm" opacity={0.9}>
+                Language
+              </Text>
+              <FlagSelect />
+            </HStack>
+          </VStack>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
   );
 }
