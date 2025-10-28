@@ -50,9 +50,13 @@ export default function Navbar({
           {
             key: '1',
             label: 'ประกาศอัตราดอกเบี้ย ค่าปรับ ค่าบริการและค่าธรรมเนียม',
-            link: 'announcement/dokbea',
+            link: 'announcement/Rates_Fees',
           },
-          { key: '2', label: 'งบการเงิน', link: 'announcement/money' },
+          {
+            key: '2',
+            label: 'งบการเงิน',
+            link: 'announcement/FinancialStatements',
+          },
         ],
       },
       { title: pdpa, link: 'pdpa' },
@@ -217,7 +221,10 @@ export default function Navbar({
 
           {/* เปลี่ยนภาษา (เดสก์ท็อป) */}
           <Flex align="center" ml={6} mr={{ base: 2, md: 6 }}>
-            <Box display={{ base: 'none', md: 'block' }}>
+            <Box
+              display={{ base: 'none', md: 'block' }}
+              fontSize={{ md: '12px', xl: '14px' }}
+            >
               <FlagSelect />
             </Box>
           </Flex>

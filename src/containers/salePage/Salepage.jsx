@@ -23,11 +23,7 @@ async function SalePage({ allTags, areaTags, homeTags, buildingTags }) {
 }
 
 export async function getData() {
-  //   const res = await fetch('http://18.140.121.108:5500/getsalehome', {
-  //   method: 'GET',
-  //   cache: 'no-store',
-  // })
-  const res = await fetch('/api/getsalehome', {
+  const res = await fetch('http://18.140.121.108:5500/getsalehome', {
     method: 'GET',
     cache: 'no-store',
   })

@@ -1,19 +1,39 @@
-'use client'
-import {  Flex } from '@chakra-ui/react'
+'use client';
+import { Flex } from '@chakra-ui/react';
 import Link from 'next/link';
-import React from 'react'
+import React from 'react';
 
-import { RiLineFill } from "react-icons/ri";
+import { RiLineFill } from 'react-icons/ri';
 
 const BtnContact = () => {
   return (
-    <>  
-    <Flex w={'56px'}
-      h={'56px'} bg={"#305553"} _hover={{ bg: '#305553' }} cursor={'pointer'} color={'white'} rounded={'full'} justifyContent={'center'} alignItems={'center'}>
-      <Link href={'https://lin.ee/xKpZRCE'} target='_blank' style={{width:'100%',height:'100%',display:'flex',justifyContent:'center',alignItems:'center'}} children={<RiLineFill size={30} />} />
-    </Flex>
+    <>
+      <Flex
+        w={'50px'}
+        h={'50px'}
+        bg={'#39CD00'}
+        _hover={{ bg: '#39CD00' }}
+        cursor={'pointer'}
+        color={'white'}
+        rounded={'full'}
+        justifyContent={'center'}
+        alignItems={'center'}
+      >
+        <Link
+          href={'https://lin.ee/xKpZRCE'}
+          target="_blank"
+          style={{
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+          children={<RiLineFill size={30} />}
+        />
+      </Flex>
     </>
-  )
-}
+  );
+};
 
-export default BtnContact
+export default BtnContact;
